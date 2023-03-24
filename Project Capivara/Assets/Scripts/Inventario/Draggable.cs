@@ -12,15 +12,17 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        placeholder.SetActive(true);
-        placeholder.transform.SetParent(transform.parent);
-        LayoutElement lE = placeholder.AddComponent<LayoutElement>();
-        lE.preferredWidth = GetComponent<LayoutElement>().preferredWidth;
-        lE.preferredHeight = GetComponent<LayoutElement>().preferredHeight;
-        lE.flexibleWidth = GetComponent<LayoutElement>().flexibleWidth;
-        lE.flexibleHeight = GetComponent<LayoutElement>().flexibleHeight;
-        placeholder.transform.SetSiblingIndex(transform.GetSiblingIndex());
-        
+        if (placeholder != null)
+        {
+            placeholder.SetActive(true);
+            placeholder.transform.SetParent(transform.parent);
+            LayoutElement lE = placeholder.AddComponent<LayoutElement>();
+            lE.preferredWidth = GetComponent<LayoutElement>().preferredWidth;
+            lE.preferredHeight = GetComponent<LayoutElement>().preferredHeight;
+            lE.flexibleWidth = GetComponent<LayoutElement>().flexibleWidth;
+            lE.flexibleHeight = GetComponent<LayoutElement>().flexibleHeight;
+            placeholder.transform.SetSiblingIndex(transform.GetSiblingIndex());   
+        }
         oldD = transform.parent;
         parentToReturnTo = transform.parent;
         transform.SetParent(transform.parent.parent);
@@ -38,25 +40,32 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
             if (transform.position.x < parentToReturnTo.GetChild(i).position.x)
             {
                 newSiblingIndex = i;
-                if (placeholder.transform.GetSiblingIndex() < newSiblingIndex)
+                if (placeholder != null && placeholder.transform.GetSiblingIndex() < newSiblingIndex)
                 {
                     newSiblingIndex--;
                 }
                 break;
             }
         }
-        placeholder.transform.SetSiblingIndex(newSiblingIndex);
+
+        if (placeholder != null)
+        {
+            placeholder.transform.SetSiblingIndex(newSiblingIndex);
+            placeholder.GetComponent<InventorySlotManager>().
+                Populate(eventData.pointerDrag.GetComponent<InventorySlotManager>().myItem);   
+        }
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
         transform.SetParent(parentToReturnTo);
-        transform.SetSiblingIndex(placeholder.transform.GetSiblingIndex());
         GetComponent<CanvasGroup>().blocksRaycasts = true;
         if (placeholder != null)
         {
+            transform.SetSiblingIndex(placeholder.transform.GetSiblingIndex());
             placeholder.SetActive(false);
             placeholder.transform.SetParent(null);
+            placeholder.GetComponent<InventorySlotManager>().Deadctivate();
         }
     }
 

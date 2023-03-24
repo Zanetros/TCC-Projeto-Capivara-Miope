@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class InventorySlotManager : MonoBehaviour
 {
-    private Item myItem;
+    public Item myItem;
     public Image background;
     public Image itemSprite;
     public TextMeshProUGUI txtQuantity;
@@ -32,7 +32,6 @@ public class InventorySlotManager : MonoBehaviour
         {
             gameObject.SetActive(false);
         }
-        myItem = null;
         background.enabled = false;
         itemSprite.enabled = false;
         background.sprite = null;
