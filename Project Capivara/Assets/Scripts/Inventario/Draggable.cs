@@ -9,6 +9,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     private Transform oldD = null;
     private int newSiblingIndex;
     public GameObject placeholder;
+    public InventoryManager iM;
 
     public void OnBeginDrag(PointerEventData eventData)
     {
@@ -60,8 +61,12 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     {
         transform.SetParent(parentToReturnTo);
         GetComponent<CanvasGroup>().blocksRaycasts = true;
+        GetComponent<InventorySlotManager>().myType = parentToReturnTo.gameObject.GetComponent<DropSlot>().myType;
+        //iM.UpdateItemLocation(GetComponent<InventorySlotManager>());
+        
         if (placeholder != null)
         {
+            iM.PopulateInventory();
             transform.SetSiblingIndex(placeholder.transform.GetSiblingIndex());
             placeholder.SetActive(false);
             placeholder.transform.SetParent(null);

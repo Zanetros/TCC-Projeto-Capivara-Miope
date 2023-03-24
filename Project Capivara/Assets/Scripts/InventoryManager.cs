@@ -43,11 +43,12 @@ public class InventoryManager : MonoBehaviour
         isInventoryOpen = !isInventoryOpen;
     }
 
-    private void PopulateInventory()
+    public void PopulateInventory()
     {
         _items = save.GetInventoryItems();
         for (int i = 0; i < _items.Length; i++)
         {
+            inventorySlots[i].Deadctivate();
             if (_items[i] != null)
             {
                 inventorySlots[i].Populate(_items[i]);
@@ -69,4 +70,44 @@ public class InventoryManager : MonoBehaviour
             }
         }
     }
+    /*
+    public void UpdateItemLocation(InventorySlotManager iS)
+    {
+        if (iS.myType.Equals(InventorySlotManager.typeOfSlot.Inventory))
+        {
+            for (int i = 0; i < inventorySlots.Length; i++)
+            {
+                if (inventorySlots[i] != null && inventorySlots[i].Equals(iS))
+                {
+                    inventorySlots[i] = null;
+                    for (int j = 0; j < quickBarSlots.Length; j++)
+                    {
+                        if (quickBarSlots[i] == null)
+                        {
+                            inventorySlots[i] = iS;
+                        }
+                    }
+                }
+            }
+        }
+        else
+        if (iS.myType.Equals(InventorySlotManager.typeOfSlot.FromQuickBar))
+        {
+            for (int i = 0; i < inventorySlots.Length; i++)
+            {
+                if (inventorySlots[i] != null && inventorySlots[i].Equals(iS))
+                {
+                    inventorySlots[i] = null;
+                    for (int j = 0; j < quickBarSlots.Length; j++)
+                    {
+                        if (quickBarSlots[i] == null)
+                        {
+                            inventorySlots[i] = iS;
+                        }
+                    }
+                }
+            }
+        }
+    }*/
+    
 }
