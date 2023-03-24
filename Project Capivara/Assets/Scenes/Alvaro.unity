@@ -3091,7 +3091,7 @@ MonoBehaviour:
   background: {fileID: 192891497}
   itemSprite: {fileID: 591349153}
   txtQuantity: {fileID: 2082422567}
-  myType: 1
+  myType: 0
 --- !u!225 &335097441
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -5146,7 +5146,7 @@ MonoBehaviour:
   background: {fileID: 821232510}
   itemSprite: {fileID: 199918245}
   txtQuantity: {fileID: 1124296818}
-  myType: 1
+  myType: 0
 --- !u!225 &604472128
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -5540,7 +5540,7 @@ MonoBehaviour:
   background: {fileID: 1781708428}
   itemSprite: {fileID: 1769501047}
   txtQuantity: {fileID: 1789834292}
-  myType: 1
+  myType: 0
 --- !u!225 &631261214
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -8486,7 +8486,7 @@ MonoBehaviour:
   background: {fileID: 1058511829}
   itemSprite: {fileID: 1761436945}
   txtQuantity: {fileID: 619630467}
-  myType: 1
+  myType: 0
 --- !u!225 &955184748
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -9111,6 +9111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7b2d9b1606a0644db2bd368f22a1bd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myType: 1
 --- !u!1 &1024798393
 GameObject:
   m_ObjectHideFlags: 0
@@ -9170,7 +9171,7 @@ MonoBehaviour:
   background: {fileID: 238465682}
   itemSprite: {fileID: 440025970}
   txtQuantity: {fileID: 1872902468}
-  myType: 1
+  myType: 0
 --- !u!225 &1024798396
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -11370,6 +11371,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7b2d9b1606a0644db2bd368f22a1bd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myType: 0
 --- !u!1 &1222071643
 GameObject:
   m_ObjectHideFlags: 0
@@ -11429,7 +11431,7 @@ MonoBehaviour:
   background: {fileID: 1863333940}
   itemSprite: {fileID: 283724357}
   txtQuantity: {fileID: 984639419}
-  myType: 1
+  myType: 0
 --- !u!225 &1222071646
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -12462,7 +12464,7 @@ MonoBehaviour:
   background: {fileID: 695349900}
   itemSprite: {fileID: 1097979215}
   txtQuantity: {fileID: 178621572}
-  myType: 1
+  myType: 0
 --- !u!225 &1388403669
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -14548,7 +14550,7 @@ MonoBehaviour:
   background: {fileID: 1049441823}
   itemSprite: {fileID: 1339060724}
   txtQuantity: {fileID: 370859285}
-  myType: 1
+  myType: 0
 --- !u!225 &1692169295
 CanvasGroup:
   m_ObjectHideFlags: 0
