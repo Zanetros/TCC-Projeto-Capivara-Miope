@@ -7,7 +7,8 @@ public class InventoryManager : MonoBehaviour
     public GameObject inventoryCanvas;
     private bool isInventoryOpen = false;
     public InventorySlotManager[] inventorySlots;
-    private List<Item> _items;
+    public InventorySlotManager[] quickBarSlots;
+    public Item[] _items;
 
     public SaveAndLoadPlayerInventory save;
     
@@ -40,9 +41,16 @@ public class InventoryManager : MonoBehaviour
     private void PopulateInventory()
     {
         _items = save.GetInventoryItems();
-        for (int i = 0; i < _items.Count; i++)
+        for (int i = 0; i < _items.Length; i++)
         {
-            inventorySlots[i].Populate(_items[i]);
+            if (_items[i] != null)
+            {
+                inventorySlots[i].Populate(_items[i]);
+                if (i < quickBarSlots.Length)
+                {
+                    quickBarSlots[i].Populate(_items[i]);
+                }
+            }
         }
     }
 }
