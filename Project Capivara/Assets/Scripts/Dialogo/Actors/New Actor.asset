@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: New Actor
   m_EditorClassIdentifier: 
   name: Kevin
-  portrait: {fileID: 21300000, guid: 601ee6102f54d41e9908ba8c8ade2173, type: 3}
+  portrait: {fileID: 21300000, guid: ff8ce5873838821459946a541b2df2f9, type: 3}

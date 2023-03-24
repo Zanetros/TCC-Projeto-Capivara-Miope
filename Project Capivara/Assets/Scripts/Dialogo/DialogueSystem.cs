@@ -74,7 +74,7 @@ public class DialogueSystem : MonoBehaviour
         currentLine++;
     }
     
-    public void InitializeDialogue(DialogueContainer dialogueContainer)
+    public void Initialize(DialogueContainer dialogueContainer)
     {
         Show(true);
         currentDialogue = dialogueContainer;

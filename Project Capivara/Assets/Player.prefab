@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2274266653621655858}
   - component: {fileID: 6748975199660161466}
   - component: {fileID: 2274266653621655870}
+  - component: {fileID: 7025821681399898654}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -159,3 +160,17 @@ MonoBehaviour:
   maxDistance: 1.5
   cropsManager: {fileID: 0}
   plowableTile: {fileID: 11400000, guid: a2cb57d3796f254479c58f960b71e3b0, type: 2}
+--- !u!114 &7025821681399898654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2274266653621655863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a4edef3d0c55e8448c56cebbc75a39c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offSetDistance: 1
+  sizeOfInteractableArea: 1.2
