@@ -16,7 +16,7 @@ public class SaveAndLoadPlayerInventory : MonoBehaviour
     public float[] newHairColor;
     public Item[] itemsAvaible;
     private PlayerInventory pI;
-    public List<Item> playerItems;
+    public Item[] playerItems;
     public Image[] testColor;
     public float r, g, b = 0;
     #endregion
@@ -28,6 +28,7 @@ public class SaveAndLoadPlayerInventory : MonoBehaviour
     private void Start()
     {
         newHairColor = new float[3] {0, 0, 0};
+        playerItems = new Item[maxSlots];
         pI = CallLoad();
         if (pI == null)
         {
@@ -46,13 +47,13 @@ public class SaveAndLoadPlayerInventory : MonoBehaviour
         //TO-DO: Passar os valores do Load Para outra classe que cuide de gerenciar o inventário
     }
 
-    public List<Item> GetInventoryItems()
+    public Item[] GetInventoryItems()
     {
         for (int i = 0, j = items.Length; i < j; i++)
         {
             if (items[i] != null && items[i].Equals(itemsAvaible[i].name))
             {
-                playerItems.Add(itemsAvaible[i]);
+                playerItems[i] = itemsAvaible[i];
                 playerItems[i].quantity = quantity[i];
             }
         }
