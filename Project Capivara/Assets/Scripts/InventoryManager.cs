@@ -11,6 +11,11 @@ public class InventoryManager : MonoBehaviour
     public Item[] _items;
 
     public SaveAndLoadPlayerInventory save;
+
+    void Start()
+    {
+        PopulateQuickBar();
+    }
     
     void Update()
     {
@@ -46,6 +51,17 @@ public class InventoryManager : MonoBehaviour
             if (_items[i] != null)
             {
                 inventorySlots[i].Populate(_items[i]);
+            }
+        }
+    }
+
+    private void PopulateQuickBar()
+    {
+        _items = save.GetInventoryItems();
+        for (int i = 0; i < _items.Length; i++)
+        {
+            if (_items[i] != null)
+            {
                 if (i < quickBarSlots.Length)
                 {
                     quickBarSlots[i].Populate(_items[i]);
@@ -53,4 +69,5 @@ public class InventoryManager : MonoBehaviour
             }
         }
     }
+    
 }

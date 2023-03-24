@@ -6,8 +6,9 @@ using UnityEngine.EventSystems;
 public class DropSlot : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerExitHandler
 {
     private Draggable d;
+    private InventorySlotManager i;
     private GameObject dToChange;
-
+    public InventorySlotManager.typeOfSlot myType;
     public void OnPointerEnter(PointerEventData eventData)
     {
     
@@ -23,12 +24,26 @@ public class DropSlot : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
         d = eventData.pointerDrag.GetComponent<Draggable>();
         if(d != null)
         {
-            if(this.transform.childCount > 0)
+            i = eventData.pointerDrag.GetComponent<InventorySlotManager>();
+            if (myType.Equals(InventorySlotManager.typeOfSlot.Inventory) &&
+                i.myType.Equals(InventorySlotManager.typeOfSlot.FromQuickBar))
             {
-                dToChange = this.transform.parent.gameObject;
-                dToChange.transform.SetParent(d.parentToReturnTo);
+                if (transform.childCount > 0)
+                {
+                    dToChange = transform.parent.gameObject;
+                    dToChange.transform.SetParent(d.parentToReturnTo);
+                }
             }
-            d.parentToReturnTo = this.transform;
+            else
+            {
+                i.myType = InventorySlotManager.typeOfSlot.FromQuickBar;
+                if (transform.childCount > 0)
+                {
+                    dToChange = transform.parent.gameObject;
+                    dToChange.transform.SetParent(d.parentToReturnTo);
+                }
+                d.parentToReturnTo = transform;
+            }
         }
     }
 }
