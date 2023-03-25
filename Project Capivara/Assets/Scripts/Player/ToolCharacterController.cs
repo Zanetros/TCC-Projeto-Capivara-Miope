@@ -6,15 +6,28 @@ using UnityEngine.Tilemaps;
 
 public class ToolCharacterController : MonoBehaviour
 {
+    PlayerMovement playerMovement;
+    Rigidbody2D rigidbody2D;
+    [SerializeField] float offsetDistance = 1f;
+    [SerializeField] float sizeOfInteractableArea = 1.2f;
+
+    #region Plantação
     [SerializeField] MarkerManager markerManager;
     [SerializeField] TileMapReadController tileMapReadController;
     [SerializeField] float maxDistance = 1.5f;
     [SerializeField] CropsManager cropsManager;
     [SerializeField] TileData plowableTile;
+    #endregion
 
     Vector3Int selectedTilePosition;
     bool selectable;
-    
+
+    private void Awake()
+    {
+        playerMovement = GetComponent<PlayerMovement>();
+        rigidbody2D = GetComponent<Rigidbody2D>();
+    }
+
     private void Update()
     {
         SelectTile();
@@ -48,7 +61,19 @@ public class ToolCharacterController : MonoBehaviour
 
     public void UseTool()
     {
+        Vector2 position = rigidbody2D.position + playerMovement.lastMotionVector * offsetDistance;
 
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(position, sizeOfInteractableArea);
+
+        foreach (Collider2D c in colliders)
+        {
+            ToolHit hit = c.GetComponent<ToolHit>();
+            if (hit != null)
+            {
+                hit.Hit();
+                break;
+            }
+        }
     }
 
     public void UseToolGrid()
