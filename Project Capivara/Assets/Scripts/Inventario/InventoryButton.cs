@@ -19,7 +19,7 @@ public class InventoryButton : MonoBehaviour
     public void Set(ItemSlot slot)
     {
         icon.gameObject.SetActive(true);
-        icon.sprite = slot.item.icon;
+        icon.sprite = slot.item.sprite;
 
         if (slot.item.stackable == true) 
         {
