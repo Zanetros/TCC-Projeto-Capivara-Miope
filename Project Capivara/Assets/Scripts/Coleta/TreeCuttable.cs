@@ -5,8 +5,11 @@ using UnityEngine;
 public class TreeCuttable : ToolHit
 {
     [SerializeField] GameObject pickUpDrop;
-    [SerializeField] int dropCount = 5;
     [SerializeField] float spread = 0.7f;
+
+    [SerializeField] Item item;
+    [SerializeField] int itemCountInOneDrop;
+    [SerializeField] int dropCount = 5;
     
     public override void Hit()
     {
@@ -18,7 +21,8 @@ public class TreeCuttable : ToolHit
             position.x += spread * UnityEngine.Random.value - spread / 2;
             position.y += spread * UnityEngine.Random.value - spread / 2;
             GameObject go = Instantiate(pickUpDrop);
-            go.transform.position = position;
+
+            DropedItemSpawner.instance.SpawnItem(position, item, itemCountInOneDrop);
         }
         
         Destroy(gameObject);

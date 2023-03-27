@@ -16,7 +16,16 @@ public class PickUpItem : MonoBehaviour
         player = GameManager.instance.player.transform;
     }
 
-    private void Update()
+    public void Set(Item item, int count)
+    {
+        this.item = item;
+        this.count = count;
+
+        SpriteRenderer renderer = GetComponent<SpriteRenderer>();
+        renderer.sprite = item.sprite;
+    }
+    
+        private void Update()
     {
         ttl -= Time.deltaTime;
         if (ttl < 0) { Destroy(gameObject); }

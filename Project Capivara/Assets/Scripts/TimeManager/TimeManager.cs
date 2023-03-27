@@ -19,7 +19,7 @@ public class TimeManager : MonoBehaviour
     void Start()
     {
         Minute = 0;
-        Hour = 6;
+        Hour = 10;
         Day = 1;
         timer = minuteToRealTime;
     }
