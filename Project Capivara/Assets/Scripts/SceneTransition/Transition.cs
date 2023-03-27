@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -13,6 +14,7 @@ public class Transition : MonoBehaviour
 {
     [SerializeField] private TransitionType transitionType;
     [SerializeField] private string sceneNameToTransition;
+    [SerializeField] private Vector3 targetPosition;
     
     private Transform destination;
     
@@ -30,9 +32,15 @@ public class Transition : MonoBehaviour
 
     public void InitiateTransition(Transform toTransition)
     {
+        Cinemachine.CinemachineBrain currentCamera = Camera.main.GetComponent<CinemachineBrain>();
+
         switch (transitionType)
         {
             case TransitionType.Warp:
+                currentCamera.ActiveVirtualCamera.OnTargetObjectWarped(
+                    toTransition,
+                    destination.position - toTransition.position
+                );
                 toTransition.position = new Vector3(
                     destination.position.x,
                     destination.position.y,
@@ -40,8 +48,11 @@ public class Transition : MonoBehaviour
                 break;
             
             case TransitionType.Scene:
-                print("FOI?");
-                SceneManager.LoadScene(sceneNameToTransition);
+                currentCamera.ActiveVirtualCamera.OnTargetObjectWarped(
+                    toTransition,
+                    targetPosition - toTransition.position
+                );
+                GameSceneManager.instance.SwitchScene(sceneNameToTransition, targetPosition);
                 break;
         }
         
