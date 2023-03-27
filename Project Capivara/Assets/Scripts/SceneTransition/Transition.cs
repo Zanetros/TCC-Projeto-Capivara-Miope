@@ -40,6 +40,7 @@ public class Transition : MonoBehaviour
                 break;
             
             case TransitionType.Scene:
+                print("FOI?");
                 SceneManager.LoadScene(sceneNameToTransition);
                 break;
         }

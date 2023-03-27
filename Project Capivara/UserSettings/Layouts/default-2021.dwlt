@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Scene
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 15
+  controlID: 105
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -68,8 +68,8 @@ MonoBehaviour:
     y: 0
     width: 454
     height: 947
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -317,23 +317,23 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/Inventario
+    - Assets/Scripts/SceneTransition
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts/Inventario
+  - Assets/Scripts/SceneTransition
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\USER\Documents\GitHub\TCC-Projeto-Capivara-Miope\Project
     Capivara
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 86700000
-    m_LastClickedID: 28806
-    m_ExpandedIDs: 00000000347000005e7000006070000000ca9a3b
+    scrollPos: {x: 0, y: 60}
+    m_SelectedIDs: 78700000
+    m_LastClickedID: 28792
+    m_ExpandedIDs: 00000000347000005e70000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -489,9 +489,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 08140000
-      m_LastClickedID: 0
-      m_ExpandedIDs: 0efbffff
+      m_SelectedIDs: e8d90000
+      m_LastClickedID: 55784
+      m_ExpandedIDs: 8cc6ffffd0c8ffffbad7ffff70d8ffffe8ddffffc4e0ffff32e3ffff06e6fffffee8ffff36eafffffaecffffb6edffff92f0ffff60f3ffff9af6ffff0efbffff2a870000228c00001a950000f29f000090a000007eda0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -762,9 +762,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -1.3821365, y: -0.99800265, z: -0.077900805}
+    m_Target: {x: 7.236871, y: -1.4659745, z: -0.112989955}
     speed: 2
-    m_Value: {x: -1.3821365, y: -0.99800265, z: -0.077900805}
+    m_Value: {x: 7.387744, y: -1.4854169, z: -0.1089848}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -815,9 +815,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 8.971605
+    m_Target: 9.300817
     speed: 2
-    m_Value: 8.971605
+    m_Value: 8.900303
   m_Ortho:
     m_Target: 1
     speed: 2

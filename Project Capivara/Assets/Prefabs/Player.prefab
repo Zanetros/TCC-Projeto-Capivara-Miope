@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 7025821681399898654}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -143,6 +143,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 100
+  lastMotionVector: {x: 0, y: 0}
+  moving: 0
 --- !u!114 &2274266653621655870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,6 +157,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cea6cec3e7455e24088ef781b8d3a2af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  offsetDistance: 1
+  sizeOfInteractableArea: 1.2
   markerManager: {fileID: 0}
   tileMapReadController: {fileID: 0}
   maxDistance: 1.5
@@ -172,5 +176,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a4edef3d0c55e8448c56cebbc75a39c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offSetDistance: 1
+  offsetDistance: 1
   sizeOfInteractableArea: 1.2
