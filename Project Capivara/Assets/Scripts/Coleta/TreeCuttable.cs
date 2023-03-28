@@ -20,7 +20,7 @@ public class TreeCuttable : ToolHit
             Vector3 position = transform.position;
             position.x += spread * UnityEngine.Random.value - spread / 2;
             position.y += spread * UnityEngine.Random.value - spread / 2;
-            GameObject go = Instantiate(pickUpDrop);
+            //GameObject go = Instantiate(pickUpDrop);
 
             DropedItemSpawner.instance.SpawnItem(position, item, itemCountInOneDrop);
         }
