@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class LootContainerInteract : Interactable
 {
-    [SerializeField] GameObject chest;
-    [SerializeField] bool open;
+    [SerializeField] GameObject closedChest;
+    [SerializeField] GameObject openedChest;
+    [SerializeField] bool open = false;
     
     public override void Interact(Character character)
     {
-       if (open == false)
-        {
-            open = true;
-        }
+        open = !open;
+        closedChest.SetActive(!closedChest.activeSelf);
+        openedChest.SetActive(!openedChest.activeSelf);
     }
 }

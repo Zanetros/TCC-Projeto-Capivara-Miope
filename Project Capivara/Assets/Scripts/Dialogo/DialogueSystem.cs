@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
-using UnityEditor.Search;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,7 +9,7 @@ public class DialogueSystem : MonoBehaviour
     [SerializeField] private Image portrait;
 
     private DialogueContainer currentDialogue;
-    private int currentLine;
+    private int currentLine, letterCount;
 
     [Range(0f,1f)]
     [SerializeField] private float visibleTextPercent;
@@ -42,7 +38,7 @@ public class DialogueSystem : MonoBehaviour
 
     void UpdateText()
     {
-        int letterCount = (int)(lineToShow.Length * visibleTextPercent);
+        letterCount = (int)(lineToShow.Length * visibleTextPercent);
         targetText.text = lineToShow.Substring(0, letterCount);
     }
 
@@ -70,6 +66,7 @@ public class DialogueSystem : MonoBehaviour
         totalTimeToType = lineToShow.Length * timePerLetter;
         currentTime = 0F;
         visibleTextPercent = 0F;
+        letterCount = 0;
         targetText.text = "";
         currentLine++;
     }
@@ -79,8 +76,8 @@ public class DialogueSystem : MonoBehaviour
         Show(true);
         currentDialogue = dialogueContainer;
         currentLine = 0;
-        PushText();
         UpdatePortrait();
+        PushText();
     }
 
     private void UpdatePortrait()
