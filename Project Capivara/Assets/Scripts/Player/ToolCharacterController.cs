@@ -8,6 +8,8 @@ public class ToolCharacterController : MonoBehaviour
 {
     PlayerMovement playerMovement;
     Rigidbody2D rigidbody2D;
+    Animator animator;
+    ToolBarController toolbarController;
     [SerializeField] float offsetDistance = 1f;
     [SerializeField] float sizeOfInteractableArea = 1.2f;
 
@@ -26,6 +28,8 @@ public class ToolCharacterController : MonoBehaviour
     {
         playerMovement = GetComponent<PlayerMovement>();
         rigidbody2D = GetComponent<Rigidbody2D>();
+        toolbarController = GetComponent<ToolBarController>();
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -36,7 +40,11 @@ public class ToolCharacterController : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            UseTool();
+            if (UseToolWorld() == true)
+            {
+                return;
+            }
+
             UseToolGrid();
         }
     }
@@ -59,21 +67,18 @@ public class ToolCharacterController : MonoBehaviour
         markerManager.markedCellPosition = selectedTilePosition;
     }
 
-    public void UseTool()
+    public bool UseToolWorld()
     {
         Vector2 position = rigidbody2D.position + playerMovement.lastMotionVector * offsetDistance;
 
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(position, sizeOfInteractableArea);
+        Item item = toolbarController.GetItem;
+        if (item == null) { return false; }
+        if (item.onAction == null) { return false; }
 
-        foreach (Collider2D c in colliders)
-        {
-            ToolHit hit = c.GetComponent<ToolHit>();
-            if (hit != null)
-            {
-                hit.Hit();
-                break;
-            }
-        }
+        animator.SetTrigger("act");
+        bool complete = item.onAction.OnAply(position);
+
+        return complete;
     }
 
     public void UseToolGrid()

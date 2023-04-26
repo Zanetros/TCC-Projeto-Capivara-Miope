@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 74b9439d70e29b345860848dba9e0985, type: 3}
-  m_Name: Enxada
+  m_Name: Machado
   m_EditorClassIdentifier: 
-  Name: Enxada
-  Description: Usada para arar a terra
+  Name: Machado
+  Description: 
   stackable: 0
-  sprite: {fileID: -1176985666, guid: 26f7ba4f4c238b649b8004c01d6287bf, type: 3}
-  onAction: {fileID: 11400000, guid: b59aa232d9404d34aa8a0250c55898ba, type: 2}
+  sprite: {fileID: -20622527, guid: 26f7ba4f4c238b649b8004c01d6287bf, type: 3}
+  onAction: {fileID: 11400000, guid: 71a785a5e9502c84fa252a434fbf74bf, type: 2}
