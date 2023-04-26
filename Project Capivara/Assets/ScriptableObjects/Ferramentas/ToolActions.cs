@@ -9,4 +9,15 @@ public class ToolActions : ScriptableObject
         Debug.LogWarning("is no working");
         return true;
     }
+
+    public virtual bool OnAplyToTileMap(Vector3Int gridPosition, TileMapReadController tileMapReadController)
+    {
+        Debug.LogWarning("tilemap is not applied");
+        return true;
+    }
+
+    public virtual void OnItemUsed(Item usedItem, ItemContainer inventory)
+    {
+
+    }
 }

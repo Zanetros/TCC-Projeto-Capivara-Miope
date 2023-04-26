@@ -17,8 +17,6 @@ public class ToolCharacterController : MonoBehaviour
     [SerializeField] MarkerManager markerManager;
     [SerializeField] TileMapReadController tileMapReadController;
     [SerializeField] float maxDistance = 1.5f;
-    [SerializeField] CropsManager cropsManager;
-    [SerializeField] TileData plowableTile;
     #endregion
 
     Vector3Int selectedTilePosition;
@@ -79,24 +77,34 @@ public class ToolCharacterController : MonoBehaviour
         bool complete = item.onAction.OnAply(position);
 
         return complete;
+
+        if (complete == true)
+        {
+            if (item.onItemUsed != null)
+            {
+                item.onItemUsed.OnItemUsed(item, GameManager.instance.inventoryContainer);
+            }
+        }
     }
 
     public void UseToolGrid()
     {
         if (selectable == true)
         {
-            TileBase tileBase = tileMapReadController.GetTileBase(selectedTilePosition);
-            TileData tileData = tileMapReadController.GetTileData(tileBase);
-            if (tileData != plowableTile) { return; }
-            
-            if (cropsManager.Check(selectedTilePosition))
+            Item item = toolbarController.GetItem;
+            if (item == null) { return; }
+            if (item.onTilemapAction == null) { return; }
+
+            animator.SetTrigger("act");
+            bool complete = item.onTilemapAction.OnAplyToTileMap(selectedTilePosition, tileMapReadController);
+
+            if (complete == true)
             {
-                cropsManager.Seed(selectedTilePosition);
+                if (item.onItemUsed != null)
+                {
+                    item.onItemUsed.OnItemUsed(item, GameManager.instance.inventoryContainer);
+                }
             }
-            else
-            {
-                cropsManager.Plow(selectedTilePosition);
-            }            
         }
     }
 }

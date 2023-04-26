@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 74b9439d70e29b345860848dba9e0985, type: 3}
-  m_Name: Enxada
+  m_Name: Semente
   m_EditorClassIdentifier: 
-  Name: Enxada
-  Description: Usada para arar a terra
-  stackable: 0
-  sprite: {fileID: -1176985666, guid: 26f7ba4f4c238b649b8004c01d6287bf, type: 3}
-  onAction: {fileID: 11400000, guid: b59aa232d9404d34aa8a0250c55898ba, type: 2}
-  onTilemapAction: {fileID: 11400000, guid: fbe8c4d57a5ca1441a6ba037af62ac84, type: 2}
-  onItemUsed: {fileID: 0}
+  Name: Seed
+  Description: 
+  stackable: 1
+  sprite: {fileID: 212335102, guid: 22dea690a3a477240a6f8fa3f3983b26, type: 3}
+  onAction: {fileID: 0}
+  onTilemapAction: {fileID: 11400000, guid: 153bb18c0f355dc418179a46811796a5, type: 2}
+  onItemUsed: {fileID: 11400000, guid: 153bb18c0f355dc418179a46811796a5, type: 2}

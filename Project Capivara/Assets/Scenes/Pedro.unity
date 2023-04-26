@@ -9108,9 +9108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilemap: {fileID: 2947986739512647564}
-  tileDatas:
-  - {fileID: 11400000, guid: a7834089927f2894694eba0d837bad92, type: 2}
-  - {fileID: 11400000, guid: a2cb57d3796f254479c58f960b71e3b0, type: 2}
+  cropsManager: {fileID: 5908046378252556749}
 --- !u!114 &5908046378252556749
 MonoBehaviour:
   m_ObjectHideFlags: 0
