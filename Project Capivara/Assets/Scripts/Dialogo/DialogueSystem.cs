@@ -38,6 +38,7 @@ public class DialogueSystem : MonoBehaviour
 
     void UpdateText()
     {
+        if (lineToShow == null) return;
         letterCount = (int)(lineToShow.Length * visibleTextPercent);
         targetText.text = lineToShow.Substring(0, letterCount);
     }
@@ -75,7 +76,9 @@ public class DialogueSystem : MonoBehaviour
     {
         Show(true);
         currentDialogue = dialogueContainer;
+        visibleTextPercent = 1;
         currentLine = 0;
+        targetText.text = "";
         UpdatePortrait();
         PushText();
     }
