@@ -15,7 +15,24 @@ public class TimeManager : MonoBehaviour
 
     [SerializeField] private float minuteToRealTime = 0.3f;
     private float timer;
-    
+
+    public List<TimeAgent> agents;
+
+    private void Awake()
+    {
+        agents = new List<TimeAgent>();
+    }
+
+    public void Subscribe(TimeAgent timeAgent)
+    {
+
+    }
+
+    public void Unsubscribe(TimeAgent timeAgent)
+    {
+        agents.Remove(timeAgent);
+    }
+
     void Start()
     {
         Minute = 0;
@@ -48,6 +65,11 @@ public class TimeManager : MonoBehaviour
             }
 
             timer = minuteToRealTime;
+        }
+
+        for (int i = 0; i < agents.Count; i++)
+        {
+            agents[i].Invoke();
         }
     }
 }

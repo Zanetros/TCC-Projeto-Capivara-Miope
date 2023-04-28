@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 74b9439d70e29b345860848dba9e0985, type: 3}
-  m_Name: Enxada
+  m_Name: New Item
   m_EditorClassIdentifier: 
-  Name: Enxada
-  Description: Usada para arar a terra
-  stackable: 0
-  sprite: {fileID: -1176985666, guid: 26f7ba4f4c238b649b8004c01d6287bf, type: 3}
-  onAction: {fileID: 11400000, guid: b59aa232d9404d34aa8a0250c55898ba, type: 2}
-  onTilemapAction: {fileID: 11400000, guid: fbe8c4d57a5ca1441a6ba037af62ac84, type: 2}
+  Name: Teste
+  Description: 
+  stackable: 1
+  sprite: {fileID: 21300000, guid: 129445b692ce7734ca7d9b4d2e883570, type: 3}
+  onAction: {fileID: 0}
+  onTilemapAction: {fileID: 0}
   onItemUsed: {fileID: 0}

@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Rendering;
 using System;
+using System.Collections.Generic;
 
 public class DayNightCycle : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class DayNightCycle : MonoBehaviour
 
     public bool areLightsOn;
     public GameObject[] lights;
-
+ 
     public void Start()
     {
         ppv = GetComponent<Volume>();
