@@ -8653,6 +8653,8 @@ MonoBehaviour:
   dragAndDropController: {fileID: 5908046378252556752}
   dialogueSystem: {fileID: 0}
   timeController: {fileID: 5908046378252556754}
+  coinBag: {fileID: 0}
+  shopController: {fileID: 0}
 --- !u!114 &5908046378252556752
 MonoBehaviour:
   m_ObjectHideFlags: 0

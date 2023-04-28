@@ -15,13 +15,19 @@ public class ShopController : MonoBehaviour
     public TextMeshProUGUI txtTotalPrice;
     public TextMeshProUGUI txtCoinsInBag;
     public Image imgItemConfirm;
+    public ItemContainer inventory;
     
-    private Item selectedItem;
+    private Item selectedItem;   
     private int quantityToBuy;
     private int totalPrice;
 
     private bool open = false;
     public GameManager gameManager;
+
+    public void Start()
+    {
+        
+    }
 
     void Update()
     {
@@ -108,12 +114,22 @@ public class ShopController : MonoBehaviour
             confirmPanel.SetActive(false);
             //O item a ser comprado é o "selectedItem" e sua quantidade é a "quantityToBuy"
             //Nessa linha seria a parte de adicionar o item no inventário do jogador de acordo com a quantidade comprada
+            Debug.Log("Voce comprou " + quantityToBuy +  " itens");
+            ItemBought(selectedItem, quantityToBuy);
             ResetShop();
         }
         else
         {
-            print("You don't have enough coins to buy this");
+            print("Voce nao tem dinheiro o suficiente");
         }
     }
-    
+
+    public void ItemBought(Item itemBought, int count)
+    {
+        selectedItem = itemBought;
+        quantityToBuy = count;
+        inventory.Add(itemBought, count);
+        
+        
+    }  
 }
