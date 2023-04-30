@@ -7,18 +7,18 @@ public class TimeAgent : MonoBehaviour
 {
     public Action onTimeTick;
 
-    private void Start()
+    public void Start()
     {
-        GameManager.instance.timeController.Subscribe(this);
+        GameManager.instance.timeManager.Subscribe(this);
     }
 
     public void Invoke()
     {
-        onTimeTick.Invoke();
+        onTimeTick?.Invoke();
     }
 
     private void OnDestroy()
     {
-        GameManager.instance.timeController.Unsubscribe(this);
+        GameManager.instance.timeManager.Unsubscribe(this);
     }
 }
