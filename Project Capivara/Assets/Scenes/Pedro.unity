@@ -989,6 +989,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 300386993}
   m_CullTransparentMesh: 1
+--- !u!114 &341673479 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6163186370596490526, guid: d26581477a0da8349a28d2a2d8cbfc3b, type: 3}
+  m_PrefabInstance: {fileID: 937534247}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78b36016aeac37f40853cae4d5517515, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &358884862
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3216,6 +3227,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4300676552262674634, guid: 74d9c6d38661a3941ac2ecdc5c499d91, type: 3}
   m_PrefabInstance: {fileID: 699348247}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1114816482 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6163186370596490526, guid: d26581477a0da8349a28d2a2d8cbfc3b, type: 3}
+  m_PrefabInstance: {fileID: 6163186371631280892}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78b36016aeac37f40853cae4d5517515, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1126685535 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4532582100044325406, guid: 74d9c6d38661a3941ac2ecdc5c499d91, type: 3}
@@ -4222,6 +4244,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74d9c6d38661a3941ac2ecdc5c499d91, type: 3}
+--- !u!114 &1363811146 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6163186370596490526, guid: d26581477a0da8349a28d2a2d8cbfc3b, type: 3}
+  m_PrefabInstance: {fileID: 748048098}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78b36016aeac37f40853cae4d5517515, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1416775611
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7722,8 +7755,8 @@ Tilemap:
   - first: {x: 0, y: -4, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 2
-      m_TileSpriteIndex: 2
+      m_TileIndex: 10
+      m_TileSpriteIndex: 1
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -9425,7 +9458,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 5d9a54a45e530ef4588f1dc732307aad, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 6483e7f529fcc0f498609fb865e45844, type: 2}
-  - m_RefCount: 162
+  - m_RefCount: 161
     m_Data: {fileID: 11400000, guid: 8e365575edc5f0947aafdeaeb4c01465, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: f659fa3d1350b9f489412b2f28a08cc1, type: 2}
@@ -9441,14 +9474,14 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 6794a4c1fbd48f44a960c0617699c9e0, type: 2}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: 372e2ccef3483ea4a9b3ec87105e1b64, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 162
+  - m_RefCount: 1
+    m_Data: {fileID: -1549704848, guid: 22dea690a3a477240a6f8fa3f3983b26, type: 3}
+  - m_RefCount: 161
     m_Data: {fileID: 1751384710, guid: 22dea690a3a477240a6f8fa3f3983b26, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 406899853, guid: 22dea690a3a477240a6f8fa3f3983b26, type: 3}
@@ -9964,6 +9997,7 @@ MonoBehaviour:
   plowed: {fileID: 11400000, guid: 372e2ccef3483ea4a9b3ec87105e1b64, type: 2}
   seeded: {fileID: 11400000, guid: 33bee2766968a2d4ea094d1f213c6d99, type: 2}
   targetTilemap: {fileID: 2947986739796854458}
+  cropsSpritePrefab: {fileID: 6509993136063677104, guid: 963c9478a57eee64fa10a85593ec747a, type: 3}
 --- !u!114 &5908046378252556750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10040,7 +10074,9 @@ MonoBehaviour:
   minuteToRealTime: 0.5
   ppv: {fileID: 1926568413}
   agents:
-  - {fileID: 0}
+  - {fileID: 1114816482}
+  - {fileID: 1363811146}
+  - {fileID: 341673479}
 --- !u!1001 &6163186371631280892
 PrefabInstance:
   m_ObjectHideFlags: 0

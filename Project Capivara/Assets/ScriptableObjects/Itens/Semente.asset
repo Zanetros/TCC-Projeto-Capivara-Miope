@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Seed
   Description: 
+  sellPrice: 0
   stackable: 1
   sprite: {fileID: 212335102, guid: 22dea690a3a477240a6f8fa3f3983b26, type: 3}
   onAction: {fileID: 0}
   onTilemapAction: {fileID: 11400000, guid: 153bb18c0f355dc418179a46811796a5, type: 2}
   onItemUsed: {fileID: 11400000, guid: 153bb18c0f355dc418179a46811796a5, type: 2}
+  crop: {fileID: 11400000, guid: 4454fc322e6c72f4aa7f7a463f3d6af6, type: 2}

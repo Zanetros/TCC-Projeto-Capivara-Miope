@@ -8,7 +8,7 @@ public class PlowTile : ToolActions
 {
     public List<TileBase> canPlow;
     
-    public override bool OnAplyToTileMap(Vector3Int gridPosition, TileMapReadController tileMapReadController)
+    public override bool OnAplyToTileMap(Vector3Int gridPosition, TileMapReadController tileMapReadController, Item item)
     {
         TileBase tileToPlow = tileMapReadController.GetTileBase(gridPosition);
 

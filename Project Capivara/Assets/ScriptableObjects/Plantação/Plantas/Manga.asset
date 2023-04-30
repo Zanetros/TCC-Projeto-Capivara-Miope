@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 675643aeacb0a1649a908b39a4f7daf5, type: 3}
+  m_Name: Manga
+  m_EditorClassIdentifier: 
+  timeToGrow: 100
+  yield: {fileID: 11400000, guid: 0e87d732b68e6e347b837e925cded9e9, type: 2}
+  count: 1
+  sprites:
+  - {fileID: -299873319, guid: cd520a82895c6224db5c73e37b5d2211, type: 3}
+  - {fileID: -903263757, guid: cd520a82895c6224db5c73e37b5d2211, type: 3}
+  - {fileID: 1383239753, guid: cd520a82895c6224db5c73e37b5d2211, type: 3}
+  - {fileID: -1636125029, guid: cd520a82895c6224db5c73e37b5d2211, type: 3}
+  growthStageTime: 04000000070000000d00000014000000
