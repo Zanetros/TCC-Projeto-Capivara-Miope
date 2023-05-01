@@ -23,36 +23,19 @@ public class ShopController : MonoBehaviour
 
     private bool open = false;
     public GameManager gameManager;
-
-    public void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            open = !open;
-            if (open)
-            {
-                OpenShop();
-            }
-            else
-            {
-                CloseShop();
-            }
-        }
-    }
     
     public void OpenShop()
     {
+        gameManager.playerMovement.enabled = false;
+        gameManager.characterInteractController.enabled = false;
         ResetShop();
         shopPanel.SetActive(true);
     }
 
     public void CloseShop()
     {
+        gameManager.playerMovement.enabled = true;
+        gameManager.characterInteractController.enabled = true;
         ResetShop();
         shopPanel.SetActive(false);
     }

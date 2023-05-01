@@ -17,7 +17,8 @@ public class DialogueSystem : MonoBehaviour
     [SerializeField] private float timePerLetter = 0.05F;
     private float totalTimeToType, currentTime;
     private string lineToShow;
-    
+
+    public GameManager gameManager;
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -91,6 +92,8 @@ public class DialogueSystem : MonoBehaviour
 
     private void Show(bool b)
     {
+        gameManager.playerMovement.enabled = !b;
+        gameManager.characterInteractController.enabled = !b;
         gameObject.SetActive(b);
     }
 

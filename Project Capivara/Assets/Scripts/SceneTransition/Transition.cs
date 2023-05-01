@@ -47,7 +47,6 @@ public class Transition : MonoBehaviour
                 break;
             
             case TransitionType.Scene:
-               
                 GameSceneManager.instance.InitSwitchScene(sceneNameToTransition, targetPosition);
                 break;
         }

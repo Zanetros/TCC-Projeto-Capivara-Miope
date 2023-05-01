@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: New Dialogue Container
   m_EditorClassIdentifier: 
   line:
-  - First Line
-  - Second Line
-  - Third Line
+  - "Ol\xE1, eu sou o Douglas!"
+  - "Voc\xEA sabia que eu sou o Douglas?"
+  - "Pois \xE9, eu sou o Douglas!"
+  - "E voc\xEA n\xE3o \xE9 o Douglas, pois eu sou o Douglas! Lembre-se disso"
   actor: {fileID: 11400000, guid: 49cba591a1397734c8c92d696d2eb035, type: 2}

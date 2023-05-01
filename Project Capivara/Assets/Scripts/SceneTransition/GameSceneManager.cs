@@ -32,8 +32,8 @@ public class GameSceneManager : MonoBehaviour
     IEnumerator Transition(string to, Vector3 targetPosition)
     {
         screenTint.Tint();
-        
         yield return new WaitForSeconds(1F / screenTint.speed + 0.1F);
+        
         SwitchScene(to, targetPosition);
 
         while (load != null && unload != null)
@@ -42,7 +42,6 @@ public class GameSceneManager : MonoBehaviour
             if (unload.isDone) { unload = null; }
             yield return new WaitForSeconds(0.1F);
         }
-        
         
         cameraConfiner.UpdateBounds();
         screenTint.UnTint();

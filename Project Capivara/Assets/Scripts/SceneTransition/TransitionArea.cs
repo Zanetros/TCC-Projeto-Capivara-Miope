@@ -9,6 +9,7 @@ public class TransitionArea : MonoBehaviour
     {
         if (collision.transform.CompareTag("Player"))
         {
+            print("!@!@");
             transform.parent.GetComponent<Transition>().InitiateTransition(collision.transform);
         }
     }

@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     {
         instance = this;
     }
-
+    
     public GameObject player;
     public ItemContainer inventoryContainer;
     public ItemDragAndDropController dragAndDropController;
@@ -18,4 +18,6 @@ public class GameManager : MonoBehaviour
     public TimeManager timeManager;
     public CoinBag coinBag;
     public ShopController shopController;
+    public PlayerMovement playerMovement;
+    public CharacterInteractController characterInteractController;
 }
