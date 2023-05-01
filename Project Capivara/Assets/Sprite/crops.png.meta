@@ -923,15 +923,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crops_39
+      name: manga_02
       rect:
         serializedVersion: 2
         x: 617
         y: 962
         width: 16
         height: 17
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: -0.25, y: -0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -951,8 +951,8 @@ TextureImporter:
         y: 962
         width: 16
         height: 17
-      alignment: 6
-      pivot: {x: 0, y: 0}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1196,15 +1196,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crops_52
+      name: manga_01
       rect:
         serializedVersion: 2
         x: 172
         y: 964
         width: 5
         height: 6
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: -2, y: -1.7}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1770,8 +1770,8 @@ TextureImporter:
         y: 897
         width: 18
         height: 30
-      alignment: 6
-      pivot: {x: 0, y: 0}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2372,15 +2372,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crops_108
+      name: manga_03
       rect:
         serializedVersion: 2
         x: 577
         y: 834
         width: 31
         height: 33
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.1, y: -0.1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2414,15 +2414,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crops_110
+      name: manga_04
       rect:
         serializedVersion: 2
         x: 641
         y: 834
         width: 31
         height: 33
-      alignment: 6
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.1, y: -0.1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3660,8 +3660,8 @@ TextureImporter:
         y: 706
         width: 31
         height: 33
-      alignment: 6
-      pivot: {x: 0, y: 0}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -6432,8 +6432,8 @@ TextureImporter:
         y: 387
         width: 25
         height: 25
-      alignment: 6
-      pivot: {x: 0, y: 0}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -6453,8 +6453,8 @@ TextureImporter:
         y: 387
         width: 25
         height: 25
-      alignment: 6
-      pivot: {x: 0, y: 0}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -6474,8 +6474,8 @@ TextureImporter:
         y: 387
         width: 25
         height: 25
-      alignment: 6
-      pivot: {x: 0, y: 0}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -6495,8 +6495,8 @@ TextureImporter:
         y: 387
         width: 25
         height: 25
-      alignment: 6
-      pivot: {x: 0, y: 0}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -6723,9 +6723,30 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 355
-        width: 1008
-        height: 668
+        y: 323
+        width: 1004
+        height: 637
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc1a13d8273a5f54d8ea0f629220d70c
+      internalID: -744469322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crops_316
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 268
+        width: 1024
+        height: 756
       alignment: 6
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6733,8 +6754,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a369c3da83e4c904c95d6d6eb230e50c
-      internalID: -1514396563
+      spriteID: 59a341bafce0b704da1f6a84437bdec1
+      internalID: 2058240347
       vertices: []
       indices: 
       edges: []
@@ -6785,18 +6806,20 @@ TextureImporter:
       crops_194: 429393376
       crops_56: 421168092
       crops_73: -2098255499
+      crops_316: 2058240347
       crops_95: -1916623595
       crops_252: -983154086
       crops_91: -885120257
       crops_84: -1855970801
       crops_183: -1934186734
+      manga_04: 1749380731
       crops_205: 195085121
       crops_212: -1593559138
       crops_104: -1353794112
       crops_123: -1897157644
       crops_305: -903263757
       crops_297: 397234546
-      crops_315: -1514396563
+      crops_315: -744469322
       crops_42: 2108163389
       crops_31: -1896337080
       crops_85: -2023970828
@@ -6827,15 +6850,15 @@ TextureImporter:
       crops_157: -1508671537
       crops_227: 1226580950
       crops_13: -2115621949
-      crops_276: -319649752
-      crops_208: 918159133
-      crops_74: -1183906271
-      crops_241: 1785400994
-      crops_43: 2003311409
-      crops_92: -283772828
-      crops_130: -596104359
-      crops_193: 276595151
       crops_51: 1042831927
+      crops_74: -1183906271
+      crops_208: 918159133
+      crops_241: 1785400994
+      crops_130: -596104359
+      crops_92: -283772828
+      crops_276: -319649752
+      crops_43: 2003311409
+      crops_193: 276595151
       crops_11: 1600106141
       crops_100: 1859692735
       crops_20: 76660648
@@ -6855,7 +6878,6 @@ TextureImporter:
       crops_135: -569682895
       crops_127: -794266524
       crops_256: 705066277
-      crops_108: -1422383674
       crops_162: -336065512
       crops_295: 70928438
       crops_111: -19174794
@@ -6898,7 +6920,6 @@ TextureImporter:
       crops_137: -61023029
       crops_147: -950341718
       crops_98: -768016346
-      crops_52: -1033181317
       crops_138: -493408359
       crops_142: -881340466
       crops_114: -212986585
@@ -7023,22 +7044,23 @@ TextureImporter:
       crops_170: 1781970606
       crops_275: 528525558
       crops_0: 570132286
-      crops_39: 202177373
-      crops_110: 1749380731
+      crops_242: -1335704226
+      crops_244: -1497617600
       crops_131: 597422401
       crops_150: -1366857266
       crops_269: -1945719158
       crops_180: -1581530510
-      crops_242: -1335704226
       crops_247: -1270667628
       crops_314: 622414560
-      crops_244: -1497617600
+      crops_293: 1030968222
       crops_172: 1496253147
       crops_19: -2073478229
       crops_55: 989031609
       crops_192: 922624633
       crops_37: 814741632
       crops_171: -809066629
+      manga_01: -1033181317
+      manga_03: -1422383674
       crops_158: 366136579
       crops_82: -1290914374
       crops_309: -1896858125
@@ -7054,7 +7076,7 @@ TextureImporter:
       crops_260: 1473612452
       crops_97: 625344361
       crops_134: -1025612154
-      crops_293: 1030968222
+      manga_02: 202177373
       crops_125: -376572984
       crops_146: -1706166842
       crops_159: 1761664082

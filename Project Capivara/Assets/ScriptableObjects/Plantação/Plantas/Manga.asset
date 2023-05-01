@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 675643aeacb0a1649a908b39a4f7daf5, type: 3}
   m_Name: Manga
   m_EditorClassIdentifier: 
-  timeToGrow: 100
+  timeToGrow: 10000
   yield: {fileID: 11400000, guid: 0e87d732b68e6e347b837e925cded9e9, type: 2}
   count: 1
   sprites:
-  - {fileID: -1487348899, guid: cd520a82895c6224db5c73e37b5d2211, type: 3}
-  - {fileID: -1652841415, guid: cd520a82895c6224db5c73e37b5d2211, type: 3}
-  - {fileID: -1768694419, guid: cd520a82895c6224db5c73e37b5d2211, type: 3}
+  - {fileID: -1033181317, guid: cd520a82895c6224db5c73e37b5d2211, type: 3}
+  - {fileID: 202177373, guid: cd520a82895c6224db5c73e37b5d2211, type: 3}
+  - {fileID: -1422383674, guid: cd520a82895c6224db5c73e37b5d2211, type: 3}
   - {fileID: 1749380731, guid: cd520a82895c6224db5c73e37b5d2211, type: 3}
-  growthStageTime: 0a0000000f0000001400000019000000
+  growthStageTime: 00000000fa000000f4010000e8030000

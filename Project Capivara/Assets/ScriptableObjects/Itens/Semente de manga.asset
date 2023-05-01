@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 74b9439d70e29b345860848dba9e0985, type: 3}
-  m_Name: Semente
+  m_Name: Semente de manga
   m_EditorClassIdentifier: 
   Name: Seed
   Description: 

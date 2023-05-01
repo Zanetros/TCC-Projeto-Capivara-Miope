@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Loja.unity
     guid: 109fb7b5a329b1742b456420f476e87f
+  - enabled: 1
+    path: Assets/Scenes/Pedro.unity
+    guid: ab15e7753dc54d7438d896c2dee7809c
   m_configObjects: {}
