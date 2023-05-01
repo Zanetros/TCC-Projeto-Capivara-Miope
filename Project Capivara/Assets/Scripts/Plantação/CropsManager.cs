@@ -35,13 +35,16 @@ public class CropsManager : TimeAgent
             if (cropsTile.crop == null) { continue; }
           
             cropsTile.growTimer += 1;
-
+            
             if (cropsTile.growTimer >= cropsTile.crop.growthStageTime[cropsTile.growthStage])
             {
                 cropsTile.renderer.gameObject.SetActive(false);
                 cropsTile.renderer.sprite = cropsTile.crop.sprites[cropsTile.growthStage];
 
-                cropsTile.growthStage += 1;
+                if (cropsTile.growthStage + 1 < cropsTile.crop.sprites.Count)
+                {
+                    cropsTile.growthStage += 1;   
+                }
             }
 
             if (cropsTile.growTimer >= cropsTile.crop.timeToGrow)
