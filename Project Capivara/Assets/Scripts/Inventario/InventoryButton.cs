@@ -33,6 +33,23 @@ public class InventoryButton : MonoBehaviour, IPointerClickHandler
         }
     }
 
+    public void UpdateItem(ItemSlot slot)
+    {
+        icon.gameObject.SetActive(true);
+        icon.sprite = slot.item.sprite;
+
+        if (slot.item.stackable == true) 
+        {
+            text.gameObject.SetActive(true);
+            text.text = slot.count.ToString();
+        }
+
+        else
+        {
+            text.gameObject.SetActive(false);
+        }
+    }
+
     public void Clean()
     {
         icon.sprite = null;
