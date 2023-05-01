@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Alvaro.unity
     guid: 6a9380aa85e50a04d8aa44662857428b
   - enabled: 1
+    path: Assets/Scenes/Essentials.unity
+    guid: f2d901a22eb709a42beda244fd782629
+  - enabled: 1
     path: Assets/Scenes/Transition.unity
     guid: b3c8f81c7b8049a45afd22d5a1079874
   - enabled: 1

@@ -19,7 +19,7 @@ public class CropsManager : TimeAgent
     [SerializeField] Tilemap targetTilemap;
     [SerializeField] GameObject cropsSpritePrefab;
 
-    Dictionary<Vector2Int, CropsTile> crops;
+    [SerializeField] Dictionary<Vector2Int, CropsTile> crops;
 
     private void Start()
     {
@@ -38,7 +38,7 @@ public class CropsManager : TimeAgent
             
             if (cropsTile.growTimer >= cropsTile.crop.growthStageTime[cropsTile.growthStage])
             {
-                cropsTile.renderer.gameObject.SetActive(false);
+                cropsTile.renderer.gameObject.SetActive(true);
                 cropsTile.renderer.sprite = cropsTile.crop.sprites[cropsTile.growthStage];
 
                 if (cropsTile.growthStage + 1 < cropsTile.crop.sprites.Count)
@@ -84,6 +84,7 @@ public class CropsManager : TimeAgent
 
         GameObject go = Instantiate(cropsSpritePrefab);
         go.transform.position = targetTilemap.CellToWorld(position);
+        go.transform.position -= Vector3.forward * 0.01f;
         go.SetActive(false);
         crop.renderer = go.GetComponent<SpriteRenderer>();
 
