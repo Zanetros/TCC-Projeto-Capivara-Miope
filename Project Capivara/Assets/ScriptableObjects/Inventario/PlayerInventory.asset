@@ -22,13 +22,13 @@ MonoBehaviour:
   - item: {fileID: 11400000, guid: f3efdad6dd208ba47bd1dc6f57a34c25, type: 2}
     count: 1
   - item: {fileID: 11400000, guid: 0e87d732b68e6e347b837e925cded9e9, type: 2}
-    count: 67
+    count: 13
   - item: {fileID: 11400000, guid: 5c57c28f65a08d140bf705886b50c4c7, type: 2}
     count: 100
-  - item: {fileID: 0}
-    count: 0
-  - item: {fileID: 0}
-    count: 0
+  - item: {fileID: 11400000, guid: 3668fe5c001781d418c0e23451faf3ad, type: 2}
+    count: 1
+  - item: {fileID: 11400000, guid: 0e87d732b68e6e347b837e925cded9e9, type: 2}
+    count: 100
   - item: {fileID: 0}
     count: 0
   - item: {fileID: 0}
