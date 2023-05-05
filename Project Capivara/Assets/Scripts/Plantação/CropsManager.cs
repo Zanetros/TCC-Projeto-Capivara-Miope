@@ -10,12 +10,30 @@ public class CropsTile
     public int growthStage;
     public Crop crop;
     public SpriteRenderer renderer;
+
+    public bool Complete
+    {
+        get
+        {
+            if (crop == null) { return false; }
+            return growTimer >= crop.timeToGrow;
+        }
+    }
+
+    internal void Harvested()
+    {
+        growTimer = 0;
+        growthStage = 0;
+        crop = null;
+        renderer.gameObject.SetActive(false);
+    }
 }
 
 public class CropsManager : TimeAgent
 {
     [SerializeField] TileBase plowed;
     [SerializeField] TileBase seeded;
+
     [SerializeField] Tilemap targetTilemap;
     [SerializeField] GameObject cropsSpritePrefab;
 
@@ -33,7 +51,13 @@ public class CropsManager : TimeAgent
         foreach (CropsTile cropsTile in crops.Values)
         {
             if (cropsTile.crop == null) { continue; }
-          
+
+            if (cropsTile.Complete)
+            {
+                Debug.Log("cresceu");
+                continue;
+            }
+
             cropsTile.growTimer += 1;
             
             if (cropsTile.growTimer >= cropsTile.crop.growthStageTime[cropsTile.growthStage])
@@ -45,12 +69,6 @@ public class CropsManager : TimeAgent
                 {
                     cropsTile.growthStage += 1;   
                 }
-            }
-
-            if (cropsTile.growTimer >= cropsTile.crop.timeToGrow)
-            {
-                Debug.LogError("cresceu");
-                cropsTile.crop = null;
             }
         }
     }
@@ -79,6 +97,7 @@ public class CropsManager : TimeAgent
 
     private void CreatePlowedTile(Vector3Int position)
     {
+        print("arado");
         CropsTile crop = new CropsTile();
         crops.Add((Vector2Int)position, crop);
 
@@ -89,5 +108,24 @@ public class CropsManager : TimeAgent
         crop.renderer = go.GetComponent<SpriteRenderer>();
 
         targetTilemap.SetTile(position, plowed);
+    }
+
+    internal void PickUp(Vector3Int gridPosition)
+    {
+        print("Pego");
+        Vector2Int position = (Vector2Int)gridPosition;
+        if (crops.ContainsKey(position) == false) { return; }
+
+        CropsTile cropsTile = crops[position];
+
+        if (cropsTile.Complete)
+        {
+            print("plantavelpego");
+            DropedItemSpawner.instance.SpawnItem(targetTilemap.CellToWorld(gridPosition),
+                cropsTile.crop.yield, cropsTile.crop.count);
+
+            targetTilemap.SetTile(gridPosition, plowed);
+            cropsTile.Harvested();
+        }
     }
 }

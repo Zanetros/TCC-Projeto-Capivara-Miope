@@ -1382,6 +1382,10 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 2274266653621655870, guid: 320cab532f4a9c34d9516c9f7782e997, type: 3}
+      propertyPath: onTilePickUp
+      value: 
+      objectReference: {fileID: 11400000, guid: 09c46d2a1cdcfa34a880cba0597c5fcf, type: 2}
+    - target: {fileID: 2274266653621655870, guid: 320cab532f4a9c34d9516c9f7782e997, type: 3}
       propertyPath: markerManager
       value: 
       objectReference: {fileID: 2947986740253943385}

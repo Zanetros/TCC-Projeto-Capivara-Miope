@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 675643aeacb0a1649a908b39a4f7daf5, type: 3}
   m_Name: Manga
   m_EditorClassIdentifier: 
-  timeToGrow: 10000
+  timeToGrow: 1000
   yield: {fileID: 11400000, guid: 0e87d732b68e6e347b837e925cded9e9, type: 2}
-  count: 1
+  count: 5
   sprites:
   - {fileID: -1033181317, guid: cd520a82895c6224db5c73e37b5d2211, type: 3}
   - {fileID: 202177373, guid: cd520a82895c6224db5c73e37b5d2211, type: 3}

@@ -718,6 +718,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ArvoreTeste
       objectReference: {fileID: 0}
+    - target: {fileID: 6163186370596490524, guid: d26581477a0da8349a28d2a2d8cbfc3b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d26581477a0da8349a28d2a2d8cbfc3b, type: 3}
 --- !u!1 &791009186
@@ -1816,6 +1820,10 @@ PrefabInstance:
       propertyPath: cropsManager
       value: 
       objectReference: {fileID: 5908046378252556749}
+    - target: {fileID: 2274266653621655870, guid: 320cab532f4a9c34d9516c9f7782e997, type: 3}
+      propertyPath: onTilePickUp
+      value: 
+      objectReference: {fileID: 11400000, guid: 09c46d2a1cdcfa34a880cba0597c5fcf, type: 2}
     - target: {fileID: 2274266653621655870, guid: 320cab532f4a9c34d9516c9f7782e997, type: 3}
       propertyPath: markerManager
       value: 
