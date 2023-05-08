@@ -13,7 +13,7 @@ public class ToolCharacterController : MonoBehaviour
     [SerializeField] float offsetDistance = 1f;
     [SerializeField] float sizeOfInteractableArea = 1.2f;
 
-    #region Plantação
+    #region Plantaï¿½ï¿½o
     [SerializeField] MarkerManager markerManager;
     [SerializeField] TileMapReadController tileMapReadController;
     [SerializeField] float maxDistance = 1.5f;

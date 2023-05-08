@@ -62,7 +62,6 @@ public class TilemapCropsManager : TimeAgent
 
     public void Seed(Vector3Int position, Crop toSeed)
     {
-        Debug.Log("B");
         CropsTile tile = container.Get(position);
 
         if (tile == null) { return; }
@@ -83,6 +82,7 @@ public class TilemapCropsManager : TimeAgent
         go.transform.position -= Vector3.forward * 0.01f;
         go.SetActive(false);
         crop.renderer = go.GetComponent<SpriteRenderer>();
+        crop.position = position;
 
         targetTilemap.SetTile(position, plowed);
     }

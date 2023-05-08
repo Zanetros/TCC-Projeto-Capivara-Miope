@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 
 [CreateAssetMenu(menuName ="Data/ Crops Container")]
@@ -15,7 +16,6 @@ public class CropsContainer : ScriptableObject
 
     internal void Add(CropsTile crop)
     {
-        Debug.Log("!!");
         crops.Add(crop);
     }
 }
