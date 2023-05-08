@@ -13,9 +13,19 @@ MonoBehaviour:
   m_Name: AlvaroCropsContainer
   m_EditorClassIdentifier: 
   crops:
-  - growTimer: 1000
-    growthStage: 3
-    crop: {fileID: 11400000, guid: 4454fc322e6c72f4aa7f7a463f3d6af6, type: 2}
+  - growTimer: 0
+    growthStage: 0
+    crop: {fileID: 0}
+    renderer: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+  - growTimer: 0
+    growthStage: 0
+    crop: {fileID: 0}
+    renderer: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
+  - growTimer: 0
+    growthStage: 0
+    crop: {fileID: 0}
     renderer: {fileID: 0}
     position: {x: 0, y: 0, z: 0}
   - growTimer: 0

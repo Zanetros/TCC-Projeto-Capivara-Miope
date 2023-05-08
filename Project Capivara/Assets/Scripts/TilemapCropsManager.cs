@@ -62,6 +62,7 @@ public class TilemapCropsManager : TimeAgent
 
     public void Seed(Vector3Int position, Crop toSeed)
     {
+        Debug.Log("B");
         CropsTile tile = container.Get(position);
 
         if (tile == null) { return; }

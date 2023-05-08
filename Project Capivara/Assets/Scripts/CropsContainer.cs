@@ -15,6 +15,7 @@ public class CropsContainer : ScriptableObject
 
     internal void Add(CropsTile crop)
     {
+        Debug.Log("!!");
         crops.Add(crop);
     }
 }

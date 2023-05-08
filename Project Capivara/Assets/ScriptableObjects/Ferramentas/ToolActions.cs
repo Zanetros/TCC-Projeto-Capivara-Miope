@@ -18,6 +18,6 @@ public class ToolActions : ScriptableObject
 
     public virtual void OnItemUsed(Item usedItem, ItemContainer inventory)
     {
-
+        
     }
 }

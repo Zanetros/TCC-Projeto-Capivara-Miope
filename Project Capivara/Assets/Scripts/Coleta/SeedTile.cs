@@ -10,9 +10,11 @@ public class SeedTile : ToolActions
         if (tileMapReadController.cropsManager.Check(gridPosition) == false)
         {
             return false;
+            Debug.Log("B");
         }
         
         tileMapReadController.cropsManager.Seed(gridPosition, item.crop);
+        Debug.Log("A");
         
         return true;
     }
