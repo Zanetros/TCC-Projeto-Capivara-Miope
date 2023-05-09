@@ -33,49 +33,49 @@ public class CropsTile
 
 public class CropsManager : MonoBehaviour
 {
-    public TilemapCropsManager cropsManager;
+    public TilemapCropsManager tileCropsManager;
     
     public void PickUp(Vector3Int position  )
     {
-        if (cropsManager == null)
+        if (tileCropsManager == null)
         {
             Debug.Log("sem crops manager");
             return;
         }
 
-        cropsManager.PickUp(position);
+        tileCropsManager.PickUp(position);
     }
 
     public bool Check(Vector3Int position)
     {
-        if (cropsManager == null)
+        if (tileCropsManager == null)
         {
             Debug.Log("sem crops manager");
             return false;
         }
 
-        return cropsManager.Check(position);
+        return tileCropsManager.Check(position);
     }
 
     public void Seed(Vector3Int position, Crop toSeed)
     {
-        if (cropsManager == null)
+        if (tileCropsManager == null)
         {
             Debug.Log("sem crops manager");
             return;
         }
 
-        cropsManager.Seed(position, toSeed);
+        tileCropsManager.Seed(position, toSeed);
     }
 
     public void Plow(Vector3Int position)
     {
-        if (cropsManager == null)
+        if (tileCropsManager == null)
         {
             Debug.Log("sem crops manager");
             return;
         }
-
-        cropsManager.Plow(position);
+        
+        tileCropsManager.Plow(position);
     }
 }

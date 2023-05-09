@@ -17,7 +17,7 @@ public class TilemapCropsManager : TimeAgent
 
     public void Start()
     {
-        GameManager.instance.GetComponent<CropsManager>().cropsManager = this;
+        GameManager.instance.GetComponent<CropsManager>().tileCropsManager = this;
         targetTilemap = GetComponent<Tilemap>();
         onTimeTick += Tick;
         Init();
@@ -72,23 +72,33 @@ public class TilemapCropsManager : TimeAgent
     }
 
     private void CreatePlowedTile(Vector3Int position)
-    {
-        print("arado");
-        CropsTile crop = new CropsTile();
-        container.Add(crop);
+    {   
+        if (targetTilemap.HasTile(position))
+        {
+            Debug.Log("ja arado");
+            return;
+        }
+        
+        else
+        {
+            print("arado");
+            CropsTile crop = new CropsTile();
+            container.Add(crop);
 
-        GameObject go = Instantiate(cropsSpritePrefab);
-        go.transform.position = targetTilemap.CellToWorld(position);
-        go.transform.position -= Vector3.forward * 0.01f;
-        go.SetActive(false);
-        crop.renderer = go.GetComponent<SpriteRenderer>();
-        crop.position = position;
+            GameObject go = Instantiate(cropsSpritePrefab);
+            go.transform.position = targetTilemap.CellToWorld(position);
+            go.transform.position -= Vector3.forward * 0.01f;
+            go.SetActive(false);
+            crop.renderer = go.GetComponent<SpriteRenderer>();
+            crop.position = position;
 
-        targetTilemap.SetTile(position, plowed);
+            targetTilemap.SetTile(position, plowed);
+        }
+        
     }
 
     internal void PickUp(Vector3Int gridPosition)
-    {
+    {     
         print("Pego");
         Vector2Int position = (Vector2Int)gridPosition;
         CropsTile tile = container.Get(gridPosition); 
