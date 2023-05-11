@@ -6,7 +6,7 @@ using UnityEngine.Tilemaps;
 
 public class ToolCharacterController : MonoBehaviour
 {
-    PlayerMovement playerMovement;
+    PlayerMovementTeste playerMovement;
     Rigidbody2D rigidbody2D;
     Animator animator;
     ToolBarController toolbarController;
@@ -25,7 +25,7 @@ public class ToolCharacterController : MonoBehaviour
 
     private void Awake()
     {
-        playerMovement = GetComponent<PlayerMovement>();
+        playerMovement = GetComponent<PlayerMovementTeste>();
         rigidbody2D = GetComponent<Rigidbody2D>();
         toolbarController = GetComponent<ToolBarController>();
         animator = GetComponent<Animator>();
@@ -90,6 +90,7 @@ public class ToolCharacterController : MonoBehaviour
 
     public void UseToolGrid()
     {
+        Debug.Log("ferramentatile");
         if (selectable == true)
         {
             Item item = toolbarController.GetItem;

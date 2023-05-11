@@ -5,7 +5,7 @@ using UnityEngine.TextCore.Text;
 
 public class CharacterInteractController : MonoBehaviour
 {
-    private PlayerMovement playerMovementController;
+    private PlayerMovementTeste playerMovementController;
     private Rigidbody2D rgbd2d;
     [SerializeField] private float offsetDistance = 1F;
     [SerializeField] private float sizeOfInteractableArea = 1.2F;
@@ -14,7 +14,7 @@ public class CharacterInteractController : MonoBehaviour
     
     void Awake()
     {
-        playerMovementController = GetComponent<PlayerMovement>();
+        playerMovementController = GetComponent<PlayerMovementTeste>();
         rgbd2d = GetComponent<Rigidbody2D>();
         character = GetComponent<Character>();
     }
@@ -29,7 +29,7 @@ public class CharacterInteractController : MonoBehaviour
             Interact();    
         }
     }
-
+    
     private void Check()
     {
         Vector2 position = rgbd2d.position + playerMovementController.lastMotionVector * offsetDistance;
@@ -50,7 +50,8 @@ public class CharacterInteractController : MonoBehaviour
 
     public void Interact()
     {
-        Vector2 position = rgbd2d.position + playerMovementController.lastMotionVector * offsetDistance;
+        Debug.Log("interagido");
+        Vector2 position = rgbd2d.position * offsetDistance;
 
         Collider2D[] colliders = Physics2D.OverlapCircleAll(position, sizeOfInteractableArea);
 

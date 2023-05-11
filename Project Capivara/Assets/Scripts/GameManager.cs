@@ -18,6 +18,6 @@ public class GameManager : MonoBehaviour
     public TimeManager timeManager;
     public CoinBag coinBag;
     public ShopController shopController;
-    public PlayerMovement playerMovement;
+    public PlayerMovementTeste playerMovement;
     public CharacterInteractController characterInteractController;
 }

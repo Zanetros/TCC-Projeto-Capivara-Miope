@@ -20,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Loja.unity
     guid: 109fb7b5a329b1742b456420f476e87f
+  - enabled: 1
+    path: Assets/Cusotmizacao/Scenes/CharacterCreator.unity
+    guid: 8ae8a04ba9c6f2e429a7b6d30ef30936
+  - enabled: 1
+    path: Assets/Cusotmizacao/Scenes/Overworld.unity
+    guid: 24ad24d54daf23b499682c11299d901d
   m_configObjects: {}

@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D rigidbody2D;
     [SerializeField] float speed;
     Vector2 motionVector;
-    public Vector2 lastMotionVector;
+    public Vector2 lastMotionVector2;
     Animator animator;
     public bool moving;
     
@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (horizontal != 0 || vertical != 0)
         {
-            lastMotionVector = new Vector2(
+            lastMotionVector2 = new Vector2(
                 horizontal,
                 vertical
                 ).normalized;
