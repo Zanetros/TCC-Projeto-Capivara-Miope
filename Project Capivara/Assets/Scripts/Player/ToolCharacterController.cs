@@ -99,6 +99,7 @@ public class ToolCharacterController : MonoBehaviour
                 PickUpTile();
                 return; 
             }
+
             if (item.onTilemapAction == null) { return; }
 
             animator.SetTrigger("act");

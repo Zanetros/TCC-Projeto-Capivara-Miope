@@ -9,7 +9,9 @@ public class ItemToolBarPanel : ItemPanel
     public void Start()
     {
         Initialize();
+        print(toolBarController.onChange);
         toolBarController.onChange += Highlight;
+        print(toolBarController.onChange);
         Highlight(0);
     }
 

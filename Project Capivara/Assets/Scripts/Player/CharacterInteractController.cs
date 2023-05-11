@@ -11,6 +11,7 @@ public class CharacterInteractController : MonoBehaviour
     [SerializeField] private float sizeOfInteractableArea = 1.2F;
     private Character character;
     [SerializeField] private HighLightController highLightController;
+    private Vector2 position;
     
     void Awake()
     {
@@ -32,7 +33,7 @@ public class CharacterInteractController : MonoBehaviour
     
     private void Check()
     {
-        Vector2 position = rgbd2d.position + playerMovementController.lastMotionVector * offsetDistance;
+        position = rgbd2d.position + playerMovementController.lastMotionVector * offsetDistance;
 
         Collider2D[] colliders = Physics2D.OverlapCircleAll(position, sizeOfInteractableArea);
         

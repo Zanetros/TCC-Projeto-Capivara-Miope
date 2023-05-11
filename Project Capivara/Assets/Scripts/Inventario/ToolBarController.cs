@@ -28,13 +28,12 @@ public class ToolBarController : MonoBehaviour
                 selectedTool += 1;
                 selectedTool = (selectedTool >= toolBarSize ? 0 : selectedTool);
             }
-
             else
             {
                 selectedTool -= 1;
                 selectedTool = (selectedTool < 0 ? toolBarSize - 1 : selectedTool);
             }
-            onChange?.Invoke(selectedTool);           
+            onChange?.Invoke(selectedTool);
         }
     }
 
