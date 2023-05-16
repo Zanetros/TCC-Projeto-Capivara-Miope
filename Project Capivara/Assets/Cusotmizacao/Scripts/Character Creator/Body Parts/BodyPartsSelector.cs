@@ -1,17 +1,16 @@
-// Code written by tutmo (youtube.com/tutmo)
-// For help, check out the tutorial - https://youtu.be/PNWK5o9l54w
-
 using UnityEngine;
 using UnityEngine.UI;
 
 public class BodyPartsSelector : MonoBehaviour
 {
-    // ~~ 1. Handles Body Part Selection Updates
+    // Handles Body Part Selection Updates
 
     // Full Character Body
     [SerializeField] private SO_CharacterBody characterBody;
     // Body Part Selections
     [SerializeField] private BodyPartSelection[] bodyPartSelections;
+
+    [SerializeField] Slider hairColor;
 
     private void Start()
     {
@@ -93,4 +92,5 @@ public class BodyPartSelection
     public SO_BodyPart[] bodyPartOptions;
     public Text bodyPartNameTextComponent;
     [HideInInspector] public int bodyPartCurrentIndex;
+    public Color originalColor;
 }

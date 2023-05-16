@@ -90,7 +90,7 @@ public class ToolCharacterController : MonoBehaviour
 
     public void UseToolGrid()
     {
-        Debug.Log("ferramentatile");
+        
         if (selectable == true)
         {
             Item item = toolbarController.GetItem;
