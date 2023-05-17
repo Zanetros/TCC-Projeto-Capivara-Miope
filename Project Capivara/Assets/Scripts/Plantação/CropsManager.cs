@@ -11,7 +11,7 @@ public class CropsTile
     public int growthStage;
     public Crop crop;
     public SpriteRenderer renderer;
-    public Vector3 position;
+    public Vector3Int position;
 
     public bool Complete
     {

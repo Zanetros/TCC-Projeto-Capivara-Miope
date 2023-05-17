@@ -16,7 +16,7 @@ MonoBehaviour:
   Description: 
   sellPrice: 0
   stackable: 1
-  sprite: {fileID: 212335102, guid: 22dea690a3a477240a6f8fa3f3983b26, type: 3}
+  sprite: {fileID: 21300000, guid: 0a8460f85ee341248a06f8399d9433ca, type: 3}
   onAction: {fileID: 0}
   onTilemapAction: {fileID: 11400000, guid: 153bb18c0f355dc418179a46811796a5, type: 2}
   onItemUsed: {fileID: 11400000, guid: 153bb18c0f355dc418179a46811796a5, type: 2}

@@ -21,6 +21,23 @@ public class TilemapCropsManager : TimeAgent
         targetTilemap = GetComponent<Tilemap>();
         onTimeTick += Tick;
         Init();
+        VisualizeMap();
+    }
+
+    private void VisualizeMap()
+    {
+        for (int i = 0; i < container.crops.Count; i++)
+        {
+            VisualizeTile(container.crops[i]);
+        }
+    }
+
+    private void OnDestroy()
+    {
+        for (int i = 0; i < container.crops.Count; i++)
+        {
+            container.crops[i].renderer = null;
+        }
     }
 
     public void Tick()
@@ -57,6 +74,7 @@ public class TilemapCropsManager : TimeAgent
 
     public void Plow(Vector3Int position)
     {
+        if (Check(position) == true) { return; }
         CreatePlowedTile(position);
     }
 
@@ -71,30 +89,38 @@ public class TilemapCropsManager : TimeAgent
         tile.crop = toSeed;
     }
 
+    public void VisualizeTile(CropsTile cropsTile)
+    {
+        targetTilemap.SetTile(cropsTile.position, cropsTile.crop != null ? seeded : plowed);
+        
+        if (cropsTile.renderer == null) 
+        {
+            GameObject go = Instantiate(cropsSpritePrefab, transform);
+            go.transform.position = targetTilemap.CellToWorld(cropsTile.position);
+            go.transform.position -= Vector3.forward * 0.01f;
+            cropsTile.renderer = go.GetComponent<SpriteRenderer>();
+        }
+        bool growing = cropsTile.crop != null && cropsTile.growTimer >= cropsTile.crop.growthStageTime[0];
+
+        cropsTile.renderer.gameObject.SetActive(growing);
+
+        if (growing == true)
+        {
+            cropsTile.renderer.sprite = cropsTile.crop.sprites[cropsTile.growthStage-1];
+        }      
+    }
+    
     private void CreatePlowedTile(Vector3Int position)
     {   
-        if (targetTilemap.HasTile(position))
-        {
-            Debug.Log("ja arado");
-            return;
-        }
-        
-        else
-        {
             print("arado");
             CropsTile crop = new CropsTile();
             container.Add(crop);
-
-            GameObject go = Instantiate(cropsSpritePrefab);
-            go.transform.position = targetTilemap.CellToWorld(position);
-            go.transform.position -= Vector3.forward * 0.01f;
-            go.SetActive(false);
-            crop.renderer = go.GetComponent<SpriteRenderer>();
+                    
             crop.position = position;
 
-            targetTilemap.SetTile(position, plowed);
-        }
-        
+            VisualizeTile(crop);
+
+            targetTilemap.SetTile(position, plowed);      
     }
 
     internal void PickUp(Vector3Int gridPosition)
@@ -109,8 +135,8 @@ public class TilemapCropsManager : TimeAgent
             DropedItemSpawner.instance.SpawnItem(targetTilemap.CellToWorld(gridPosition),
                 tile.crop.yield, tile.crop.count);
 
-            targetTilemap.SetTile(gridPosition, plowed);
             tile.Harvested();
+            VisualizeTile(tile);
         }
     }
 }

@@ -2610,27 +2610,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1430722940}
   m_CullTransparentMesh: 1
---- !u!1 &1523527660 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4312722990455320527, guid: 1ca671a1aa6d67e47bdd526c2c16f3a1, type: 3}
-  m_PrefabInstance: {fileID: 1578393158}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1523527663
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1523527660}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 610aa86d82a27aa48996acd95211a963, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 0}
-  haircolor1: {fileID: 1991575981}
-  haircolor2: {fileID: 155578901}
-  haircolor3: {fileID: 282313988}
 --- !u!1 &1526230351 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4312722991140976057, guid: 1ca671a1aa6d67e47bdd526c2c16f3a1, type: 3}
