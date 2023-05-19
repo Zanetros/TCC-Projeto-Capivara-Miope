@@ -7,6 +7,7 @@ public class DialogueSystem : MonoBehaviour
     [SerializeField] private TextMeshProUGUI targetText;
     [SerializeField] private TextMeshProUGUI nameText;
     [SerializeField] private Image portrait;
+    [SerializeField] AudioClip dialogueSound;
 
     private DialogueContainer currentDialogue;
     private int currentLine, letterCount;
@@ -76,6 +77,7 @@ public class DialogueSystem : MonoBehaviour
     public void Initialize(DialogueContainer dialogueContainer)
     {
         Show(true);
+        AudioManager.instance.Play(dialogueSound);
         currentDialogue = dialogueContainer;
         visibleTextPercent = 1;
         currentLine = 0;

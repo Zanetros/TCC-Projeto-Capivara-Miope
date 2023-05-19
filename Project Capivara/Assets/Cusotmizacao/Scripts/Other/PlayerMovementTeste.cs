@@ -3,7 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovementTeste : MonoBehaviour
 {
-    private float speed = 4f;
+    [SerializeField] private float speed = 4f;
     private Rigidbody2D myRigidbody;
     private Vector3 playerMovement;
     public Vector2 lastMotionVector;
