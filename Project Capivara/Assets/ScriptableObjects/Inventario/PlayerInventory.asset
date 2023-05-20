@@ -13,12 +13,26 @@ MonoBehaviour:
   m_Name: PlayerInventory
   m_EditorClassIdentifier: 
   slots:
-  - item: {fileID: 11400000, guid: 3668fe5c001781d418c0e23451faf3ad, type: 2}
-    count: 1
+  - item: {fileID: 11400000, guid: 87ffd56066341954e8d8b08ff4d0dd6f, type: 2}
+    count: 940
   - item: {fileID: 11400000, guid: f3efdad6dd208ba47bd1dc6f57a34c25, type: 2}
     count: 1
   - item: {fileID: 11400000, guid: 0e87d732b68e6e347b837e925cded9e9, type: 2}
-    count: 165
+    count: 180
+  - item: {fileID: 11400000, guid: be598419e776f984b89e0f5b4b3a3b67, type: 2}
+    count: 12
+  - item: {fileID: 0}
+    count: 0
+  - item: {fileID: 0}
+    count: 0
+  - item: {fileID: 0}
+    count: 0
+  - item: {fileID: 0}
+    count: 0
+  - item: {fileID: 0}
+    count: 0
+  - item: {fileID: 11400000, guid: 87ffd56066341954e8d8b08ff4d0dd6f, type: 2}
+    count: 1
   - item: {fileID: 0}
     count: 0
   - item: {fileID: 0}
@@ -47,17 +61,4 @@ MonoBehaviour:
     count: 0
   - item: {fileID: 0}
     count: 0
-  - item: {fileID: 0}
-    count: 0
-  - item: {fileID: 0}
-    count: 0
-  - item: {fileID: 0}
-    count: 0
-  - item: {fileID: 0}
-    count: 0
-  - item: {fileID: 0}
-    count: 0
-  - item: {fileID: 0}
-    count: 0
-  - item: {fileID: 0}
-    count: 0
+  isDirty: 0

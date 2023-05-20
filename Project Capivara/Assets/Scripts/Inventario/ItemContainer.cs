@@ -34,10 +34,13 @@ public class ItemSlot
 public class ItemContainer : ScriptableObject
 {
     public List<ItemSlot> slots;
+    public bool isDirty;
 
     //adiciona itens no inventario
     public void Add(Item item , int count = 1)
     {
+        isDirty = true;
+
         //adiciona itens stackaveis no invetario 
         if (item.stackable == true)
         {
@@ -71,6 +74,8 @@ public class ItemContainer : ScriptableObject
 
     public void Remove(Item itemRemove, int count = 1)
     {
+        isDirty = true;
+        
         if (itemRemove.stackable)
         {
             ItemSlot itemSlot = slots.Find(x => x.item == itemRemove);

@@ -20,6 +20,8 @@ public class ToolCharacterController : MonoBehaviour
     [SerializeField] ToolActions onTilePickUp;
     #endregion
 
+    [SerializeField] IconHighlight iconHighlight;
+
     Vector3Int selectedTilePosition;
     bool selectable;
 
@@ -59,11 +61,13 @@ public class ToolCharacterController : MonoBehaviour
         Vector2 cameraPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         selectable = Vector2.Distance(characterPosition, cameraPosition) < maxDistance;
         markerManager.Show(selectable);
+        iconHighlight.CanSelect = selectable;
     }
 
     private void Marker()
     {       
         markerManager.markedCellPosition = selectedTilePosition;
+        iconHighlight.cellPosition = selectedTilePosition;
     }
 
     public bool UseToolWorld()

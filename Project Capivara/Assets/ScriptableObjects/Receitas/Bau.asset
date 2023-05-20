@@ -9,9 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60967bbccea7be746971f0df78e31706, type: 3}
-  m_Name: Plow
+  m_Script: {fileID: 11500000, guid: 4e292e1440e4c7a43aca2d3d196b3e19, type: 3}
+  m_Name: Bau
   m_EditorClassIdentifier: 
-  canPlow:
-  - {fileID: 11400000, guid: 8e365575edc5f0947aafdeaeb4c01465, type: 2}
-  onPlowUsed: {fileID: 8300000, guid: e8ddc5d8be0273c45be39f39ef4ff205, type: 3}
+  elements:
+  - item: {fileID: 11400000, guid: 87ffd56066341954e8d8b08ff4d0dd6f, type: 2}
+    count: 5
+  output:
+    item: {fileID: 11400000, guid: be598419e776f984b89e0f5b4b3a3b67, type: 2}
+    count: 1
