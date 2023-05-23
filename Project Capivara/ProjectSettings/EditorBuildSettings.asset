@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Pedro.unity
     guid: ab15e7753dc54d7438d896c2dee7809c
   - enabled: 1
-    path: Assets/Scenes/Alvaro.unity
+    path: Assets/Scenes/CenaPrincipal.unity
     guid: 6a9380aa85e50a04d8aa44662857428b
   - enabled: 1
     path: Assets/Scenes/Essentials.unity

@@ -4040,6 +4040,7 @@ GameObject:
   - component: {fileID: 5908046378252556755}
   - component: {fileID: 5908046378252556756}
   - component: {fileID: 5908046378252556757}
+  - component: {fileID: 5908046378252556758}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -4076,6 +4077,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tilemap: {fileID: 0}
   cropsManager: {fileID: 5908046378252556749}
+  objectManager: {fileID: 5908046378252556758}
 --- !u!114 &5908046378252556749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4123,6 +4125,7 @@ MonoBehaviour:
   shopController: {fileID: 5908046378252556754}
   playerMovement: {fileID: 1526230363}
   characterInteractController: {fileID: 2103833163}
+  pleacableObjects: {fileID: 5908046378252556758}
 --- !u!114 &5908046378252556752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4217,3 +4220,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickUpItemPrefab: {fileID: 8832624617819755325, guid: 2edfe4a9534dea2419d93786b3db4835, type: 3}
+--- !u!114 &5908046378252556758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5908046378252556736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddd9a20270813b543a9d0bc20b39981a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pleacableObject: {fileID: 0}

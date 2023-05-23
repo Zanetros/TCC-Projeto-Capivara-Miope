@@ -20,4 +20,5 @@ public class GameManager : MonoBehaviour
     public ShopController shopController;
     public PlayerMovementTeste playerMovement;
     public CharacterInteractController characterInteractController;
+    public PleacableObjectsReferenceManager pleacableObjects;
 }
