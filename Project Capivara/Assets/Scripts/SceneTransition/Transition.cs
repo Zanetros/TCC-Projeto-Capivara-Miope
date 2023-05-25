@@ -18,13 +18,11 @@ public class Transition : MonoBehaviour
     
     private Transform destination;
     
-    // Start is called before the first frame update
     void Start()
     {
         destination = transform.GetChild(1);
     }
 
-    // Update is called once per frame
     void Update()
     {
         

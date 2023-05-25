@@ -94,8 +94,9 @@ public class DialogueSystem : MonoBehaviour
 
     private void Show(bool b)
     {
-        gameManager.playerMovement.enabled = !b;
-        gameManager.characterInteractController.enabled = !b;
+        Debug.Log("cOMECOU DIALOGO");
+        gameManager.playerMovement.enabled = b;
+        gameManager.characterInteractController.enabled = b;
         gameObject.SetActive(b);
     }
 
