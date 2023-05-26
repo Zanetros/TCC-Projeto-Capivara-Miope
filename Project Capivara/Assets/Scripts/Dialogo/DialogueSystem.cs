@@ -84,6 +84,7 @@ public class DialogueSystem : MonoBehaviour
         targetText.text = "";
         UpdatePortrait();
         PushText();
+        gameManager.playerMovement.enabled = false;
     }
 
     private void UpdatePortrait()
@@ -104,5 +105,6 @@ public class DialogueSystem : MonoBehaviour
     {
         print("The dialogue has ended");
         Show(false);
+        gameManager.playerMovement.enabled = true;
     }
 }

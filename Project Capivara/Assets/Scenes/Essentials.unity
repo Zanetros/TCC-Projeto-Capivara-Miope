@@ -8339,7 +8339,7 @@ MonoBehaviour:
   coinBag: {fileID: 5908046378252556753}
   shopController: {fileID: 5908046378252556754}
   playerMovement: {fileID: 1526230363}
-  characterInteractController: {fileID: 0}
+  characterInteractController: {fileID: 1526230361}
   pleacableObjects: {fileID: 5908046378252556758}
 --- !u!114 &5908046378252556752
 MonoBehaviour:
