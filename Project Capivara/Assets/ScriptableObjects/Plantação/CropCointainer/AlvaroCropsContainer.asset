@@ -17,9 +17,29 @@ MonoBehaviour:
     growthStage: 0
     crop: {fileID: 0}
     renderer: {fileID: 0}
-    position: {x: -6, y: -4, z: 0}
+    position: {x: -4, y: -5, z: 0}
   - growTimer: 0
     growthStage: 0
     crop: {fileID: 0}
     renderer: {fileID: 0}
-    position: {x: -5, y: -4, z: 0}
+    position: {x: -4, y: -4, z: 0}
+  - growTimer: 0
+    growthStage: 0
+    crop: {fileID: 0}
+    renderer: {fileID: 0}
+    position: {x: -3, y: -4, z: 0}
+  - growTimer: 0
+    growthStage: 0
+    crop: {fileID: 0}
+    renderer: {fileID: 0}
+    position: {x: -3, y: -5, z: 0}
+  - growTimer: 0
+    growthStage: 0
+    crop: {fileID: 0}
+    renderer: {fileID: 0}
+    position: {x: -2, y: -5, z: 0}
+  - growTimer: 0
+    growthStage: 0
+    crop: {fileID: 0}
+    renderer: {fileID: 0}
+    position: {x: -2, y: -4, z: 0}
