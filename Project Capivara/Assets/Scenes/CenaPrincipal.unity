@@ -2688,6 +2688,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: chest
       objectReference: {fileID: 0}
+    - target: {fileID: 8675831235170795279, guid: 464a61e5ab3c2bd4f9d4f40ceb3085c5, type: 3}
+      propertyPath: itemContainer
+      value: 
+      objectReference: {fileID: 11400000, guid: 9bbae3efdc5026d47959fe557c74422f, type: 2}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 464a61e5ab3c2bd4f9d4f40ceb3085c5, type: 3}
@@ -2833,8 +2837,8 @@ Grid:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 608622626}
   m_Enabled: 1
-  m_CellSize: {x: 1, y: 1, z: 0}
-  m_CellGap: {x: 1, y: 1, z: 0}
+  m_CellSize: {x: 2, y: 2, z: 0}
+  m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
 --- !u!4 &608622628
@@ -3236,8 +3240,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16084b1d8c47de14b9f8257798489da0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  plowed: {fileID: 11400000, guid: 372e2ccef3483ea4a9b3ec87105e1b64, type: 2}
-  seeded: {fileID: 11400000, guid: 4e79819d11ad24747b025a41384c8da8, type: 2}
+  plowed: {fileID: 11400000, guid: d73ae74dfc6da294e8f73732f4b4e268, type: 2}
+  seeded: {fileID: 11400000, guid: ad04d0764402fe6449cb92f72b52c08c, type: 2}
   cropsSpritePrefab: {fileID: 2055445525925977141, guid: a546724b9f00fbd44b5c7cc599e990ca, type: 3}
   container: {fileID: 11400000, guid: c50a91d2255858f419fce13c695363cc, type: 2}
 --- !u!1 &1974805457

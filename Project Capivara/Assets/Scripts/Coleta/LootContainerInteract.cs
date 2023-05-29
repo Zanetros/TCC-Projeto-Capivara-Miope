@@ -6,12 +6,36 @@ public class LootContainerInteract : Interactable
 {
     [SerializeField] GameObject closedChest;
     [SerializeField] GameObject openedChest;
-    [SerializeField] bool open = false;
+    [SerializeField] bool open;
+    [SerializeField] ItemContainer itemContainer;
     
     public override void Interact(Character character)
     {
-        open = !open;
-        closedChest.SetActive(!closedChest.activeSelf);
-        openedChest.SetActive(!openedChest.activeSelf);
+        if (open == false)
+        {
+            Open(character);
+        }
+
+        else
+        {
+            Close(character);
+        }      
+    }
+
+    public void Open(Character character)
+    {
+        open = true;
+        closedChest.SetActive(false);
+        openedChest.SetActive(true);
+        character.GetComponent<ItemContainerInteractController>().Open(itemContainer, transform);
+    }
+
+    public void Close(Character character)
+    {
+        open = false;
+        closedChest.SetActive(true);
+        openedChest.SetActive(false);
+
+        character.GetComponent<ItemContainerInteractController>().Close();
     }
 }

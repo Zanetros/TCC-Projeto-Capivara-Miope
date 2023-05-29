@@ -51,7 +51,6 @@ public class CharacterInteractController : MonoBehaviour
 
     public void Interact()
     {
-        Debug.Log("interagido");
         Vector2 position = rgbd2d.position * offsetDistance;
 
         Collider2D[] colliders = Physics2D.OverlapCircleAll(position, sizeOfInteractableArea);

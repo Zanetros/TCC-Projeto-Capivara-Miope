@@ -3,7 +3,7 @@ guid: cd520a82895c6224db5c73e37b5d2211
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -20,6 +20,7 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
@@ -63,6 +64,8 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -905,7 +908,7 @@ TextureImporter:
       name: crops_38
       rect:
         serializedVersion: 2
-        x: 583
+        x: 584
         y: 962
         width: 16
         height: 17
@@ -926,12 +929,12 @@ TextureImporter:
       name: manga_02
       rect:
         serializedVersion: 2
-        x: 617
+        x: 618
         y: 962
         width: 16
         height: 17
       alignment: 9
-      pivot: {x: -0.25, y: -0.4}
+      pivot: {x: -0.2, y: -0.3}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1204,7 +1207,7 @@ TextureImporter:
         width: 5
         height: 6
       alignment: 9
-      pivot: {x: 1, y: 1.2}
+      pivot: {x: -1.5, y: -1.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -7090,7 +7093,6 @@ TextureImporter:
       crops_35: 505680323
   spritePackingTag: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
