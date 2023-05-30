@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d56554f0f28e3174b9b0f26242568028, type: 3}
+  m_Name: Olho_0
+  m_EditorClassIdentifier: 
+  bodyPartName: Olho Verde
+  bodyPartAnimationID: 0
+  allBodyPartAnimations:
+  - {fileID: 7400000, guid: db3f382828b53b84f9afbeb4393fc71e, type: 2}
+  - {fileID: 7400000, guid: f407f776e8ae2ab43841f8ebb1d41376, type: 2}
+  - {fileID: 7400000, guid: fda3101b767d7b244b556cd493cf7b10, type: 2}
+  - {fileID: 7400000, guid: a53f198a854c60846a0ae959732089ce, type: 2}
+  - {fileID: 7400000, guid: 5c69c1c5f059a1d4084f87665a318b02, type: 2}
+  - {fileID: 7400000, guid: a97f760a3afc2404fb5a7b545056a38f, type: 2}

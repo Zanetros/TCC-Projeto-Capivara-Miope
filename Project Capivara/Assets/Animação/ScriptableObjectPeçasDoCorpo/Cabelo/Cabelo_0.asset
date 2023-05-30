@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d56554f0f28e3174b9b0f26242568028, type: 3}
+  m_Name: Cabelo_0
+  m_EditorClassIdentifier: 
+  bodyPartName: Cabelo Loiro
+  bodyPartAnimationID: 0
+  allBodyPartAnimations:
+  - {fileID: 7400000, guid: dfddae5ce2ccd0d4386ab395261d2398, type: 2}
+  - {fileID: 7400000, guid: 26e07f2a7adf7f44fb9472f718d14054, type: 2}
+  - {fileID: 0}
+  - {fileID: 7400000, guid: 7d349616e78406843900e3876722a53f, type: 2}
+  - {fileID: 7400000, guid: ed7f74ee19f5fc24185b87559d20577e, type: 2}
+  - {fileID: 7400000, guid: bd3b2fa3c900e0948b7287761000e376, type: 2}
+  - {fileID: 7400000, guid: 67442af921df15441a70e37f2cef3a3b, type: 2}
+  - {fileID: 7400000, guid: cdf4d066d3de002409c7121ede72b75f, type: 2}

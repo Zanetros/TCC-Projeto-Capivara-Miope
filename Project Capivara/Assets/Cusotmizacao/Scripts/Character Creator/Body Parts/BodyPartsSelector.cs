@@ -10,8 +10,6 @@ public class BodyPartsSelector : MonoBehaviour
     // Body Part Selections
     [SerializeField] private BodyPartSelection[] bodyPartSelections;
 
-    [SerializeField] Slider hairColor;
-
     private void Start()
     {
         // Get All Current Body Parts
@@ -92,5 +90,4 @@ public class BodyPartSelection
     public SO_BodyPart[] bodyPartOptions;
     public Text bodyPartNameTextComponent;
     [HideInInspector] public int bodyPartCurrentIndex;
-    public Color originalColor;
 }

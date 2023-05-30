@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d56554f0f28e3174b9b0f26242568028, type: 3}
+  m_Name: Corpo_0
+  m_EditorClassIdentifier: 
+  bodyPartName: "Corpo Padr\xE3o"
+  bodyPartAnimationID: 0
+  allBodyPartAnimations:
+  - {fileID: 7400000, guid: 74d6ce8821c99ab46825cbd2faf2c634, type: 2}
+  - {fileID: 7400000, guid: 98121ed68e89e1c4287b4f4847f0cedc, type: 2}
+  - {fileID: 7400000, guid: 5fbf1930b9815ca4681fb9064ad16be2, type: 2}
+  - {fileID: 7400000, guid: 0db0d1f69db6b41498a94c6ac3cab348, type: 2}
+  - {fileID: 7400000, guid: 669adb60504fa2542829edb64c0aaf3e, type: 2}
+  - {fileID: 7400000, guid: 0a25544a8d9ae4c409c10d976d988c68, type: 2}
+  - {fileID: 7400000, guid: 57bd4a7538108944d9f38673978cd02a, type: 2}
+  - {fileID: 7400000, guid: c4b08386893f4a0429d11aae10afaa87, type: 2}

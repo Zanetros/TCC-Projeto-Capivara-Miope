@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d56554f0f28e3174b9b0f26242568028, type: 3}
+  m_Name: Sobrancelha_0
+  m_EditorClassIdentifier: 
+  bodyPartName: Sobrancelha Loira
+  bodyPartAnimationID: 0
+  allBodyPartAnimations:
+  - {fileID: 7400000, guid: 925570b409793094891905468568bc55, type: 2}
+  - {fileID: 7400000, guid: e80874f306139814b8c2283c2881223d, type: 2}
+  - {fileID: 7400000, guid: d2ee458b6402ac04088885bb6ccf9870, type: 2}
+  - {fileID: 7400000, guid: 8f87588714f9fd54ebee1895a7faa9ea, type: 2}
+  - {fileID: 7400000, guid: 26f4096ebe0dfa14bb30409ac5c762ed, type: 2}
+  - {fileID: 7400000, guid: 06ec6bc5123747141a4ec44c531023ce, type: 2}
