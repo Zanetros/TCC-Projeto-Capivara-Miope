@@ -10,10 +10,9 @@ public class PleacableObject
     public Transform targetObject;
     public Vector3Int positionOnGrid;
 
-    public PleacableObject(Item item, Transform target, Vector3Int pos)
+    public PleacableObject(Item item, Vector3Int pos)
     {
         placedItem = item;
-        targetObject = target;
         positionOnGrid = pos;
     }
 }
@@ -22,4 +21,14 @@ public class PleacableObject
 public class PleacableObjectContainer : ScriptableObject
 {
     public List<PleacableObject> pleacableObjects;
+
+    internal object Get(Vector3Int position)
+    {
+        return pleacableObjects.Find(x => x.positionOnGrid == position);
+    }
+
+    internal void Remove(PleacableObject placedObject)
+    {
+        pleacableObjects.Remove(placedObject);
+    }
 }

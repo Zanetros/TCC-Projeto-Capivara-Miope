@@ -33,7 +33,7 @@ Transform:
   - {fileID: 8675831235461416414}
   - {fileID: 8675831236176195061}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &8675831235170795278
 BoxCollider2D:
@@ -48,7 +48,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.00548923, y: 0.008233845}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -59,7 +59,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.204467, y: 1.3004038}
+  m_Size: {x: 1.4569726, y: 1.3937212}
   m_EdgeRadius: 0
 --- !u!114 &8675831235170795279
 MonoBehaviour:
@@ -76,6 +76,7 @@ MonoBehaviour:
   closedChest: {fileID: 8675831235461416415}
   openedChest: {fileID: 8675831236176195058}
   open: 0
+  itemContainer: {fileID: 11400000, guid: 9bbae3efdc5026d47959fe557c74422f, type: 2}
 --- !u!1 &8675831235461416415
 GameObject:
   m_ObjectHideFlags: 0

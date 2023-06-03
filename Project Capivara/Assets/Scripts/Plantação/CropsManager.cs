@@ -48,6 +48,7 @@ public class CropsManager : MonoBehaviour
 
     public bool Check(Vector3Int position)
     {
+               
         if (tileCropsManager == null)
         {
             Debug.Log("sem crops manager");

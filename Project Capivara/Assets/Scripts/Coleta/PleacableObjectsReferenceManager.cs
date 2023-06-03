@@ -1,19 +1,41 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PleacableObjectsReferenceManager : MonoBehaviour
 {
-    public PleacableObjectManagaer pleacableObject;
+    public PleacableObjectManagaer pleacableObjectsManager;
 
     public void Place(Item item, Vector3Int pos)
     {
-        if (pleacableObject == null)
+        if (pleacableObjectsManager == null)
         {
             Debug.LogWarning("sem referencia para pleacable manager");
             return;
         }
 
-        pleacableObject.Place(item, pos);
+        pleacableObjectsManager.Place(item, pos);
+    }
+
+    internal void PickUp(Vector3Int gridPosition)
+    {
+        if (pleacableObjectsManager == null)
+        {
+            Debug.LogWarning("sem referencia para pleacable manager");
+            return;
+        }
+
+        pleacableObjectsManager.PickUp(gridPosition);
+    }
+
+    public bool Check(Vector3Int pos)
+    {
+        if (pleacableObjectsManager == null)
+        {
+            return false;
+        }
+
+        return pleacableObjectsManager.Check(pos);
     }
 }

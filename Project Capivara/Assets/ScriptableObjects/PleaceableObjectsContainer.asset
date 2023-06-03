@@ -12,4 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c005b44f8a24bb64ca18a3d136f841d1, type: 3}
   m_Name: PleaceableObjectsContainer
   m_EditorClassIdentifier: 
-  pleacableObjects: []
+  pleacableObjects:
+  - placedItem: {fileID: 11400000, guid: be598419e776f984b89e0f5b4b3a3b67, type: 2}
+    targetObject: {fileID: 0}
+    positionOnGrid: {x: 5, y: -4, z: 0}
+  - placedItem: {fileID: 11400000, guid: be598419e776f984b89e0f5b4b3a3b67, type: 2}
+    targetObject: {fileID: 0}
+    positionOnGrid: {x: 5, y: -3, z: 0}
+  - placedItem: {fileID: 11400000, guid: be598419e776f984b89e0f5b4b3a3b67, type: 2}
+    targetObject: {fileID: 0}
+    positionOnGrid: {x: 5, y: -1, z: 0}
+  - placedItem: {fileID: 11400000, guid: be598419e776f984b89e0f5b4b3a3b67, type: 2}
+    targetObject: {fileID: 0}
+    positionOnGrid: {x: -4, y: -4, z: 0}

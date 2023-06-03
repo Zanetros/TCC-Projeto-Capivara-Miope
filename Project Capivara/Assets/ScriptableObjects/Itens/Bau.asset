@@ -19,7 +19,7 @@ MonoBehaviour:
   sprite: {fileID: -1972868305, guid: 5bca394cecdde994d96cacd04faf88ee, type: 3}
   onAction: {fileID: 0}
   onTilemapAction: {fileID: 11400000, guid: f3bab436df4d2574792b17dc64137998, type: 2}
-  onItemUsed: {fileID: 0}
+  onItemUsed: {fileID: 11400000, guid: f3bab436df4d2574792b17dc64137998, type: 2}
   crop: {fileID: 0}
   iconHighlight: 1
   itemPrefab: {fileID: 8675831235170795276, guid: 464a61e5ab3c2bd4f9d4f40ceb3085c5, type: 3}
