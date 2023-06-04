@@ -12023,9 +12023,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   txtPrice: {fileID: 7961068399513940614}
-  imgSprite: {fileID: 0}
+  imgSprite: {fileID: 6315858059527434195}
   shopItem: {fileID: 0}
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 5908046378252556751}
 --- !u!1 &4312722990932931420
 GameObject:
   m_ObjectHideFlags: 0
@@ -12529,7 +12529,7 @@ PrefabInstance:
     - target: {fileID: 3215193981909162841, guid: 665d737fc202867469ba18be08a98f65, type: 3}
       propertyPath: gameManager
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 5908046378252556751}
     - target: {fileID: 3354847094953426768, guid: 665d737fc202867469ba18be08a98f65, type: 3}
       propertyPath: m_Name
       value: ShopSlot
@@ -12537,6 +12537,17 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 665d737fc202867469ba18be08a98f65, type: 3}
+--- !u!114 &6315858059527434195 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3841139632810642190, guid: 665d737fc202867469ba18be08a98f65, type: 3}
+  m_PrefabInstance: {fileID: 6315858059527434194}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6527203460652822118
 GameObject:
   m_ObjectHideFlags: 0
@@ -13801,7 +13812,7 @@ PrefabInstance:
     - target: {fileID: 3215193981909162841, guid: 665d737fc202867469ba18be08a98f65, type: 3}
       propertyPath: gameManager
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 5908046378252556751}
     - target: {fileID: 3354847094953426768, guid: 665d737fc202867469ba18be08a98f65, type: 3}
       propertyPath: m_Name
       value: ShopSlot (1)
