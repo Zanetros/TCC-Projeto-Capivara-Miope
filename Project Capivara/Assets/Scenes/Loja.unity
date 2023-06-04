@@ -4174,7 +4174,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d3cee87184b56a469212cdf954ef167, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pleacableObject: {fileID: 11400000, guid: b18c7906b832214459c66803f681d8c4, type: 2}
+  pleacableObjects: {fileID: 0}
   targetTilemap: {fileID: 0}
 --- !u!4 &1723268581
 Transform:

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d56554f0f28e3174b9b0f26242568028, type: 3}
+  m_Name: Cabelo_1
+  m_EditorClassIdentifier: 
+  bodyPartName: Cabelo Preto
+  bodyPartAnimationID: 1
+  allBodyPartAnimations:
+  - {fileID: 7400000, guid: 4d97ec699d0839b438bf263df1f5cef0, type: 2}
+  - {fileID: 7400000, guid: d4c8322937eed8f4282cdecc4cef4ccd, type: 2}
+  - {fileID: 7400000, guid: 66048f8d50e4d394f9c51e7218ff8524, type: 2}
+  - {fileID: 7400000, guid: c5d4e2ba9278c244984571d2f8b25f91, type: 2}
+  - {fileID: 7400000, guid: 3ffdc4d37b3caee43a325806601731d9, type: 2}
+  - {fileID: 7400000, guid: c50ad5f836f5bc34ba640d4eab35a196, type: 2}
+  - {fileID: 7400000, guid: 091752608ebeb5643b9992000dc8f1bb, type: 2}
+  - {fileID: 7400000, guid: df7ba5ecb8662444195ab0bdd744daf9, type: 2}
