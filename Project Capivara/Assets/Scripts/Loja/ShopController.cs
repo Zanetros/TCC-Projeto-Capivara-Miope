@@ -22,13 +22,15 @@ public class ShopController : MonoBehaviour
     private int totalPrice;
 
     private bool open = false;
+    public ShopItem[] shopButtons;
     public GameManager gameManager;
     
-    public void OpenShop()
+    public void OpenShop(Item[] itemsToSell)
     {
         gameManager.playerMovement.enabled = false;
         gameManager.characterInteractController.enabled = false;
         ResetShop();
+        SetItems(itemsToSell);
         shopPanel.SetActive(true);
     }
 
@@ -40,6 +42,22 @@ public class ShopController : MonoBehaviour
         shopPanel.SetActive(false);
     }
 
+    private void SetItems(Item[] items)
+    {
+        for (int i = 0, j = items.Length-1; i<= j; i++)
+        {
+            shopButtons[i].GetItem(items[i]);
+        }
+    }
+
+    private void ClearItems()
+    {
+        for (int i = 0, j = shopButtons.Length-1; i<= j; i++)
+        {
+            shopButtons[i].ClearItem();
+        }
+    }
+    
     private void ResetShop()
     {
         selectedItem = null;

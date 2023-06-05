@@ -10,12 +10,13 @@ public class ShopItem : MonoBehaviour
     public TextMeshProUGUI txtPrice;
     public Image imgSprite;
     
-    public Item shopItem;
+    private Item shopItem;
     public GameManager gameManager;
-
-
-    void Start()
+    
+    public void GetItem(Item myItem)
     {
+        gameObject.SetActive(true);
+        shopItem = myItem;
         imgSprite.sprite = shopItem.sprite;
         txtPrice.text = "" + shopItem.sellPrice;
     }
@@ -23,6 +24,11 @@ public class ShopItem : MonoBehaviour
     public void SendItem()
     {
         gameManager.shopController.SelectItem(shopItem);
+    }
+
+    public void ClearItem()
+    {
+        shopItem = null;
     }
     
 }

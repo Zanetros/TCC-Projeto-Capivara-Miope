@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68c6127866ace1541b8f44f20792e496, type: 3}
+  m_Name: ArmazemContainer
+  m_EditorClassIdentifier: 
+  itemsToSell:
+  - {fileID: 11400000, guid: 5c57c28f65a08d140bf705886b50c4c7, type: 2}
+  - {fileID: 11400000, guid: 0e87d732b68e6e347b837e925cded9e9, type: 2}
+  - {fileID: 11400000, guid: 87ffd56066341954e8d8b08ff4d0dd6f, type: 2}
