@@ -105,6 +105,7 @@ public class DialogueSystem : MonoBehaviour
     {
         print("The dialogue has ended");
         Show(false);
+        gameManager.characterInteractController.enabled = true;
         gameManager.playerMovement.enabled = true;
     }
 }

@@ -48,7 +48,6 @@ public class TilemapCropsManager : TimeAgent
 
             if (cropsTile.Complete)
             {
-                Debug.Log("cresceu");
                 continue;
             }
 

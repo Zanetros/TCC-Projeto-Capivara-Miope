@@ -110,10 +110,10 @@ TextureImporter:
       name: "In\xEDcio \xC1rvore Seca_0"
       rect:
         serializedVersion: 2
-        x: 6
-        y: 3
-        width: 1188
-        height: 1193
+        x: 0
+        y: 800
+        width: 400
+        height: 400
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -123,6 +123,174 @@ TextureImporter:
       bones: []
       spriteID: ea1bc7a230d7c8c4c83d9588f2ce6bcf
       internalID: 1146210454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "In\xEDcio \xC1rvore Seca_1"
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 800
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7e6096bbae30804eb0667794cd41115
+      internalID: 309762336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "In\xEDcio \xC1rvore Seca_2"
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 800
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a379a6c2e9b1299409efcf5eceae02ad
+      internalID: -1168209136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "In\xEDcio \xC1rvore Seca_3"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 400
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2587538d57ce9da44a4f99c0bd622c4f
+      internalID: 1766902736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "In\xEDcio \xC1rvore Seca_4"
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 400
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2552474ffba1e5488bb28093a2be9ef
+      internalID: 1929214302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "In\xEDcio \xC1rvore Seca_5"
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 400
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f885835f73f9e8344befc79b7b0d2f2e
+      internalID: -1679406041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "In\xEDcio \xC1rvore Seca_6"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c35a80727d5da4f4b938f5bdd9f6aa1c
+      internalID: -36258647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "In\xEDcio \xC1rvore Seca_7"
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 212c9ff0da1042647ad5bda427f72a3a
+      internalID: 887921150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "In\xEDcio \xC1rvore Seca_8"
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 0
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 019950792ef6c914ebbecdf716b904f6
+      internalID: 908904389
       vertices: []
       indices: 
       edges: []
@@ -139,6 +307,14 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       "In\xEDcio \xC1rvore Seca_0": 1146210454
+      "In\xEDcio \xC1rvore Seca_1": 309762336
+      "In\xEDcio \xC1rvore Seca_2": -1168209136
+      "In\xEDcio \xC1rvore Seca_6": -36258647
+      "In\xEDcio \xC1rvore Seca_3": 1766902736
+      "In\xEDcio \xC1rvore Seca_7": 887921150
+      "In\xEDcio \xC1rvore Seca_4": 1929214302
+      "In\xEDcio \xC1rvore Seca_8": 908904389
+      "In\xEDcio \xC1rvore Seca_5": -1679406041
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 
