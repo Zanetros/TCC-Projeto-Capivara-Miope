@@ -29,6 +29,7 @@ public class ShopItem : MonoBehaviour
     public void ClearItem()
     {
         shopItem = null;
+        gameObject.SetActive(false);
     }
     
 }

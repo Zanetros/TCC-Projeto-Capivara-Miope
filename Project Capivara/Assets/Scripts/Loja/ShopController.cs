@@ -14,6 +14,7 @@ public class ShopController : MonoBehaviour
     public TextMeshProUGUI txtItemName;
     public TextMeshProUGUI txtTotalPrice;
     public TextMeshProUGUI txtCoinsInBag;
+    public TextMeshProUGUI txtItemDescription;
     public Image imgItemConfirm;
     public ItemContainer inventory;
     
@@ -38,6 +39,7 @@ public class ShopController : MonoBehaviour
     {
         gameManager.playerMovement.enabled = true;
         gameManager.characterInteractController.enabled = true;
+        ClearItems();
         ResetShop();
         shopPanel.SetActive(false);
     }
@@ -71,6 +73,7 @@ public class ShopController : MonoBehaviour
         selectedItem = itemToBuy;
         txtItemName.text = itemToBuy.Name;
         imgItemConfirm.sprite = itemToBuy.sprite;
+        txtItemDescription.text = itemToBuy.Description;
         CalculatePrice();
     }
 
@@ -130,7 +133,5 @@ public class ShopController : MonoBehaviour
         selectedItem = itemBought;
         quantityToBuy = count;
         inventory.Add(itemBought, count);
-        
-        
     }  
 }
