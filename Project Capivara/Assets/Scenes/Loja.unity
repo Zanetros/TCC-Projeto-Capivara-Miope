@@ -4222,7 +4222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transitionType: 1
-  sceneNameToTransition: CenaPrincipal
+  sceneNameToTransition: Cidade
   targetPosition: {x: 129, y: -158, z: 0}
 --- !u!4 &2027809452
 Transform:

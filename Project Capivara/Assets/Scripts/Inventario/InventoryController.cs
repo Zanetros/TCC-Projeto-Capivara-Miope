@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class InventoryController : MonoBehaviour
 {
     [SerializeField] GameObject panel;
     [SerializeField] GameObject statusPanel;
     [SerializeField] GameObject toolBar;
+    [SerializeField] TextMeshProUGUI moneyText;
+    [SerializeField] CoinBag coinBag;
 
     private void Update()
     {
@@ -25,6 +28,7 @@ public class InventoryController : MonoBehaviour
 
     public void Open()
     {
+        moneyText.text = coinBag.coinsQuantity.ToString();
         panel.SetActive(true);
         statusPanel.SetActive(true);
         toolBar.SetActive(false);

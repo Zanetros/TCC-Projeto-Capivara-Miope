@@ -16,7 +16,7 @@ MonoBehaviour:
   - bodyPartName: Pele
     bodyPart: {fileID: 11400000, guid: 1d13b39e9d0f4cf44b67392e6844554e, type: 2}
   - bodyPartName: Cabelo
-    bodyPart: {fileID: 11400000, guid: 60ade8beb1517814aa6741dc9461a95e, type: 2}
+    bodyPart: {fileID: 11400000, guid: fb28f18102fd7844d806dcf16e52b28f, type: 2}
   - bodyPartName: Olhos
     bodyPart: {fileID: 11400000, guid: 3c50dd38075ad5e42bc727961de659db, type: 2}
   - bodyPartName: Sobrancelhas
