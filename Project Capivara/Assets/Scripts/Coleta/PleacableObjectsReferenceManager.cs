@@ -33,6 +33,7 @@ public class PleacableObjectsReferenceManager : MonoBehaviour
     {
         if (pleacableObjectsManager == null)
         {
+            Debug.Log("No pleaceble object");
             return false;
         }
 

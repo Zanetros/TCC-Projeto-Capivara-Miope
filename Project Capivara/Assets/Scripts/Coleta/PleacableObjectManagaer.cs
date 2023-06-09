@@ -33,19 +33,22 @@ public class PleacableObjectManagaer : MonoBehaviour
 
     internal void PickUp(Vector3Int gridPosition)
     {
-        PleacableObject placedObject = (PleacableObject)pleacableObjects.Get(gridPosition);
+        PleacableObject placeableObject = pleacableObjects.Get(gridPosition);
 
-        if (placedObject == null)
+        if (placeableObject == null)
         {
             return;
         }
 
-        DropedItemSpawner.instance.SpawnItem
-            (targetTilemap.CellToWorld(gridPosition), placedObject.placedItem, 1);
+        DropedItemSpawner.instance.SpawnItem(
+            targetTilemap.CellToWorld(gridPosition),
+            placeableObject.placedItem,
+            1
+            );
 
-        Destroy(placedObject.targetObject.gameObject);
+        Destroy(placeableObject.targetObject.gameObject);
 
-        pleacableObjects.Remove(placedObject);
+        pleacableObjects.Remove(placeableObject);
     }
 
     private void VisualizeItem(PleacableObject pleacableObject)

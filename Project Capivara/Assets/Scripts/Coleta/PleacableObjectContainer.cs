@@ -22,7 +22,7 @@ public class PleacableObjectContainer : ScriptableObject
 {
     public List<PleacableObject> pleacableObjects;
 
-    internal object Get(Vector3Int position)
+    internal PleacableObject Get(Vector3Int position)
     {
         return pleacableObjects.Find(x => x.positionOnGrid == position);
     }
