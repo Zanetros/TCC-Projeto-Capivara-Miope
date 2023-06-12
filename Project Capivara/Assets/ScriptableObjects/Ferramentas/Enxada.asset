@@ -14,8 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Enxada
   Description: Usada para arar a terra
+  sellPrice: 5
   stackable: 0
   sprite: {fileID: -1176985666, guid: 26f7ba4f4c238b649b8004c01d6287bf, type: 3}
   onAction: {fileID: 0}
   onTilemapAction: {fileID: 11400000, guid: fbe8c4d57a5ca1441a6ba037af62ac84, type: 2}
   onItemUsed: {fileID: 0}
+  crop: {fileID: 0}
+  iconHighlight: 0
+  itemPrefab: {fileID: 0}

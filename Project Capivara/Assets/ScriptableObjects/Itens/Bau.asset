@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Bau
   Description: 
-  sellPrice: 0
+  sellPrice: 5
   stackable: 1
   sprite: {fileID: -1972868305, guid: 5bca394cecdde994d96cacd04faf88ee, type: 3}
   onAction: {fileID: 0}
