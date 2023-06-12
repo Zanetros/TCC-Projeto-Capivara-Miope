@@ -44,6 +44,14 @@ public class AudioManager : MonoBehaviour
         audioSource.Play();
     }
 
+    public void Stop(AudioClip audioClip)
+    {
+        AudioSource audioSource = GetFreeAudioSource();
+
+        audioSource.clip = audioClip;
+        audioSource.Stop();
+    }
+
     private AudioSource GetFreeAudioSource()
     {
         for (int i = 0; i < audioSources.Count; i++)

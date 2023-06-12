@@ -103,9 +103,10 @@ public class DialogueSystem : MonoBehaviour
 
     void Conclude()
     {
+        AudioManager.instance.Stop(dialogueSound);
         print("The dialogue has ended");
         Show(false);
         gameManager.characterInteractController.enabled = true;
-        gameManager.playerMovement.enabled = true;
+        gameManager.playerMovement.enabled = true;       
     }
 }
