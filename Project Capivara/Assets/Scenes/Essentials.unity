@@ -16187,7 +16187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   txtCoins: {fileID: 7961068400502442204}
-  coinsQuantity: 300
+  coinsQuantity: 500
 --- !u!114 &5908046378252556754
 MonoBehaviour:
   m_ObjectHideFlags: 0
