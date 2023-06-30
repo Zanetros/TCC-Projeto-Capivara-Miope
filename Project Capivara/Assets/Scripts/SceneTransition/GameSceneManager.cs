@@ -19,13 +19,20 @@ public class GameSceneManager : MonoBehaviour
     private AsyncOperation unload;
     private AsyncOperation load;
 
+    public PlayerMovementTeste playerMovementTeste;
+    public CharacterInteractController characterInteractController;
+
     void Start()
     {
         currentScene = SceneManager.GetActiveScene().name;
+        playerMovementTeste = FindObjectOfType<PlayerMovementTeste>();
+        characterInteractController = FindObjectOfType<CharacterInteractController>();
     }
 
     public void InitSwitchScene(string to, Vector3 targetPosition)
     {
+        playerMovementTeste.enabled = false;
+        characterInteractController.enabled = false;
         StartCoroutine(Transition(to, targetPosition));
     }
     
@@ -63,7 +70,8 @@ public class GameSceneManager : MonoBehaviour
             playerTransform,
             targetPosition - playerTransform.position
         );
-        
+        playerMovementTeste.enabled = true;
+        characterInteractController.enabled = true;
         GameManager.instance.player.transform.position = new Vector3(targetPosition.x, targetPosition.y, targetPosition.z);
     }
 

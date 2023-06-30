@@ -17,10 +17,13 @@ public class Transition : MonoBehaviour
     [SerializeField] private Vector3 targetPosition;
     
     private Transform destination;
+
+    public PlayerMovementTeste playerMovementTeste;
     
     void Start()
     {
         destination = transform.GetChild(1);
+        playerMovementTeste = GetComponent<PlayerMovementTeste>();
     }
 
     void Update()

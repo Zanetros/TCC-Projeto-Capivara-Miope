@@ -16174,6 +16174,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   screenTint: {fileID: 6527203460652822122}
   cameraConfiner: {fileID: 1800309298}
+  playerMovementTeste: {fileID: 0}
+  characterInteractController: {fileID: 0}
 --- !u!114 &5908046378252556753
 MonoBehaviour:
   m_ObjectHideFlags: 0
