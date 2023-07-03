@@ -10,6 +10,7 @@ public class InventoryController : MonoBehaviour
     [SerializeField] GameObject toolBar;
     [SerializeField] TextMeshProUGUI moneyText;
     [SerializeField] CoinBag coinBag;
+    [SerializeField] private GameManager gameManager;
 
     private void Update()
     {
@@ -32,6 +33,8 @@ public class InventoryController : MonoBehaviour
         panel.SetActive(true);
         statusPanel.SetActive(true);
         toolBar.SetActive(false);
+        gameManager.characterInteractController.enabled = false;
+        gameManager.playerMovement.enabled = false;
     }
 
     public void Close()
@@ -39,5 +42,7 @@ public class InventoryController : MonoBehaviour
         panel.SetActive(false);
         statusPanel.SetActive(false);
         toolBar.SetActive(true);
+        gameManager.characterInteractController.enabled = true;
+        gameManager.playerMovement.enabled = true;
     }
 }

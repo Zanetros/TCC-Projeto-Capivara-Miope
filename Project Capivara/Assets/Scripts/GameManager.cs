@@ -22,4 +22,6 @@ public class GameManager : MonoBehaviour
     public CharacterInteractController characterInteractController;
     public CropsManager cropsManager;
     public PleacableObjectsReferenceManager pleacableObjects;
+    public MusicManager musicManager;
+    public InventoryController inventoryController;
 }

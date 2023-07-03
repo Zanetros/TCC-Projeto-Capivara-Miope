@@ -95,7 +95,6 @@ public class DialogueSystem : MonoBehaviour
 
     private void Show(bool b)
     {
-        Debug.Log("cOMECOU DIALOGO");
         gameManager.playerMovement.enabled = b;
         gameManager.characterInteractController.enabled = b;
         gameObject.SetActive(b);
@@ -103,7 +102,7 @@ public class DialogueSystem : MonoBehaviour
 
     void Conclude()
     {
-        AudioManager.instance.Stop(dialogueSound);
+        AudioManager.instance.Stop();
         print("The dialogue has ended");
         Show(false);
         gameManager.characterInteractController.enabled = true;

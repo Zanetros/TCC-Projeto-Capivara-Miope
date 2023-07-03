@@ -58,4 +58,17 @@ public class MusicManager : MonoBehaviour
 
         Play(switchTo, true);
     }
+
+    public void Pause_UnpauseMusic(bool state)
+    {
+        if (state)
+        {
+            audioSource.Pause();
+        }
+        else
+        {
+            audioSource.UnPause();
+        }
+    }
+    
 }
