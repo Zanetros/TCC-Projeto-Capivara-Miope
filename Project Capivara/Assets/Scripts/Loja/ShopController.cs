@@ -28,8 +28,7 @@ public class ShopController : MonoBehaviour
     
     public void OpenShop(Item[] itemsToSell)
     {
-        gameManager.playerMovement.enabled = false;
-        gameManager.characterInteractController.enabled = false;
+        gameManager.ControlCharacterControls(false, false);
         ResetShop();
         SetItems(itemsToSell);
         shopPanel.SetActive(true);
@@ -37,8 +36,7 @@ public class ShopController : MonoBehaviour
 
     public void CloseShop()
     {
-        gameManager.playerMovement.enabled = true;
-        gameManager.characterInteractController.enabled = true;
+        gameManager.ControlCharacterControls(true, true);
         ClearItems();
         ResetShop();
         shopPanel.SetActive(false);

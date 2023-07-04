@@ -6,7 +6,6 @@ using TMPro;
 public class InventoryController : MonoBehaviour
 {
     [SerializeField] GameObject panel;
-    [SerializeField] GameObject statusPanel;
     [SerializeField] GameObject toolBar;
     [SerializeField] TextMeshProUGUI moneyText;
     [SerializeField] CoinBag coinBag;
@@ -31,18 +30,14 @@ public class InventoryController : MonoBehaviour
     {
         moneyText.text = coinBag.coinsQuantity.ToString();
         panel.SetActive(true);
-        statusPanel.SetActive(true);
         toolBar.SetActive(false);
-        gameManager.characterInteractController.enabled = false;
-        gameManager.playerMovement.enabled = false;
+        gameManager.ControlCharacterControls(false, false);
     }
 
     public void Close()
     {
         panel.SetActive(false);
-        statusPanel.SetActive(false);
         toolBar.SetActive(true);
-        gameManager.characterInteractController.enabled = true;
-        gameManager.playerMovement.enabled = true;
+        gameManager.ControlCharacterControls(false, false);
     }
 }

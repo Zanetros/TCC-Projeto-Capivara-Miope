@@ -84,7 +84,7 @@ public class DialogueSystem : MonoBehaviour
         targetText.text = "";
         UpdatePortrait();
         PushText();
-        gameManager.playerMovement.enabled = false;
+        gameManager.ControlCharacterControls(false, true);
     }
 
     private void UpdatePortrait()
@@ -95,8 +95,7 @@ public class DialogueSystem : MonoBehaviour
 
     private void Show(bool b)
     {
-        gameManager.playerMovement.enabled = b;
-        gameManager.characterInteractController.enabled = b;
+        gameManager.ControlCharacterControls(b, b);
         gameObject.SetActive(b);
     }
 

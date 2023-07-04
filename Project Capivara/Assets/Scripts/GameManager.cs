@@ -24,4 +24,12 @@ public class GameManager : MonoBehaviour
     public PleacableObjectsReferenceManager pleacableObjects;
     public MusicManager musicManager;
     public InventoryController inventoryController;
+    public Crafting crafting;
+
+    public void ControlCharacterControls(bool characterMov, bool characterInt)
+    {
+        playerMovement.enabled = characterMov;
+        characterInteractController.enabled = characterInt;
+    }
+    
 }

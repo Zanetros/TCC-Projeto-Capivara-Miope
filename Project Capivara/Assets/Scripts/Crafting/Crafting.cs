@@ -5,6 +5,22 @@ using UnityEngine;
 public class Crafting : MonoBehaviour
 {
     [SerializeField] ItemContainer inventory;
+    [SerializeField] GameObject craftingPanel;
+    [SerializeField] GameObject newRecipesPanel;
+    [SerializeField] GameObject knownRecipesPanel;
+    [SerializeField] RecipeList allRecipesInGame;
+    [SerializeField] RecipeList recipesKnownList;
+    public void OpenCrafting()
+    {
+        craftingPanel.SetActive(true);
+        newRecipesPanel.SetActive(true);
+        knownRecipesPanel.SetActive(false);
+    }
+
+    public void CloseCrafting()
+    {
+        craftingPanel.SetActive(false);
+    }
     
     public void Craft(CraftingRecipe recipe)
     {
