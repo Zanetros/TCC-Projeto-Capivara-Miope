@@ -5,6 +5,7 @@ using UnityEngine;
 public class PauseMenu : MonoBehaviour
 {
     [SerializeField] GameObject menuPanel;
+    [SerializeField] GameObject soundPanel;
     public GameManager gameManager;
     private float normalFTime;
 
@@ -36,6 +37,18 @@ public class PauseMenu : MonoBehaviour
         gameManager.playerMovement.enabled = true;
         gameManager.characterInteractController.enabled = true;
         gameManager.inventoryController.enabled = true;
+    }
+
+    public void SoundMenu()
+    {
+        menuPanel.SetActive(false);
+        soundPanel.SetActive(true);
+    }
+
+    public void SoundBackToMenu()
+    {
+        menuPanel.SetActive(true);
+        soundPanel.SetActive(false);
     }
 
     public void Quit()

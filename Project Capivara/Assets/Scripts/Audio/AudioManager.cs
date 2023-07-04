@@ -7,63 +7,33 @@ using UnityEngine.Audio;
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
-    private AudioSource audioSource;
     [SerializeField] private AudioMixerGroup SFX_mixer;
-    [SerializeField] private AudioSource audioSourceMusic;
+    [SerializeField] private AudioSource audioSourceSFX;
+
+    [Header("AudioClips")]
+    public AudioClip arar;
+    public AudioClip dialogo;
+    public AudioClip cortar;
+
 
     public void Awake()
     {
         instance = this;
     }
 
-    [SerializeField] GameObject audioSourcePrefab;
-    [SerializeField] int audioSourceCount;
-
-    List<AudioSource> audioSources;
 
     public void Start()
     {
-        Init();
-    }
 
-    private void Init()
-    {
-        audioSources = new List<AudioSource>();
-
-        for (int i = 0; i < audioSourceCount; i++)
-        {
-            GameObject go = Instantiate(audioSourcePrefab, transform);
-            go.transform.localPosition = Vector3.zero;
-            audioSources.Add(go.GetComponent<AudioSource>());
-        }
     }
 
     public void Play(AudioClip audioClip)
     {
-        if (audioClip == null) { return; }
-        
-        audioSource = GetFreeAudioSource();
-
-        audioSource.clip = audioClip;
-        audioSource.Play();
+        audioSourceSFX.PlayOneShot(audioClip);
     }
 
-    public void Stop()
+    public void Stop(AudioClip audioClip)
     {
-        audioSource.clip = null;
-        audioSource.Stop();
-    }
-
-    private AudioSource GetFreeAudioSource()
-    {
-        for (int i = 0; i < audioSources.Count; i++)
-        {
-            if (audioSources[i].isPlaying == false)
-            {
-                return audioSources[i];
-            }
-        }
-
-        return audioSources[0]; 
+        audioSourceSFX.Stop();
     }
 }
