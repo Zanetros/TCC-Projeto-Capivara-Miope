@@ -2934,6 +2934,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0fa1cf0b3ebe3246b45d4be7541ab0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SFX_mixer: {fileID: 24100000, guid: 6a5239832a698e44680fd51066bdb589, type: 2}
+  audioSourceMusic: {fileID: 584455417}
   audioSourcePrefab: {fileID: 2098194142684595193, guid: 5ffea122451c5ba458774d97cfe009cd, type: 3}
   audioSourceCount: 10
 --- !u!1001 &348718983
@@ -4698,7 +4700,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -49.3343}
+  m_AnchoredPosition: {x: 0, y: -49.33435}
   m_SizeDelta: {x: -365.7131, y: -362.2497}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &492628254
@@ -5234,7 +5236,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 129, y: -162, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6006,7 +6008,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &569401704
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6027,7 +6029,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 49.33429}
+  m_AnchoredPosition: {x: 0, y: 49.33435}
   m_SizeDelta: {x: 365.71313, y: 362.2497}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &572413903
@@ -6156,7 +6158,7 @@ GameObject:
   - component: {fileID: 584455416}
   - component: {fileID: 584455417}
   m_Layer: 0
-  m_Name: Audio Source
+  m_Name: MusicAudioSource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6186,7 +6188,7 @@ AudioSource:
   m_GameObject: {fileID: 584455415}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -4837123404001726659, guid: 6a5239832a698e44680fd51066bdb589, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -6520,10 +6522,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4312722990166600703}
-        m_TargetAssemblyTypeName: PanelGroup, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 3
+      - m_Target: {fileID: 1526230358}
+        m_TargetAssemblyTypeName: Crafting, Assembly-CSharp
+        m_MethodName: KnowRecipes
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -12605,7 +12607,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1211734679
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12625,7 +12627,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 49.33429}
+  m_AnchoredPosition: {x: 0, y: 49.33435}
   m_SizeDelta: {x: 365.71313, y: 362.2497}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1214147053
@@ -14912,10 +14914,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4312722990166600703}
-        m_TargetAssemblyTypeName: PanelGroup, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 3
+      - m_Target: {fileID: 1526230358}
+        m_TargetAssemblyTypeName: Crafting, Assembly-CSharp
+        m_MethodName: RecipesToResearch
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -15577,10 +15579,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventory: {fileID: 11400000, guid: c9b86d2555838be44a1343983fb80ba7, type: 2}
   craftingPanel: {fileID: 3432523732333243533}
-  newRecipesPanel: {fileID: 1447571448}
-  knownRecipesPanel: {fileID: 0}
-  allRecipesInGame: {fileID: 0}
-  recipesKnownList: {fileID: 11400000, guid: 55556ed06dbfdac4e847a459436f76c1, type: 2}
+  newRecipesPanel: {fileID: 1211734678}
+  knownRecipesPanel: {fileID: 569401703}
+  allRecipesInGame: {fileID: 11400000, guid: 99d09c55050a6b84dba44112f16a76aa, type: 2}
+  recipesKnownList: {fileID: 11400000, guid: 99d09c55050a6b84dba44112f16a76aa, type: 2}
 --- !u!114 &1526230359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17579,7 +17581,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1800309294}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 129, y: -162, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -22160,9 +22162,9 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1133809836}
   - {fileID: 1445044890726800058}
   - {fileID: 335831009}
+  - {fileID: 1133809836}
   - {fileID: 3432523731977819416}
   m_Father: {fileID: 1211734679}
   m_RootOrder: -1
@@ -22187,12 +22189,7 @@ MonoBehaviour:
   inventory: {fileID: 11400000, guid: c9b86d2555838be44a1343983fb80ba7, type: 2}
   buttons:
   - {fileID: 1244173556856377454}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 335831010}
   recipeList: {fileID: 11400000, guid: 99d09c55050a6b84dba44112f16a76aa, type: 2}
   crafting: {fileID: 1526230358}
 --- !u!1 &3432523731110348605
@@ -24260,13 +24257,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PanelGroup, Assembly-CSharp
-        m_MethodName: Show
-        m_Mode: 3
+      - m_Target: {fileID: 1526230358}
+        m_TargetAssemblyTypeName: Crafting, Assembly-CSharp
+        m_MethodName: Craft
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 11400000, guid: dceef79248a5b014c9c307ba6d59885e, type: 2}
+          m_ObjectArgumentAssemblyTypeName: CraftingRecipe, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -25139,7 +25136,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1001 &3432523732333316570
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25776,7 +25773,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4312722990166600703}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 129, y: -162, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

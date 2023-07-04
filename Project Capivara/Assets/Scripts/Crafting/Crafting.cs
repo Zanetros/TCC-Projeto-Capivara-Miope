@@ -12,13 +12,27 @@ public class Crafting : MonoBehaviour
     [SerializeField] RecipeList recipesKnownList;
     public void OpenCrafting()
     {
+        GameManager.instance.ControlCharacterControls(false, false);
         craftingPanel.SetActive(true);
+        newRecipesPanel.SetActive(false);
+        knownRecipesPanel.SetActive(true);
+    }
+
+    public void RecipesToResearch()
+    {
         newRecipesPanel.SetActive(true);
         knownRecipesPanel.SetActive(false);
     }
 
+    public void KnowRecipes()
+    {
+        newRecipesPanel.SetActive(false);
+        knownRecipesPanel.SetActive(true);
+    }
+
     public void CloseCrafting()
     {
+        GameManager.instance.ControlCharacterControls(true, true);
         craftingPanel.SetActive(false);
     }
     

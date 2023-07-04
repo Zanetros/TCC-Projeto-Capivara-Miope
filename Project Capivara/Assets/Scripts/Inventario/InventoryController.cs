@@ -38,6 +38,6 @@ public class InventoryController : MonoBehaviour
     {
         panel.SetActive(false);
         toolBar.SetActive(true);
-        gameManager.ControlCharacterControls(false, false);
+        gameManager.ControlCharacterControls(true, true);
     }
 }

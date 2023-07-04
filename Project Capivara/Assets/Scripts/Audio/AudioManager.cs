@@ -2,12 +2,15 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
     private AudioSource audioSource;
-    
+    [SerializeField] private AudioMixerGroup SFX_mixer;
+    [SerializeField] private AudioSource audioSourceMusic;
+
     public void Awake()
     {
         instance = this;
