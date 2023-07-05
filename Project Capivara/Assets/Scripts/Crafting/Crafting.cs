@@ -10,18 +10,19 @@ public class Crafting : MonoBehaviour
     [SerializeField] GameObject knownRecipesPanel;
     [SerializeField] RecipeList allRecipesInGame;
     [SerializeField] RecipeList recipesKnownList;
+    [SerializeField] CraftingPanel craftingInventoryPanel;
     public void OpenCrafting()
     {
         GameManager.instance.ControlCharacterControls(false, false);
         craftingPanel.SetActive(true);
-        newRecipesPanel.SetActive(false);
-        knownRecipesPanel.SetActive(true);
+        RecipesToResearch();
     }
 
     public void RecipesToResearch()
     {
         newRecipesPanel.SetActive(true);
         knownRecipesPanel.SetActive(false);
+        craftingInventoryPanel.Show();
     }
 
     public void KnowRecipes()
@@ -57,7 +58,8 @@ public class Crafting : MonoBehaviour
         {
             inventory.Remove(recipe.elements[i].item, recipe.elements[i].count);
         }
-
+        
         inventory.Add(recipe.output.item, recipe.output.count);
+        print("Você fez : " + recipe.output.item.Name);
     }
 }

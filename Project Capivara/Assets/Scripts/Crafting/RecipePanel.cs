@@ -9,10 +9,7 @@ public class RecipePanel : ItemPanel
 
     public override void Show()
     {
-        for (int i = 0; i < buttons.Count && i < recipeList.recipes.Count; i++)
-        {
-            buttons[i].Set(recipeList.recipes[i].output);
-        }
+        
     }
 
     public override void OnClick(int id)

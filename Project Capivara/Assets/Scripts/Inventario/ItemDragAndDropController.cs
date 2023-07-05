@@ -46,10 +46,9 @@ public class ItemDragAndDropController : MonoBehaviour
     {
         if (this.itemSlot.item == null)
         {
-            this.itemSlot.Copy(itemSlot);
+            this.itemSlot.Copy(itemSlot); 
             itemSlot.Clear();
         }
-
         else
         {
             Item item = itemSlot.item;
@@ -58,8 +57,8 @@ public class ItemDragAndDropController : MonoBehaviour
             itemSlot.Copy(this.itemSlot);
             this.itemSlot.Set(item, count);
         }
-
-        UpdateIcon();
+        UpdateIcon();   
+        
     }
 
     private void UpdateIcon()

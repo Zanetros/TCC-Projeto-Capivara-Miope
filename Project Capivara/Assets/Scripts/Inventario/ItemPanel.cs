@@ -6,7 +6,7 @@ public class ItemPanel : MonoBehaviour
 {
     public ItemContainer inventory;
     public List<InventoryButton> buttons;
-
+    
     private void Start()
     {
         Initialize();
@@ -23,7 +23,7 @@ public class ItemPanel : MonoBehaviour
         Show();
     }
 
-    private void SetIndex()
+    public void SetIndex()
     {
         for (int i = 0; i < inventory.slots.Count && i < buttons.Count; i++)
         {
@@ -48,10 +48,9 @@ public class ItemPanel : MonoBehaviour
             {
                 buttons[i].Clean();
             }
-
             else
             {
-                buttons[i].Set(inventory.slots[i]);
+                buttons[i].Set(inventory.slots[i], i);
             }
         }
     }

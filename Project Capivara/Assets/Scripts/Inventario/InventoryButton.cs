@@ -8,7 +8,6 @@ public class InventoryButton : MonoBehaviour, IPointerClickHandler
     [SerializeField] Image icon;
     [SerializeField] TextMeshProUGUI text;
     [SerializeField] Image highlight;
-
     int myIndex;
 
     public void SetIndex(int index)
@@ -16,8 +15,9 @@ public class InventoryButton : MonoBehaviour, IPointerClickHandler
         myIndex = index;
     }
 
-    public void Set(ItemSlot slot)
+    public void Set(ItemSlot slot, int index)
     {
+        SetIndex(index);
         icon.gameObject.SetActive(true);
         icon.sprite = slot.item.sprite;
 
@@ -26,7 +26,6 @@ public class InventoryButton : MonoBehaviour, IPointerClickHandler
             text.gameObject.SetActive(true);
             text.text = slot.count.ToString();
         }
-
         else
         {
             text.gameObject.SetActive(false);
@@ -57,7 +56,7 @@ public class InventoryButton : MonoBehaviour, IPointerClickHandler
 
         text.gameObject.SetActive(false);
     }
-
+    
     public void OnPointerClick(PointerEventData eventData)
     {
         ItemPanel itemPanel = transform.parent.GetComponent<ItemPanel>();
