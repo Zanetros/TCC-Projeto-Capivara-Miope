@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class CraftingPanel : MonoBehaviour
@@ -10,7 +11,13 @@ public class CraftingPanel : MonoBehaviour
     public CraftingButtonsControls ingredientsUsedButtons1;
     public CraftingButtonsControls ingredientsUsedButtons2;
     public List<CraftingButtonsControls> buttons;
+    public List<RecipeButtonsControl> recipeButtons;
+    public TextMeshProUGUI txtPageNumber;
     private int ingredientCount = 0;
+    public int page = 0;
+    public int firstItemShown = -1;
+    public int lastItemShown = -1;
+    private int c = 0;
     public void Show()
     {
         foreach (CraftingButtonsControls cbt in buttons)
@@ -27,6 +34,45 @@ public class CraftingPanel : MonoBehaviour
            
         }
         ingredientCount = 0;
+    }
+
+    public void ShowRecipesKnown()
+    {
+        foreach (RecipeButtonsControl rBc in recipeButtons)
+        {
+            rBc.Disable();
+            //rBc.Clear();
+        }
+        
+        firstItemShown = 6 * page;
+        lastItemShown = firstItemShown + 6;
+        if (lastItemShown > recipeList.recipes.Count)
+        {
+            lastItemShown = recipeList.recipes.Count;
+        }
+        for (int i = firstItemShown; i < recipeButtons.Count; i++)
+        {
+            if (i <= lastItemShown + 1)
+            {
+                recipeButtons[c].Set(recipeList.recipes[i], i);
+            }
+            else
+            {
+                recipeButtons[i].Disable();
+            }
+            c++;
+        }
+        c = 0;
+    }
+
+    public void ChangePage(int c)
+    {
+        if (firstItemShown + c >= 0 && lastItemShown + c <= recipeList.recipes.Count)
+        {
+            page = page + c;
+            ShowRecipesKnown();
+            txtPageNumber.text = (page + 1) + "/" + (Mathf.Round(recipeList.recipes.Count/8) + 1);
+        }
     }
 
     public void GetIngredient(int index)

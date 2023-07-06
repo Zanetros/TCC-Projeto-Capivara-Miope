@@ -5,7 +5,7 @@ using UnityEngine;
 public class Crafting : MonoBehaviour
 {
     [SerializeField] ItemContainer inventory;
-    [SerializeField] GameObject craftingPanel;
+    [SerializeField] GameObject craftingPanelP;
     [SerializeField] GameObject newRecipesPanel;
     [SerializeField] GameObject knownRecipesPanel;
     [SerializeField] RecipeList allRecipesInGame;
@@ -14,7 +14,7 @@ public class Crafting : MonoBehaviour
     public void OpenCrafting()
     {
         GameManager.instance.ControlCharacterControls(false, false);
-        craftingPanel.SetActive(true);
+        craftingPanelP.SetActive(true);
         RecipesToResearch();
     }
 
@@ -29,12 +29,13 @@ public class Crafting : MonoBehaviour
     {
         newRecipesPanel.SetActive(false);
         knownRecipesPanel.SetActive(true);
+        craftingInventoryPanel.ShowRecipesKnown();
     }
 
     public void CloseCrafting()
     {
         GameManager.instance.ControlCharacterControls(true, true);
-        craftingPanel.SetActive(false);
+        craftingPanelP.SetActive(false);
     }
     
     public void Craft(CraftingRecipe recipe)
