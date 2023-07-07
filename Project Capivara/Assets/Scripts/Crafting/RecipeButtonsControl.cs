@@ -31,11 +31,15 @@ public class RecipeButtonsControl : MonoBehaviour
 
     public void SelectRecipe()
     {
-        
+        if(myIndex != -1)
+        {
+            craftingPanel.GetRecipe(craftingPanel.recipeList.recipes[myIndex]);
+        }
     }
     
     public void Clear()
     {
+        gameObject.SetActive(true);
         myIndex = -1;
         gameObject.GetComponent<Button>().enabled = false;
         icon.sprite = unkownSprite;

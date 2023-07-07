@@ -1,23 +1,52 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CraftingPanel : MonoBehaviour
 {
+    [Header("Lists & Inventory")]
+    #region
     public ItemContainer inventory;
     public RecipeList recipeList;
+    public RecipeList knownRecipes;
     public Crafting crafting;
+    #endregion
+
+    [Header("Manual Crafting")]
+    #region
     public CraftingButtonsControls ingredientsUsedButtons1;
     public CraftingButtonsControls ingredientsUsedButtons2;
     public List<CraftingButtonsControls> buttons;
-    public List<RecipeButtonsControl> recipeButtons;
-    public TextMeshProUGUI txtPageNumber;
     private int ingredientCount = 0;
-    public int page = 0;
     public int firstItemShown = -1;
     public int lastItemShown = -1;
     private int c = 0;
+    #endregion
+    
+    [Header("Recipes Known")]
+    #region
+    public CraftingButtonsControls recipeSelectedButton;
+    private CraftingRecipe recipeToTry = null;
+    public List<RecipeButtonsControl> recipeButtons;
+    public TextMeshProUGUI txtRecipeName;
+    public GameObject btnPlus;
+    public GameObject btnMinus;
+    public TextMeshProUGUI txtQuantityToCreate;
+    public Image imgIngredient1;
+    public Image imgIngredient2;
+    public TextMeshProUGUI txtNumberIngredient1;
+    public TextMeshProUGUI txtNumberIngredient2;
+    public TextMeshProUGUI txtPageNumber;
+    private int actualQuantityToCreate = 0;
+    private bool canCreate = false;
+    private int page = 0;
+    private int o;
+    private int p;
+    #endregion
+    
     public void Show()
     {
         foreach (CraftingButtonsControls cbt in buttons)
@@ -31,7 +60,6 @@ public class CraftingPanel : MonoBehaviour
                 buttons[ingredientCount].Set(inventory.slots[i], i, false);
                ingredientCount++;   
             }
-           
         }
         ingredientCount = 0;
     }
@@ -54,7 +82,14 @@ public class CraftingPanel : MonoBehaviour
         {
             if (i <= lastItemShown + 1)
             {
-                recipeButtons[c].Set(recipeList.recipes[i], i);
+                if (knownRecipes.recipes.Contains(recipeList.recipes[i]))
+                {
+                    recipeButtons[c].Set(recipeList.recipes[i], i);
+                }
+                else
+                {
+                    recipeButtons[c].Clear();
+                }
             }
             else
             {
@@ -88,6 +123,97 @@ public class CraftingPanel : MonoBehaviour
         }
     }
 
+    public void GetRecipe(CraftingRecipe recipe)
+    {
+        recipeSelectedButton.GetComponent<Button>().enabled = true;
+        recipeToTry = recipe;
+        txtRecipeName.gameObject.SetActive(true);
+        txtRecipeName.text = recipeToTry.output.item.Name;
+        imgIngredient1.gameObject.SetActive(true);
+        imgIngredient2.gameObject.SetActive(true);
+        imgIngredient1.sprite = recipeToTry.elements[0].item.sprite;
+        imgIngredient2.sprite = recipeToTry.elements[1].item.sprite;
+        txtNumberIngredient1.gameObject.SetActive(true);
+        txtNumberIngredient2.gameObject.SetActive(true);
+        if (inventory.slots.Contains(recipeToTry.elements[0]))
+        {
+            o = inventory.slots.IndexOf(recipeToTry.elements[0]);
+            txtNumberIngredient1.text = inventory.slots[o].count.ToString();
+        }
+        else
+        if (inventory.slots.Contains(recipeToTry.elements[1]))
+        {
+            o = inventory.slots.IndexOf(recipeToTry.elements[1]);
+            txtNumberIngredient1.text = inventory.slots[o].count.ToString();
+        }
+        if(!inventory.slots.Contains(recipeToTry.elements[0]) && !inventory.slots.Contains(recipeToTry.elements[1]))
+        {
+            txtNumberIngredient1.text = 0.ToString();
+            canCreate = false;
+        }
+        
+        
+        if (inventory.slots.Contains(recipeToTry.elements[0]))
+        {
+            p = inventory.slots.IndexOf(recipeToTry.elements[0]);
+            txtNumberIngredient2.text = inventory.slots[p].count.ToString();
+        }
+        else
+        if (inventory.slots.Contains(recipeToTry.elements[1]))
+        {
+            p = inventory.slots.IndexOf(recipeToTry.elements[1]);
+            txtNumberIngredient2.text = inventory.slots[p].count.ToString();
+        }
+        if(!inventory.slots.Contains(recipeToTry.elements[0]) && !inventory.slots.Contains(recipeToTry.elements[1]))
+        {
+            txtNumberIngredient2.text = 0.ToString();
+            canCreate = false;
+        }
+        VerifyIfCanCreate(canCreate);
+    }
+
+    private void VerifyIfCanCreate(bool c)
+    {
+        if (c)
+        {
+            btnPlus.SetActive(true);
+            btnMinus.SetActive(true);
+            txtQuantityToCreate.gameObject.SetActive(true);
+            txtQuantityToCreate.text = 1.ToString();
+        }
+        else
+        {
+            btnPlus.SetActive(false);
+            btnMinus.SetActive(false);
+            txtQuantityToCreate.gameObject.SetActive(false);
+        }
+        canCreate = false;
+    }
+    
+    public int CalculateQuantity(int addValue)
+    {
+        if (actualQuantityToCreate + addValue <= inventory.slots[o].count &&
+            actualQuantityToCreate + addValue <= inventory.slots[p].count && actualQuantityToCreate + addValue > 0)
+        {
+            actualQuantityToCreate += addValue;
+        }
+        return actualQuantityToCreate;
+    }
+    
+    public void DeselectRecipe()
+    {
+        recipeToTry = null;
+        txtRecipeName.gameObject.SetActive(false);
+        btnPlus.SetActive(false);
+        btnMinus.SetActive(false);
+        txtQuantityToCreate.gameObject.SetActive(false);
+        imgIngredient1.gameObject.SetActive(false);
+        imgIngredient2.gameObject.SetActive(false);
+        txtNumberIngredient1.gameObject.SetActive(false);
+        txtNumberIngredient2.gameObject.SetActive(false);
+        recipeSelectedButton.Clear();
+    }
+    
     public void TryRecipe()
     {
         if (ingredientsUsedButtons1.myIndex != -1 && ingredientsUsedButtons2.myIndex != -1)
