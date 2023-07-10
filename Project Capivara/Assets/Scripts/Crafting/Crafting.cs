@@ -63,4 +63,30 @@ public class Crafting : MonoBehaviour
         inventory.Add(recipe.output.item, recipe.output.count);
         print("Você fez : " + recipe.output.item.Name);
     }
+    
+    public void CraftForQuantity(CraftingRecipe recipe, int quantity)
+    {
+        if (inventory.CheckFreeSpace() == false)
+        {
+            Debug.LogError("Sem espaco no inventario para craftar");
+            return;
+        }
+        
+        for (int i = 0; i < recipe.elements.Count; i++)
+        {
+            if (inventory.CheckItem(recipe.elements[i]) == false)
+            {
+                Debug.LogError("sem itens necessarios no invetario");
+                return;
+            }
+        }
+
+        for (int i = 0; i < recipe.elements.Count; i++)
+        {
+            inventory.Remove(recipe.elements[i].item, recipe.elements[i].count * quantity);
+        }
+        
+        inventory.Add(recipe.output.item, recipe.output.count * quantity);
+        print("Você fez : " + quantity + " " + recipe.output.item.Name);
+    }
 }

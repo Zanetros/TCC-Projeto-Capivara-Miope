@@ -34,7 +34,9 @@ public class CraftingPanel : MonoBehaviour
     public TextMeshProUGUI txtRecipeName;
     public GameObject btnPlus;
     public GameObject btnMinus;
+    public GameObject btnCraftKnownRecipe;
     public TextMeshProUGUI txtQuantityToCreate;
+    public Image imgRecipeToCraft;
     public Image imgIngredient1;
     public Image imgIngredient2;
     public TextMeshProUGUI txtNumberIngredient1;
@@ -43,6 +45,8 @@ public class CraftingPanel : MonoBehaviour
     private int actualQuantityToCreate = 0;
     private bool canCreate = false;
     private int page = 0;
+    private bool item1Found;
+    private bool item2Found;
     private int o;
     private int p;
     #endregion
@@ -131,87 +135,108 @@ public class CraftingPanel : MonoBehaviour
         txtRecipeName.text = recipeToTry.output.item.Name;
         imgIngredient1.gameObject.SetActive(true);
         imgIngredient2.gameObject.SetActive(true);
+        imgRecipeToCraft.gameObject.SetActive(true);
+        imgRecipeToCraft.sprite = recipeToTry.output.item.sprite;
         imgIngredient1.sprite = recipeToTry.elements[0].item.sprite;
         imgIngredient2.sprite = recipeToTry.elements[1].item.sprite;
         txtNumberIngredient1.gameObject.SetActive(true);
         txtNumberIngredient2.gameObject.SetActive(true);
-        if (inventory.slots.Contains(recipeToTry.elements[0]))
+
+        o = 0;
+        p = 0;
+        item1Found = false;
+        item2Found = false;
+        
+        foreach (ItemSlot itemSlot in inventory.slots)
         {
-            o = inventory.slots.IndexOf(recipeToTry.elements[0]);
-            txtNumberIngredient1.text = inventory.slots[o].count.ToString();
+            if (itemSlot.item != null && itemSlot.item.Equals(recipeToTry.elements[0].item))
+            {
+                txtNumberIngredient1.text = itemSlot.count.ToString();
+                item1Found = true;
+            }
+            else
+            if (itemSlot.item != null && itemSlot.item.Equals(recipeToTry.elements[1].item))
+            {
+                txtNumberIngredient2.text = itemSlot.count.ToString();
+                item2Found = true;
+            }
+            if (!item1Found)
+            {
+                o++;   
+            }
+            if (!item2Found)
+            {
+                p++;   
+            }
+            if (item1Found && item2Found)
+            {
+                break;
+            }
+        }
+
+        if (item1Found && item2Found)
+        {
+            canCreate = true;
         }
         else
-        if (inventory.slots.Contains(recipeToTry.elements[1]))
         {
-            o = inventory.slots.IndexOf(recipeToTry.elements[1]);
-            txtNumberIngredient1.text = inventory.slots[o].count.ToString();
-        }
-        if(!inventory.slots.Contains(recipeToTry.elements[0]) && !inventory.slots.Contains(recipeToTry.elements[1]))
-        {
-            txtNumberIngredient1.text = 0.ToString();
-            canCreate = false;
-        }
-        
-        
-        if (inventory.slots.Contains(recipeToTry.elements[0]))
-        {
-            p = inventory.slots.IndexOf(recipeToTry.elements[0]);
-            txtNumberIngredient2.text = inventory.slots[p].count.ToString();
-        }
-        else
-        if (inventory.slots.Contains(recipeToTry.elements[1]))
-        {
-            p = inventory.slots.IndexOf(recipeToTry.elements[1]);
-            txtNumberIngredient2.text = inventory.slots[p].count.ToString();
-        }
-        if(!inventory.slots.Contains(recipeToTry.elements[0]) && !inventory.slots.Contains(recipeToTry.elements[1]))
-        {
-            txtNumberIngredient2.text = 0.ToString();
             canCreate = false;
         }
         VerifyIfCanCreate(canCreate);
     }
 
-    private void VerifyIfCanCreate(bool c)
+    private void VerifyIfCanCreate(bool cC)
     {
-        if (c)
+        if (cC)
         {
             btnPlus.SetActive(true);
             btnMinus.SetActive(true);
+            btnCraftKnownRecipe.SetActive(true);
             txtQuantityToCreate.gameObject.SetActive(true);
             txtQuantityToCreate.text = 1.ToString();
+            actualQuantityToCreate = 1;
         }
         else
         {
             btnPlus.SetActive(false);
             btnMinus.SetActive(false);
+            btnCraftKnownRecipe.SetActive(false);
             txtQuantityToCreate.gameObject.SetActive(false);
         }
         canCreate = false;
     }
     
-    public int CalculateQuantity(int addValue)
+    public void CalculateQuantity(int addValue)
     {
         if (actualQuantityToCreate + addValue <= inventory.slots[o].count &&
             actualQuantityToCreate + addValue <= inventory.slots[p].count && actualQuantityToCreate + addValue > 0)
-        {
-            actualQuantityToCreate += addValue;
-        }
-        return actualQuantityToCreate;
+            {
+                actualQuantityToCreate += addValue;
+                txtQuantityToCreate.text = actualQuantityToCreate.ToString();
+            }
     }
     
     public void DeselectRecipe()
     {
         recipeToTry = null;
+        actualQuantityToCreate = 0;
         txtRecipeName.gameObject.SetActive(false);
         btnPlus.SetActive(false);
         btnMinus.SetActive(false);
+        btnCraftKnownRecipe.SetActive(false);
         txtQuantityToCreate.gameObject.SetActive(false);
+        imgRecipeToCraft.gameObject.SetActive(false);
         imgIngredient1.gameObject.SetActive(false);
         imgIngredient2.gameObject.SetActive(false);
         txtNumberIngredient1.gameObject.SetActive(false);
         txtNumberIngredient2.gameObject.SetActive(false);
         recipeSelectedButton.Clear();
+    }
+
+    public void CraftKnownRecipe()
+    {
+        crafting.CraftForQuantity(recipeToTry, actualQuantityToCreate);
+        GetRecipe(recipeToTry);
     }
     
     public void TryRecipe()
