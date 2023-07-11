@@ -42,10 +42,7 @@ public class CraftingButtonsControls : MonoBehaviour
 
     public void SelectIngredient()
     {
-        if (craftingPanel.inventory.slots[myIndex].count > 1)
-        {
-            craftingPanel.GetIngredient(myIndex);
-        }
+        craftingPanel.GetIngredient(myIndex);
     }
 
 }

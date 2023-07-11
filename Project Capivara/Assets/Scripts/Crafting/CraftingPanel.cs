@@ -70,6 +70,8 @@ public class CraftingPanel : MonoBehaviour
 
     public void ShowRecipesKnown()
     {
+        ingredientsUsedButtons1.Clear();
+        ingredientsUsedButtons2.Clear();
         foreach (RecipeButtonsControl rBc in recipeButtons)
         {
             rBc.Disable();
@@ -251,7 +253,9 @@ public class CraftingPanel : MonoBehaviour
                     if (recipeList.recipes[i].elements[1].item.Equals(inventory.slots[ingredientsUsedButtons2.myIndex].item))
                     {
                         crafting.Craft(recipeList.recipes[i]);
+                        crafting.VerifyIfItsKnownRecipe(recipeList.recipes[i]);
                         Show();
+                        break;
                     }
                 }
                 else //Mesma Receita, mas inversa
@@ -260,7 +264,9 @@ public class CraftingPanel : MonoBehaviour
                     if (recipeList.recipes[i].elements[1].item.Equals(inventory.slots[ingredientsUsedButtons1.myIndex].item))
                     {
                         crafting.Craft(recipeList.recipes[i]);
+                        crafting.VerifyIfItsKnownRecipe(recipeList.recipes[i]);
                         Show();
+                        break;
                     }
                 }
             }

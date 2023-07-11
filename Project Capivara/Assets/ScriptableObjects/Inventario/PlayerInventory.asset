@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: PlayerInventory
   m_EditorClassIdentifier: 
   slots:
-  - item: {fileID: 11400000, guid: 0e87d732b68e6e347b837e925cded9e9, type: 2}
-    count: 21
+  - item: {fileID: 11400000, guid: 5c57c28f65a08d140bf705886b50c4c7, type: 2}
+    count: 10
   - item: {fileID: 11400000, guid: c0f1a7ecc5f94da41a760a63450bd238, type: 2}
-    count: 9
+    count: 10
   - item: {fileID: 11400000, guid: 3668fe5c001781d418c0e23451faf3ad, type: 2}
     count: 1
   - item: {fileID: 11400000, guid: c6d80a1ce7cc31a4a90bc72872ebbc60, type: 2}
-    count: 5
+    count: 17
   - item: {fileID: 11400000, guid: f3efdad6dd208ba47bd1dc6f57a34c25, type: 2}
     count: 0
   - item: {fileID: 11400000, guid: 0e87d732b68e6e347b837e925cded9e9, type: 2}
