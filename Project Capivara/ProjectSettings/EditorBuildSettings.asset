@@ -12,9 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Cidade.unity
     guid: 28f4fda80f6a5da4abc232079fc06958
   - enabled: 1
-    path: Assets/Scenes/CenaPrincipal.unity
-    guid: 6a9380aa85e50a04d8aa44662857428b
-  - enabled: 1
     path: Assets/Scenes/Essentials.unity
     guid: f2d901a22eb709a42beda244fd782629
   - enabled: 1
