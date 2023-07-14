@@ -124,4 +124,22 @@ public class ItemContainer : ScriptableObject
         return true;
     }
 
+    public ItemContainer LoadItensToInventory(int[,] itens)
+    {
+        for (int i = 0; i < itens.GetLength(0); i++) 
+        {
+            for (int j = 0; j < itens.GetLength(1); j++) 
+            { 
+                
+            }
+        }
+        return this;
+    }
+
+    public int[,] GetItensInInventory()
+    {
+        //return slots;
+        return new int[0, 0];
+    }
+
 }

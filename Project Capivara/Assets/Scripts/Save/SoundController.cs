@@ -9,7 +9,6 @@ public class SoundController : MonoBehaviour
 {
     public float soundEffectVolume;
     public float sountrackVolume;
-    public string[] x;
 
     public AudioMixer aMSFX;
     public AudioMixer aMS;
@@ -29,13 +28,8 @@ public class SoundController : MonoBehaviour
     public AudioClip victory;
     public AudioClip defeat;
 
-    public void LoadSoundOptions(float music, float sfx, string[] newX)
+    public void LoadSoundOptions(float music, float sfx)
     {
-        if (newX != null && newX.Length > 0)
-        {
-            x = newX;
-        }
-        
         if (sfxSlider != null)
         {
             sfxSlider.value = sfx;

@@ -33,5 +33,5 @@ public class GameManager : MonoBehaviour
         playerMovement.enabled = characterMov;
         characterInteractController.enabled = characterInt;
     }
-    
+
 }

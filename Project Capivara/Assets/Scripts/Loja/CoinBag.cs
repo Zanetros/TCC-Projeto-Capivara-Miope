@@ -13,6 +13,12 @@ public class CoinBag : MonoBehaviour
     {
         UpdateCoinsQuantity();
     }
+
+    public void SetCoints(int coins)
+    {
+        coinsQuantity = coins;
+        UpdateCoinsQuantity();
+    }
     
     public void AddCoins(int coins)
     {

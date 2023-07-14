@@ -79,4 +79,20 @@ public class CropsManager : MonoBehaviour
         
         tileCropsManager.Plow(position);
     }
+
+    public void LoadCropsPlowed(int[,] crops)
+    {
+        //0 - Id da Crop
+        //1 - Estágio de Crescimento
+        //2 - Id da Cena
+        //3 - Posição em X
+        //4 - Posição em Y
+        for (int i = 0; i < crops.GetLength(0); i++) 
+        {
+            for (int j = 0; j < crops.GetLength(1); j++) 
+            { 
+                
+            }
+        }  
+    }
 }

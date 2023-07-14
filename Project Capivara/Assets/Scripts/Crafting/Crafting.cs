@@ -25,6 +25,15 @@ public class Crafting : MonoBehaviour
         craftingInventoryPanel.Show();
     }
 
+    public RecipeList LoadKnownRecipes(int[] recipes)
+    {
+        foreach (int recipe in recipes)
+        {
+            
+        }
+        return recipesKnownList;
+    }
+    
     public void KnowRecipes()
     {
         newRecipesPanel.SetActive(false);

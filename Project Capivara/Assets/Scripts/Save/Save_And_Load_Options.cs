@@ -11,10 +11,6 @@ public class Save_And_Load_Options : MonoBehaviour
     #region
     public int actualDay;
     public GameManager gameManager;
-    public ItemContainer itensInGame;
-    public ItemContainer itensInChest;
-    public int money;
-    public RecipeList knownRecipes;
     public int[,] npcRelationship;
     #endregion
 
@@ -28,14 +24,13 @@ public class Save_And_Load_Options : MonoBehaviour
     public SoundController sC;
     public float music;
     public float sFX;
-    public string[] x;
     #endregion
 
     private void Start()
     {
         if (CallLoad())
         {
-            sC.LoadSoundOptions(music, sFX, x);   
+            sC.LoadSoundOptions(music, sFX);   
         }
         else
         {
@@ -56,7 +51,7 @@ public class Save_And_Load_Options : MonoBehaviour
 
     public void UpdateSave()
     {
-        CallSaveOptions(music, sFX, x, false);
+        //CallSaveOptions(actualDay, gameManager.inventoryContainer.GetItensInInventory(), music, sFX, false);
         CallLoad();
     }
 
@@ -65,23 +60,33 @@ public class Save_And_Load_Options : MonoBehaviour
         ActualOptionsData aOD = LoadOptions();
         if (aOD != null)
         {
+            actualDay = aOD.actualDay;
+            gameManager.inventoryContainer.LoadItensToInventory(aOD.playerItens);
+            //Setar os Itens para o Baú na casa do Jogador
+            //Idem anterior, mas para os itens no mapa
+            gameManager.coinBag.SetCoints(aOD.money);
+            questsActive = gameManager.questController.LoadQuests(aOD.questsActive);
+            gameManager.crafting.LoadKnownRecipes(aOD.knownRecipes);
             music = aOD.musicV;
             sFX = aOD.sfxV;
-            x = aOD.x;
-
+            gameManager.cropsManager.LoadCropsPlowed(aOD.cropsOnMap);
+            ////Idem os 2 faltantes, mas para os relacionamentos com os Npcs
+            npcRelationship = aOD.npcRelationship;
+            
             return true;
         }
         return false;
     }
 
-    public void CallSaveOptions(float musicR, float sFXR, string[] x, bool isNew)
+    public void CallSaveOptions(int actualDay, int[,] playerItens, int[,] itensInChest, int[,] itensOnMap,
+        int money, int[,] questsActive, int[] knownRecipes, float musicR, float sFXR, int[,] cropsOnMap,
+        int[,] npcRelationship, bool isNew)
     {
         ActualOptionsData aOD = new ActualOptionsData();
        
         aOD.musicV = musicR;
         aOD.sfxV = sFXR;
-        aOD.x = x;
-        
+
         if (!isNew)
         {
             SaveOptions(aOD, true);
@@ -125,7 +130,8 @@ public class Save_And_Load_Options : MonoBehaviour
     public void ResetOptions()
     {
         ActualOptionsData aoD = new ActualOptionsData();
-        CallSaveOptions(aoD.ResetMusic(), aoD.ResetSfx(), aoD.ResetX(), true);
+        CallSaveOptions(aoD.resetDay(), aoD.ResetPlayerItens(), aoD.ResetItensOnChest(), aoD.ResetItensOnMap(), aoD.ResetMoney(),
+            aoD.ResetQuests(), aoD.ResetKnownRecipes(), aoD.ResetMusic(), aoD.ResetSfx(), aoD.ResetCropsOnMap(), aoD.ResetNpcsRelationship(), true);
     }
 
 }

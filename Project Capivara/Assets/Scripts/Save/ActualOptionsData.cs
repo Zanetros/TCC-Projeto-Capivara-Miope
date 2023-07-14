@@ -56,7 +56,7 @@ public class ActualOptionsData
 
     public int[] ResetKnownRecipes()
     {
-        return new int[]{};
+        return new int[]{-1};
     }
     
     public float ResetMusic()

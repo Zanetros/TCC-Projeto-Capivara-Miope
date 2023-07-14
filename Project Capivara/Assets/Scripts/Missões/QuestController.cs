@@ -28,6 +28,21 @@ public class QuestController : MonoBehaviour
         }
     }
 
+    public QuestList LoadQuests(int[,] quests)
+    {
+        for (int i = 0; i < quests.GetLength(0); i++) 
+        {
+            for (int j = 0; j < quests.GetLength(1); j++) 
+            { 
+                if (i != 0)
+                {
+                        
+                }
+           }
+        }
+        return activeQuests;
+    }
+    
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.K))
