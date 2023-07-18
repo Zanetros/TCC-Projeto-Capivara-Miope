@@ -33,7 +33,11 @@ public class ItemSlot
 public class ItemContainer : ScriptableObject
 {
     public List<ItemSlot> slots;
+    public List<ItemSlot> itensInGame;
     public bool isDirty;
+    private int[,] itensToReturn = {{0,0}, {0,0}, {0,0}, {0,0}, {0,0}, {0,0}, {0,0}, {0,0}, {0,0}, {0,0}, {0,0}, {0,0},
+    {0,0}, {0,0}, {0,0}, {0,0}, {0,0}, {0,0}, {0,0}, {0,0}, {0,0}, {0,0}, {0,0}, { 0,0 }};
+    private int c = 0;
 
     //adiciona itens no inventario
     public void Add(Item item , int count = 1)
@@ -128,9 +132,11 @@ public class ItemContainer : ScriptableObject
     {
         for (int i = 0; i < itens.GetLength(0); i++) 
         {
-            for (int j = 0; j < itens.GetLength(1); j++) 
-            { 
-                
+            if (itensInGame[i].item.itemId.Equals(itens[i, 0]))
+            {
+                Add(itensInGame[i].item, itens[i, 1]);
+                //Print das informações
+                Debug.Log("Item encontrado: " + itens[i, 1] + " " + itensInGame[i].item.Name + "(s)");
             }
         }
         return this;
@@ -138,8 +144,16 @@ public class ItemContainer : ScriptableObject
 
     public int[,] GetItensInInventory()
     {
-        //return slots;
-        return new int[0, 0];
+        c = 0;
+        foreach (ItemSlot itens in slots)
+        {
+            if (itens.item.itemId != 0)
+            {
+                itensToReturn[c, 0] = itens.item.itemId;
+                itensToReturn[c, 1] = itens.count;
+            }
+            c++;
+        }
+        return itensToReturn;
     }
-
 }

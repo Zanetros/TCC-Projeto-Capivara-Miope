@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
 
 public class TilemapCropsManager : TimeAgent
@@ -13,8 +14,26 @@ public class TilemapCropsManager : TimeAgent
 
     [SerializeField] GameObject cropsSpritePrefab;
 
-    [SerializeField] CropsContainer container;
+    public CropsContainer container;
+    public CropsContainer allCropsInGame;
 
+    
+    //Função de Exemplo
+    public void TestarComparacaoDeCrop(int id)
+    {
+        foreach (CropsTile cropToCompare in allCropsInGame.crops)
+        {
+            if (cropToCompare.crop.cropId.Equals(id))
+            {
+                Debug.Log("O id informado pertence a uma crop do jogo");
+            }
+            else
+            {
+                Debug.Log("O id informado não pertence a uma crop do jogo");
+            }
+        }
+    }
+    
     public void Start()
     {
         GameManager.instance.GetComponent<CropsManager>().tileCropsManager = this;
@@ -86,6 +105,7 @@ public class TilemapCropsManager : TimeAgent
         targetTilemap.SetTile(position, seeded);
 
         tile.crop = toSeed;
+        tile.sceneBuildIndex = SceneManager.GetActiveScene().buildIndex;
     }
 
     public void VisualizeTile(CropsTile cropsTile)

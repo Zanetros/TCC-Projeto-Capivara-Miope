@@ -21,7 +21,7 @@ public class Save_And_Load_Options : MonoBehaviour
     
     #region
     [Header("Options")]
-    public SoundController sC;
+    //public SoundController sC;
     public float music;
     public float sFX;
     #endregion
@@ -30,7 +30,8 @@ public class Save_And_Load_Options : MonoBehaviour
     {
         if (CallLoad())
         {
-            sC.LoadSoundOptions(music, sFX);   
+            //sC.LoadSoundOptions(music, sFX);   
+            
         }
         else
         {
@@ -78,8 +79,8 @@ public class Save_And_Load_Options : MonoBehaviour
         return false;
     }
 
-    public void CallSaveOptions(int actualDay, int[,] playerItens, int[,] itensInChest, int[,] itensOnMap,
-        int money, int[,] questsActive, int[] knownRecipes, float musicR, float sFXR, int[,] cropsOnMap,
+    public void CallSaveOptions(int actualDay, int[,] playerItens, int[,] itensInChest, float[,] itensOnMap,
+        int money, int[,] questsActive, int[] knownRecipes, float musicR, float sFXR, float[,] cropsOnMap,
         int[,] npcRelationship, bool isNew)
     {
         ActualOptionsData aOD = new ActualOptionsData();

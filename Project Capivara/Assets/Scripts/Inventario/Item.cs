@@ -6,6 +6,7 @@ using UnityEngine.UI;
 [CreateAssetMenu(menuName = "Data/Item")]
 public class Item : ScriptableObject
 {
+    public int itemId;
     public string Name;
     public string Description;
     public int sellPrice;

@@ -8,6 +8,12 @@ public class QuestList : ScriptableObject
     public List<QuestContainer> quests;
     private QuestStage stageToFind;
 
+    public void LoadOwnedQuest(QuestContainer ownedQuest, int stage)
+    {
+        ownedQuest.actualStage = stage;
+        quests.Add(ownedQuest);
+    }
+    
     public void GetNewQuest(QuestContainer quest)
     {
         foreach (QuestContainer questContainer in quests)
@@ -63,7 +69,4 @@ public class QuestList : ScriptableObject
         }
     }
     
-    
-    
-
 }

@@ -6,6 +6,7 @@ using UnityEngine;
 public class QuestContainer : ScriptableObject
 {
     public List<QuestStage> stages;
+    public string questName;
     //Colocar, posteriormente, uma variável para diferenciar uma quest da outra. A priori, é um id
     public int questId = 1;
     public int actualStage = 0;
