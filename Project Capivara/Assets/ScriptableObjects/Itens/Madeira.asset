@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74b9439d70e29b345860848dba9e0985, type: 3}
   m_Name: Madeira
   m_EditorClassIdentifier: 
+  itemId: 2
   Name: Madeira
   Description: "Um peda\xE7o de madeira. Um cepo de madeira de alta qualidade"
   sellPrice: 5
   stackable: 1
+  usableInRecipe: 0
   sprite: {fileID: 21300000, guid: a00958d705c8e414787b9422666afc2d, type: 3}
   onAction: {fileID: 0}
   onTilemapAction: {fileID: 0}

@@ -53,9 +53,10 @@ public class ItemDragAndDropController : MonoBehaviour
         {
             Item item = itemSlot.item;
             int count = itemSlot.count;
+            int id = itemSlot.id;
 
             itemSlot.Copy(this.itemSlot);
-            this.itemSlot.Set(item, count);
+            this.itemSlot.Set(item, count, id);
         }
         UpdateIcon();   
         

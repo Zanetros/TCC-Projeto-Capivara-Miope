@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74b9439d70e29b345860848dba9e0985, type: 3}
   m_Name: Bau
   m_EditorClassIdentifier: 
+  itemId: 6
   Name: Bau
   Description: 
   sellPrice: 5
   stackable: 1
+  usableInRecipe: 0
   sprite: {fileID: -1972868305, guid: 5bca394cecdde994d96cacd04faf88ee, type: 3}
   onAction: {fileID: 0}
   onTilemapAction: {fileID: 11400000, guid: f3bab436df4d2574792b17dc64137998, type: 2}

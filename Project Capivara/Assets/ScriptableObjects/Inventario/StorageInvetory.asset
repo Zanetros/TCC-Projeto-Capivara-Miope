@@ -12,53 +12,80 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a0564872f045cc489335ff2caf55565, type: 3}
   m_Name: StorageInvetory
   m_EditorClassIdentifier: 
+  savePath: /SaveGame2
+  database: {fileID: 0}
   slots:
   - item: {fileID: 0}
     count: 0
+    id: 0
   - item: {fileID: 0}
     count: 0
+    id: 0
   - item: {fileID: 0}
     count: 0
+    id: 0
   - item: {fileID: 0}
     count: 0
+    id: 0
   - item: {fileID: 0}
     count: 0
+    id: 0
   - item: {fileID: 0}
     count: 0
+    id: 0
   - item: {fileID: 0}
     count: 0
+    id: 0
   - item: {fileID: 0}
     count: 0
+    id: 0
   - item: {fileID: 0}
     count: 0
+    id: 0
   - item: {fileID: 0}
     count: 0
+    id: 0
   - item: {fileID: 0}
     count: 0
+    id: 0
   - item: {fileID: 0}
     count: 0
+    id: 0
   - item: {fileID: 0}
     count: 0
+    id: 0
   - item: {fileID: 0}
     count: 0
+    id: 0
   - item: {fileID: 0}
     count: 0
+    id: 0
   - item: {fileID: 0}
     count: 0
+    id: 0
   - item: {fileID: 0}
     count: 0
+    id: 0
   - item: {fileID: 0}
     count: 0
+    id: 0
   - item: {fileID: 0}
     count: 0
+    id: 0
   - item: {fileID: 0}
     count: 0
+    id: 0
   - item: {fileID: 0}
     count: 0
+    id: 0
   - item: {fileID: 0}
     count: 0
+    id: 0
   - item: {fileID: 0}
     count: 0
+    id: 0
   - item: {fileID: 0}
     count: 0
+    id: 0
+  itensInGame: []
   isDirty: 0

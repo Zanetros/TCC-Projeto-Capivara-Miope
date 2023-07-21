@@ -1,6 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
+using UnityEditor;
 
 [Serializable]
 
@@ -8,30 +11,36 @@ public class ItemSlot
 {
     public Item item;
     public int count;
+    public int id;
 
     public void Copy(ItemSlot slot)
     {
         item = slot.item;
         count = slot.count;
+        id = slot.id;
     }   
 
     public void Clear()
     {
         item = null;
         count = 0;
+        id = 0;
     }
 
-    public void Set(Item item, int count)
+    public void Set(Item item, int count, int id)
     {
         this.item = item;
         this.count = count;
+        this.id = id;
     }
 }
 
 
 [CreateAssetMenu(menuName = "Data/Item Container")]
-public class ItemContainer : ScriptableObject
+public class ItemContainer : ScriptableObject, ISerializationCallbackReceiver
 {
+    public string savePath;
+    private ItemDataBaseObject database;
     public List<ItemSlot> slots;
     public List<ItemSlot> itensInGame;
     public bool isDirty;
@@ -39,11 +48,32 @@ public class ItemContainer : ScriptableObject
     {0,0}, {0,0}, {0,0}, {0,0}, {0,0}, {0,0}, {0,0}, {0,0}, {0,0}, {0,0}, {0,0}, { 0,0 }};
     private int c = 0;
 
+    private void OnEnable()
+    {
+#if UNITY_EDITOR
+        database = (ItemDataBaseObject)AssetDatabase.LoadAssetAtPath
+            ("Assets/Resources/Database.asset", typeof(ItemDataBaseObject));
+#else
+        database = Resources.Load<ItemDataBaseObject>("Database");
+#endif
+    }
+
+    public void OnBeforeSerialize()
+    {
+        
+    }
+
+    public void OnAfterDeserialize()
+    {
+
+    }
+
+
     //adiciona itens no inventario
     public void Add(Item item , int count = 1)
     {
         isDirty = true;
-
+      
         //adiciona itens stackaveis no invetario 
         if (item.stackable == true)
         {
@@ -60,6 +90,7 @@ public class ItemContainer : ScriptableObject
                 {
                     itemSlot.item = item;
                     itemSlot.count = count;
+                    itemSlot.id = item.itemId;
                 }
             }
         }
@@ -128,6 +159,26 @@ public class ItemContainer : ScriptableObject
         return true;
     }
 
+    public void SaveInventory()
+    {
+        string saveData = JsonUtility.ToJson(this, true);
+        BinaryFormatter binaryFormatter = new BinaryFormatter();
+        FileStream file = File.Create(string.Concat(Application.persistentDataPath, savePath));
+        binaryFormatter.Serialize(file, saveData);
+        file.Close();
+    }
+
+    public void LoadInventory()
+    {
+        if (File.Exists(string.Concat(Application.persistentDataPath, savePath)))
+        {
+            BinaryFormatter binaryFormatter = new BinaryFormatter();
+            FileStream file = File.Open(string.Concat(Application.persistentDataPath, savePath), FileMode.Open);
+            JsonUtility.FromJsonOverwrite(binaryFormatter.Deserialize(file).ToString(), this);
+            file.Close();
+        }
+    }
+    /*
     public ItemContainer LoadItensToInventory(int[,] itens)
     {
         for (int i = 0; i < itens.GetLength(0); i++) 
@@ -140,7 +191,9 @@ public class ItemContainer : ScriptableObject
             }
         }
         return this;
+        
     }
+        */
 
     public int[,] GetItensInInventory()
     {

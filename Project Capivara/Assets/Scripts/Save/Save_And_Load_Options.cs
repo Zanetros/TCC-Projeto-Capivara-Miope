@@ -62,7 +62,7 @@ public class Save_And_Load_Options : MonoBehaviour
         if (aOD != null)
         {
             actualDay = aOD.actualDay;
-            gameManager.inventoryContainer.LoadItensToInventory(aOD.playerItens);
+            //gameManager.inventoryContainer.LoadItensToInventory(aOD.playerItens);
             //Setar os Itens para o Baú na casa do Jogador
             //Idem anterior, mas para os itens no mapa
             gameManager.coinBag.SetCoints(aOD.money);

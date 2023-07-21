@@ -32946,6 +32946,7 @@ MonoBehaviour:
   moneyText: {fileID: 1323865590}
   coinBag: {fileID: 5908046378252556753}
   gameManager: {fileID: 5908046378252556751}
+  itemContainer: {fileID: 11400000, guid: c9b86d2555838be44a1343983fb80ba7, type: 2}
 --- !u!114 &1526230361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51548,6 +51549,7 @@ MonoBehaviour:
   itemSlot:
     item: {fileID: 0}
     count: 0
+    id: 0
   dragItemIcon: {fileID: 3432523730824032732}
 --- !u!114 &5908046378252556756
 MonoBehaviour:

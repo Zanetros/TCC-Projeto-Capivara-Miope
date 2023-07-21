@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74b9439d70e29b345860848dba9e0985, type: 3}
   m_Name: Laranja
   m_EditorClassIdentifier: 
+  itemId: 1
   Name: Laranja
   Description: Uma Laranja das mais doces
   sellPrice: 30

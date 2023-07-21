@@ -10,6 +10,13 @@ public class InventoryController : MonoBehaviour
     [SerializeField] TextMeshProUGUI moneyText;
     [SerializeField] CoinBag coinBag;
     [SerializeField] private GameManager gameManager;
+    public ItemContainer itemContainer;
+
+    public void Start()
+    {
+        itemContainer.LoadInventory();
+        Debug.Log("Inventario Carregado");
+    }
 
     private void Update()
     {
@@ -23,6 +30,12 @@ public class InventoryController : MonoBehaviour
             {
                 Close();
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            itemContainer.SaveInventory();
+            Debug.Log("Inventario Salvo");
         }
     }
 
