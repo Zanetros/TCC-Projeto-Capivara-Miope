@@ -178,35 +178,4 @@ public class ItemContainer : ScriptableObject, ISerializationCallbackReceiver
             file.Close();
         }
     }
-    /*
-    public ItemContainer LoadItensToInventory(int[,] itens)
-    {
-        for (int i = 0; i < itens.GetLength(0); i++) 
-        {
-            if (itensInGame[i].item.itemId.Equals(itens[i, 0]))
-            {
-                Add(itensInGame[i].item, itens[i, 1]);
-                //Print das informações
-                Debug.Log("Item encontrado: " + itens[i, 1] + " " + itensInGame[i].item.Name + "(s)");
-            }
-        }
-        return this;
-        
-    }
-        */
-
-    public int[,] GetItensInInventory()
-    {
-        c = 0;
-        foreach (ItemSlot itens in slots)
-        {
-            if (itens.item.itemId != 0)
-            {
-                itensToReturn[c, 0] = itens.item.itemId;
-                itensToReturn[c, 1] = itens.count;
-            }
-            c++;
-        }
-        return itensToReturn;
-    }
 }

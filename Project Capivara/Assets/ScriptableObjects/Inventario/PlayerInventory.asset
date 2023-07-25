@@ -13,10 +13,9 @@ MonoBehaviour:
   m_Name: PlayerInventory
   m_EditorClassIdentifier: 
   savePath: /SaveGame
-  database: {fileID: 11400000, guid: da1d5bec97ca27f43bf47e3ad5dc780a, type: 2}
   slots:
   - item: {fileID: 11400000, guid: c0f1a7ecc5f94da41a760a63450bd238, type: 2}
-    count: 7
+    count: 136
     id: 3
   - item: {fileID: 0}
     count: 0
