@@ -42,11 +42,7 @@ public class ItemContainer : ScriptableObject, ISerializationCallbackReceiver
     public string savePath;
     private ItemDataBaseObject database;
     public List<ItemSlot> slots;
-    public List<ItemSlot> itensInGame;
     public bool isDirty;
-    private int[,] itensToReturn = {{0,0}, {0,0}, {0,0}, {0,0}, {0,0}, {0,0}, {0,0}, {0,0}, {0,0}, {0,0}, {0,0}, {0,0},
-    {0,0}, {0,0}, {0,0}, {0,0}, {0,0}, {0,0}, {0,0}, {0,0}, {0,0}, {0,0}, {0,0}, { 0,0 }};
-    private int c = 0;
 
     private void OnEnable()
     {

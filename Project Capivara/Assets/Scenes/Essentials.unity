@@ -32947,6 +32947,7 @@ MonoBehaviour:
   coinBag: {fileID: 5908046378252556753}
   gameManager: {fileID: 5908046378252556751}
   itemContainer: {fileID: 11400000, guid: c9b86d2555838be44a1343983fb80ba7, type: 2}
+  container: {fileID: 11400000, guid: c50a91d2255858f419fce13c695363cc, type: 2}
 --- !u!114 &1526230361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51027,7 +51028,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70f84c3dac9a65c47a622dcc7c43df2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allQuestsInGame: {fileID: 0}
   activeQuests: {fileID: 11400000, guid: 60d67a469b645d7409becc63c3f03532, type: 2}
   gameManager: {fileID: 5908046378252556751}
 --- !u!1 &4312722990932931420

@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a0564872f045cc489335ff2caf55565, type: 3}
   m_Name: PlayerInventory
   m_EditorClassIdentifier: 
-  savePath: /SaveGame
+  savePath: /SaveInventario
   slots:
-  - item: {fileID: 11400000, guid: c0f1a7ecc5f94da41a760a63450bd238, type: 2}
-    count: 136
-    id: 3
-  - item: {fileID: 0}
-    count: 0
+  - item: {fileID: 11400000, guid: 3668fe5c001781d418c0e23451faf3ad, type: 2}
+    count: 1
+    id: 0
+  - item: {fileID: 11400000, guid: 0e87d732b68e6e347b837e925cded9e9, type: 2}
+    count: 132
     id: 0
   - item: {fileID: 0}
     count: 0
@@ -86,5 +86,4 @@ MonoBehaviour:
   - item: {fileID: 0}
     count: 0
     id: 0
-  itensInGame: []
   isDirty: 0

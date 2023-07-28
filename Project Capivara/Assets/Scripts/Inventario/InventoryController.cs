@@ -11,11 +11,13 @@ public class InventoryController : MonoBehaviour
     [SerializeField] CoinBag coinBag;
     [SerializeField] private GameManager gameManager;
     public ItemContainer itemContainer;
+    public CropsContainer container;
 
     public void Start()
     {
         itemContainer.LoadInventory();
         Debug.Log("Inventario Carregado");
+        container.LoadCrops();
     }
 
     private void Update()
@@ -35,7 +37,7 @@ public class InventoryController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.G))
         {
             itemContainer.SaveInventory();
-            Debug.Log("Inventario Salvo");
+            container.SaveCrops();
         }
     }
 

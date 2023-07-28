@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
@@ -38,7 +40,7 @@ public class CropsManager : MonoBehaviour
     public TilemapCropsManager tileCropsManager;
     private float[,] cropsToReturn = {{0,0,0,0,0,0}, {0,0,0,0,0,0}, {0,0,0,0,0,0}};
     private int c = 0;
-    
+
     public void PickUp(Vector3Int position  )
     {
         if (tileCropsManager == null)
@@ -83,5 +85,5 @@ public class CropsManager : MonoBehaviour
         
         tileCropsManager.Plow(position);
     }
-    
+
 }
