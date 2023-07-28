@@ -12,11 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e39baa70bcc5b9f4399b2b9ea598f67b, type: 3}
   m_Name: Database
   m_EditorClassIdentifier: 
-  Items:
-  - {fileID: 0}
-  - {fileID: 11400000, guid: 5c57c28f65a08d140bf705886b50c4c7, type: 2}
-  - {fileID: 11400000, guid: 87ffd56066341954e8d8b08ff4d0dd6f, type: 2}
-  - {fileID: 11400000, guid: c0f1a7ecc5f94da41a760a63450bd238, type: 2}
-  - {fileID: 11400000, guid: 0e87d732b68e6e347b837e925cded9e9, type: 2}
-  - {fileID: 11400000, guid: c6d80a1ce7cc31a4a90bc72872ebbc60, type: 2}
-  - {fileID: 11400000, guid: be598419e776f984b89e0f5b4b3a3b67, type: 2}
+  slots:
+  - item: {fileID: 11400000, guid: 3668fe5c001781d418c0e23451faf3ad, type: 2}
+    count: 0
+    id: 0
+  - item: {fileID: 11400000, guid: 0e87d732b68e6e347b837e925cded9e9, type: 2}
+    count: 120
+    id: 1

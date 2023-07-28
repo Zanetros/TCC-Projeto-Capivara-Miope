@@ -16,7 +16,6 @@ public class InventoryController : MonoBehaviour
     public void Start()
     {
         itemContainer.LoadInventory();
-        Debug.Log("Inventario Carregado");
         container.LoadCrops();
     }
 

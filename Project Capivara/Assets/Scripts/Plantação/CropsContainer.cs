@@ -58,10 +58,15 @@ public class CropsContainer : ScriptableObject, ISerializationCallbackReceiver
     {
         if (File.Exists(string.Concat(Application.persistentDataPath, savePath)))
         {
+            Debug.Log("Plantas Carregadas");
             BinaryFormatter binaryFormatter = new BinaryFormatter();
             FileStream file = File.Open(string.Concat(Application.persistentDataPath, savePath), FileMode.Open);
             JsonUtility.FromJsonOverwrite(binaryFormatter.Deserialize(file).ToString(), this);
             file.Close();
+        }
+        else
+        {
+            Debug.Log("Sem save para carregar Plantas");
         }
     }
 }

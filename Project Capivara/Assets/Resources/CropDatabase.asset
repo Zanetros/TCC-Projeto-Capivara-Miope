@@ -12,5 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7eedec3883ccf4429bb97bdc45fcf51, type: 3}
   m_Name: CropDatabase
   m_EditorClassIdentifier: 
-  Crops:
-  - {fileID: 11400000, guid: 4454fc322e6c72f4aa7f7a463f3d6af6, type: 2}
+  Crops: []

@@ -40,7 +40,7 @@ public class ItemSlot
 public class ItemContainer : ScriptableObject, ISerializationCallbackReceiver
 {
     public string savePath;
-    private ItemDataBaseObject database;
+    public ItemDataBaseObject database;
     public List<ItemSlot> slots;
     public bool isDirty;
 
@@ -168,10 +168,15 @@ public class ItemContainer : ScriptableObject, ISerializationCallbackReceiver
     {
         if (File.Exists(string.Concat(Application.persistentDataPath, savePath)))
         {
+            Debug.Log("Inventário Carregado");
             BinaryFormatter binaryFormatter = new BinaryFormatter();
             FileStream file = File.Open(string.Concat(Application.persistentDataPath, savePath), FileMode.Open);
             JsonUtility.FromJsonOverwrite(binaryFormatter.Deserialize(file).ToString(), this);
             file.Close();
+        }
+        else
+        {
+            Debug.Log("Sem save para carregar Inventário");
         }
     }
 }
