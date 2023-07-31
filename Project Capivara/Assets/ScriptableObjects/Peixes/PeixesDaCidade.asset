@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a0564872f045cc489335ff2caf55565, type: 3}
+  m_Name: PeixesDaCidade
+  m_EditorClassIdentifier: 
+  savePath: 
+  database: {fileID: 11400000, guid: da1d5bec97ca27f43bf47e3ad5dc780a, type: 2}
+  slots:
+  - item: {fileID: 11400000, guid: 4a14979654f92874ba412ab35bb3b19a, type: 2}
+    count: 50
+    id: 23
+  - item: {fileID: 11400000, guid: 156d99c635e34e54c945bbf463ece486, type: 2}
+    count: 200
+    id: 24
+  - item: {fileID: 11400000, guid: f77f6a5b2da6dd54aa44baf1b8155564, type: 2}
+    count: 300
+    id: 25
+  isDirty: 0

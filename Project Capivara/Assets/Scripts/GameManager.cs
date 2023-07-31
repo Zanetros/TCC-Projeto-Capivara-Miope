@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
     public Crafting crafting;
     public RecipeDiscovery recipeDiscovery;
     public QuestController questController;
+    public FishingController fishingController;
 
     public void ControlCharacterControls(bool characterMov, bool characterInt)
     {

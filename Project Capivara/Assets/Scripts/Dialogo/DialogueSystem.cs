@@ -105,7 +105,6 @@ public class DialogueSystem : MonoBehaviour
         AudioManager.instance.Stop(AudioManager.instance.dialogo);
         print("The dialogue has ended");
         Show(false);
-        gameManager.characterInteractController.enabled = true;
-        gameManager.playerMovement.enabled = true;       
+        gameManager.ControlCharacterControls(true, true);
     }
 }

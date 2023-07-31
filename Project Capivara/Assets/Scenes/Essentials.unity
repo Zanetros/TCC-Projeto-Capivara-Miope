@@ -51367,6 +51367,7 @@ GameObject:
   - component: {fileID: 5908046378252556756}
   - component: {fileID: 5908046378252556757}
   - component: {fileID: 5908046378252556758}
+  - component: {fileID: 5908046378252556759}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -51458,6 +51459,7 @@ MonoBehaviour:
   crafting: {fileID: 1526230358}
   recipeDiscovery: {fileID: 1047227110}
   questController: {fileID: 4312722990166600705}
+  fishingController: {fileID: 5908046378252556759}
 --- !u!114 &5908046378252556752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51591,6 +51593,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pleacableObjectsManager: {fileID: 0}
+--- !u!114 &5908046378252556759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5908046378252556736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d983cebe46c9c84eb8ff63159d4deca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishing: 0
+  minTimeToWait: 6
+  maxTimeToWait: 18
+  timeToCatch1: 4
+  timeToCatch2: 3
+  fishes: {fileID: 11400000, guid: 5e7dc05c808bb1b4384a3c98638fe518, type: 2}
+  gameManager: {fileID: 5908046378252556751}
 --- !u!1001 &6315858059527434194
 PrefabInstance:
   m_ObjectHideFlags: 0
