@@ -19,6 +19,9 @@ public class FishingController : MonoBehaviour
     public ItemContainer fishes;
     public GameManager gameManager;
     public GameObject signal;
+    public Transform fishSpawn;
+
+    public Item[] fishToSpawn;
 
     void Start()
     {
@@ -84,8 +87,9 @@ public class FishingController : MonoBehaviour
 
     private void GetFish()
     {
-        //Fazer o peixe aparecer na margem;
-        print("Parabéns, você pescou um(a) " + fishes.slots[Random.Range(0, fishes.slots.Count)].item.Name);
+        var TypeofFishToSpawn = fishToSpawn[Random.Range(0, fishToSpawn.Length)];
+        Vector3 position = fishSpawn.transform.position;
+        DropedItemSpawner.instance.SpawnItem(position, TypeofFishToSpawn, 1);
     }
     
     public void Initialize(GameObject s)

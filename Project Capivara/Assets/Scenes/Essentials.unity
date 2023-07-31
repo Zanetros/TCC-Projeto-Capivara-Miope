@@ -19036,6 +19036,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 891165380}
   m_CullTransparentMesh: 1
+--- !u!1 &894724302
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 894724303}
+  m_Layer: 0
+  m_Name: Referencia de pesca
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &894724303
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 894724302}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 155.44, y: -145.63, z: -0.034677908}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &899242562 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4300676552262674634, guid: 74d9c6d38661a3941ac2ecdc5c499d91, type: 3}
@@ -51608,10 +51639,17 @@ MonoBehaviour:
   fishing: 0
   minTimeToWait: 6
   maxTimeToWait: 18
+  onCatch: 0
   timeToCatch1: 4
   timeToCatch2: 3
   fishes: {fileID: 11400000, guid: 5e7dc05c808bb1b4384a3c98638fe518, type: 2}
   gameManager: {fileID: 5908046378252556751}
+  signal: {fileID: 0}
+  fishSpawn: {fileID: 894724303}
+  fishToSpawn:
+  - {fileID: 11400000, guid: 156d99c635e34e54c945bbf463ece486, type: 2}
+  - {fileID: 11400000, guid: 4a14979654f92874ba412ab35bb3b19a, type: 2}
+  - {fileID: 11400000, guid: f77f6a5b2da6dd54aa44baf1b8155564, type: 2}
 --- !u!1001 &6315858059527434194
 PrefabInstance:
   m_ObjectHideFlags: 0
