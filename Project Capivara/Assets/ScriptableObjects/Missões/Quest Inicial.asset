@@ -14,6 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stages:
   - {fileID: 11400000, guid: 468ef60a1b575fe4197176e5464a4788, type: 2}
+  questName: "Um Novo Come\xE7o"
+  questDescription: "\xC9 hora de abandonar minha vida anterior em busca de novas
+    experi\xEAncias"
   questId: 1
   actualStage: 0
   compleated: 0
