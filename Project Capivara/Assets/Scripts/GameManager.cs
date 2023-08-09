@@ -28,6 +28,8 @@ public class GameManager : MonoBehaviour
     public RecipeDiscovery recipeDiscovery;
     public QuestController questController;
     public FishingController fishingController;
+    public PlayerShopController playerShopController;
+    public SetDialogueText setDialogueText;
 
     public void ControlCharacterControls(bool characterMov, bool characterInt)
     {

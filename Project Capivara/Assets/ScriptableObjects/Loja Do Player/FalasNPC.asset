@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 304afa3a4f76a9749941cf3a83e8dadf, type: 3}
+  m_Name: FalasNPC
+  m_EditorClassIdentifier: 
+  falas:
+  - Quero um suco de LARANJA
+  - Quero um suco de MARACUJA
+  - "Quero um suco de MEL\xC2NCIA"
+  - Quero um suco de ABACAXI
+  - Quero um suco de TANGERINA
