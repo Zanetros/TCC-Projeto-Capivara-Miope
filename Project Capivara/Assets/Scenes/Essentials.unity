@@ -8832,6 +8832,7 @@ MonoBehaviour:
   timePerLetter: 0.05
   gameManager: {fileID: 5908046378252556751}
   audioManager: {fileID: 337440180}
+  npcTalking: {fileID: 0}
 --- !u!114 &272337097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68692,6 +68693,7 @@ MonoBehaviour:
   fishingController: {fileID: 5908046378252556759}
   playerShopController: {fileID: 4312722990166600706}
   setDialogueText: {fileID: 2047950879}
+  npcSpawnManager: {fileID: 0}
 --- !u!114 &5908046378252556752
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
     public FishingController fishingController;
     public PlayerShopController playerShopController;
     public SetDialogueText setDialogueText;
+    public NpcSpawnManager npcSpawnManager;
 
     public void ControlCharacterControls(bool characterMov, bool characterInt)
     {

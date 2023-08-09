@@ -20,6 +20,7 @@ public class DialogueSystem : MonoBehaviour
 
     public GameManager gameManager;
     public AudioManager audioManager;
+    public NpcWalkController npcTalking;
 
     void Update()
     {
@@ -102,6 +103,11 @@ public class DialogueSystem : MonoBehaviour
 
     void Conclude()
     {
+        if (!npcTalking.Equals(null))
+        {
+            npcTalking.talking = false;
+            npcTalking = null;
+        }
         AudioManager.instance.Stop(AudioManager.instance.dialogo);
         print("The dialogue has ended");
         Show(false);

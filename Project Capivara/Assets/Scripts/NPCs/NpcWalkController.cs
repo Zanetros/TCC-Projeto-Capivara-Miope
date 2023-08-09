@@ -10,13 +10,16 @@ public class NpcWalkController : MonoBehaviour
     public float waitTime;
     private float actualWaitTime;
     public bool onSwitch;
+    public bool talking;
     public enum npcStates
     {
         walking,
         waiting,
-        swithing
+        swithing,
+        talking
     }
     public npcStates myState;
+    private npcStates lastStateBeforeTalk;
     #endregion
     
     public Transform[] waypoints;
@@ -32,6 +35,7 @@ public class NpcWalkController : MonoBehaviour
         onSwitch = false;
         myState = npcStates.waiting;
         actualWaitTime = waitTime;
+        talking = false;
     }
 
     // Update is called once per frame
@@ -48,11 +52,31 @@ public class NpcWalkController : MonoBehaviour
             case npcStates.swithing:
                 SwithingScene();
                 break;
+            case npcStates.talking:
+                Talking();
+                break;
+        }
+    }
+
+    public void CallTalking()
+    {
+        lastStateBeforeTalk = myState;
+        myState = npcStates.talking;
+        agent.isStopped = true;
+        talking = true;
+    }
+    
+    void Talking()
+    {
+        if (!talking)
+        {
+            myState = lastStateBeforeTalk;
         }
     }
 
     void Walking()
     {
+        agent.isStopped = false;
         if (VerifyTime())
         {
             return;
@@ -80,6 +104,7 @@ public class NpcWalkController : MonoBehaviour
     
     void Waiting()
     {
+        agent.isStopped = false;
         if (VerifyTime())
         {
             return;

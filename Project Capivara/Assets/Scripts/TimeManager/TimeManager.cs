@@ -84,6 +84,15 @@ public class TimeManager : MonoBehaviour
         }
     }
 
+    public int GetHour()
+    {
+        return Hour;
+    }
+
+    public int GetMinute()
+    {
+        return Minute;
+    }
     public void CalculateTime()
     {
         ControlPPV();

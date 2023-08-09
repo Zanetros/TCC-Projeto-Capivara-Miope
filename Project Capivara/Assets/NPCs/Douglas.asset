@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ee13a9104aeb3e408fbda20d32238d8, type: 3}
+  m_Name: Douglas
+  m_EditorClassIdentifier: 
+  dialogueContainer: {fileID: 11400000, guid: 909d33933ad66544ea56a3c4139c5b48, type: 2}
+  npcSprite: {fileID: 21300000, guid: ff8ce5873838821459946a541b2df2f9, type: 3}
+  npcTimeAndLocations:
+  - {fileID: 11400000, guid: e52c1760f149dc643b0a73ff5945013d, type: 2}
+  - {fileID: 11400000, guid: 3f74c66a0c49f25408d5516e8c8b1893, type: 2}
+  - {fileID: 11400000, guid: fc78bbfc8eb0cb045bc0575f0bc0b212, type: 2}
+  - {fileID: 11400000, guid: 10f4aa31e35c00541bb873ea60f72307, type: 2}
