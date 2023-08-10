@@ -9,6 +9,7 @@ public class Item : ScriptableObject
     public int itemId;
     public string Name;
     public string Description;
+    public string shopText;
     public int sellPrice;
     public bool stackable;
     public bool usableInRecipe;

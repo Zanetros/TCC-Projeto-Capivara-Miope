@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
     public QuestController questController;
     public FishingController fishingController;
     public PlayerShopController playerShopController;
-    public SetDialogueText setDialogueText;
+    public PlayerShopHandler playerShop;
     public NpcSpawnManager npcSpawnManager;
 
     public void ControlCharacterControls(bool characterMov, bool characterInt)

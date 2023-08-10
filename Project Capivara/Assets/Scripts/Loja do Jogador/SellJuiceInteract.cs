@@ -7,6 +7,6 @@ public class SellJuiceInteract : Interactable
     public override void Interact(Character character)
     {
         GameManager.instance.playerShopController.ShowShop();
-        GameManager.instance.setDialogueText.ShowLines();
+        GameManager.instance.playerShop.SetItensInShop();
     }
 }
