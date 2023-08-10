@@ -9,7 +9,6 @@ public class NpcWalkController : MonoBehaviour
     #region
     public float waitTime;
     private float actualWaitTime;
-    public bool onSwitch;
     public bool talking;
     public enum npcStates
     {
@@ -21,7 +20,7 @@ public class NpcWalkController : MonoBehaviour
     public npcStates myState;
     private npcStates lastStateBeforeTalk;
     #endregion
-    
+    public Npc myPersonality;
     public Transform[] waypoints;
     public float distanceToStartWait;
     private int waypointCount = 0;
@@ -32,7 +31,6 @@ public class NpcWalkController : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         agent.isStopped = false;
-        onSwitch = false;
         myState = npcStates.waiting;
         actualWaitTime = waitTime;
         talking = false;

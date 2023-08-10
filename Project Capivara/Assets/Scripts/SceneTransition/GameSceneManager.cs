@@ -54,7 +54,7 @@ public class GameSceneManager : MonoBehaviour
         }
 
         SceneManager.SetActiveScene(SceneManager.GetSceneByName(currentScene));
-
+        GameManager.instance.npcSpawnManager.SpawnStartNpcs();
         cameraConfiner.UpdateBounds();
         screenTint.UnTint();
 

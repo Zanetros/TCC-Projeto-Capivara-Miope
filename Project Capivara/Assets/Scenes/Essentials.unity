@@ -69069,6 +69069,7 @@ GameObject:
   - component: {fileID: 5908046378252556758}
   - component: {fileID: 5908046378252556759}
   - component: {fileID: 5908046378252556760}
+  - component: {fileID: 5908046378252556761}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -69163,7 +69164,7 @@ MonoBehaviour:
   fishingController: {fileID: 5908046378252556759}
   playerShopController: {fileID: 4312722990166600706}
   playerShop: {fileID: 2047950879}
-  npcSpawnManager: {fileID: 0}
+  npcSpawnManager: {fileID: 5908046378252556761}
 --- !u!114 &5908046378252556752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69351,6 +69352,28 @@ MonoBehaviour:
   - {fileID: 26491082}
   firstQuestShown: -1
   lastQuestShown: -1
+--- !u!114 &5908046378252556761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5908046378252556736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c682ba890a5ebc04eb797c51b5bff83c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcPrefab: {fileID: 3491333980933583997, guid: 117e66543e7adf0419d324f6f9e82e30, type: 3}
+  npcsInScenes:
+  - {fileID: 11400000, guid: 318a9a5fc69b4834a9bec4e33ca28c37, type: 2}
+  - {fileID: 11400000, guid: 4ab6a29244e082b448a4f78c02f2f60f, type: 2}
+  npcSpawnPointsInScene: []
+  npcWaypointsInScene: []
+  npcsToMove: []
+  containersToDeleteFrom: []
+  npcsInActualScene: []
+  gameManager: {fileID: 5908046378252556751}
 --- !u!1001 &6315858059527434194
 PrefabInstance:
   m_ObjectHideFlags: 0
