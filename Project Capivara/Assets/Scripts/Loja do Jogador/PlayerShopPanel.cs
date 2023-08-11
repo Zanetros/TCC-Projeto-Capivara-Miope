@@ -4,28 +4,22 @@ using UnityEngine;
 
 public class PlayerShopPanel : ShopItemPanel
 {
+    private int juiceCount = 0;
     public override void Show()
-    {
-        for (int i = 0; i < inventory.slots.Count && i < buttons.Count; i++)
+    { 
+        foreach (PlayerShopButton playerShopB in buttons)
         {
-            if (inventory.slots[i].item == null)
-            {
-                buttons[i].Clean();
-            }
-            else
-            {
-                if (inventory.slots[i].item != null && inventory.slots[i].item.juice)
-                {
-                    buttons[i].Set(inventory.slots[i], i);
-                } 
-
-                else
-                {
-                    buttons[i].Clean();
-                }
+            playerShopB.Clean();
+        }
+        for (int i = 0; i < inventory.slots.Count; i++)
+        { 
+            if (inventory.slots[i].item != null && inventory.slots[i].item.juice)
+            { 
+               buttons[juiceCount].Set(inventory.slots[i], i);
+               juiceCount++; 
             }
         }
-
+        juiceCount = 0;
     }
 
     public override void OnClick(int id)
