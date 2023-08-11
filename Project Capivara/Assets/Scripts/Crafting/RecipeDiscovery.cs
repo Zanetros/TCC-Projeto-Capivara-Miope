@@ -9,6 +9,11 @@ public class RecipeDiscovery : MonoBehaviour
     
     public GameObject recipePanel;
 
+    public void Start()
+    {
+        Show();
+    }
+
     public void Show()
     {
         foreach (CraftingButtonsControls cbt in buttons)

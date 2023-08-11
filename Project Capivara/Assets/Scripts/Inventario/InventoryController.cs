@@ -15,8 +15,8 @@ public class InventoryController : MonoBehaviour
 
     public void Start()
     {
-        itemContainer.LoadInventory();
-        container.LoadCrops();
+        //itemContainer.LoadInventory();
+        //container.LoadCrops();
     }
 
     private void Update()

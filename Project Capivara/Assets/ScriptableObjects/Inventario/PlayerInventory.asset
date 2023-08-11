@@ -15,11 +15,11 @@ MonoBehaviour:
   savePath: /SaveInventario
   database: {fileID: 11400000, guid: da1d5bec97ca27f43bf47e3ad5dc780a, type: 2}
   slots:
-  - item: {fileID: 11400000, guid: 3668fe5c001781d418c0e23451faf3ad, type: 2}
-    count: 1
+  - item: {fileID: 0}
+    count: 0
     id: 0
-  - item: {fileID: 11400000, guid: 0e87d732b68e6e347b837e925cded9e9, type: 2}
-    count: 116
+  - item: {fileID: 0}
+    count: 0
     id: 0
   - item: {fileID: 0}
     count: 0

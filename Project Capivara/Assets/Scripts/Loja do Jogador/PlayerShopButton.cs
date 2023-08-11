@@ -1,10 +1,11 @@
-using UnityEngine;
-using UnityEngine.UI;
+using System.Collections;
+using System.Collections.Generic;
 using TMPro;
+using UnityEngine;
 using UnityEngine.EventSystems;
-using System;
+using UnityEngine.UI;
 
-public class InventoryButton : MonoBehaviour, IPointerClickHandler
+public class PlayerShopButton : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] Image icon;
     [SerializeField] TextMeshProUGUI text;
@@ -22,7 +23,7 @@ public class InventoryButton : MonoBehaviour, IPointerClickHandler
         icon.gameObject.SetActive(true);
         icon.sprite = slot.item.sprite;
 
-        if (slot.item.stackable == true) 
+        if (slot.item.stackable == true)
         {
             text.gameObject.SetActive(true);
             text.text = slot.count.ToString();
@@ -38,7 +39,7 @@ public class InventoryButton : MonoBehaviour, IPointerClickHandler
         icon.gameObject.SetActive(true);
         icon.sprite = slot.item.sprite;
 
-        if (slot.item.stackable == true) 
+        if (slot.item.stackable == true)
         {
             text.gameObject.SetActive(true);
             text.text = slot.count.ToString();
@@ -57,14 +58,14 @@ public class InventoryButton : MonoBehaviour, IPointerClickHandler
 
         text.gameObject.SetActive(false);
     }
-    
+
     public void OnPointerClick(PointerEventData eventData)
     {
-        ItemPanel itemPanel = transform.parent.GetComponent<ItemPanel>();
+        ShopItemPanel itemPanel = transform.parent.GetComponent<ShopItemPanel>();
         itemPanel.OnClick(myIndex);
     }
 
-    public void Highlight (bool b)
+    public void Highlight(bool b)
     {
         highlight.gameObject.SetActive(b);
     }

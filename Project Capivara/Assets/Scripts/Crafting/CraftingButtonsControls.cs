@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class CraftingButtonsControls : MonoBehaviour
@@ -30,7 +31,7 @@ public class CraftingButtonsControls : MonoBehaviour
             text.text = slot.count.ToString();   
         }
     }
-    
+
     public void Clear()
     {
         myIndex = -1;
@@ -44,5 +45,4 @@ public class CraftingButtonsControls : MonoBehaviour
     {
         craftingPanel.GetIngredient(myIndex);
     }
-
 }

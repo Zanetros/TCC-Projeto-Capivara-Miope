@@ -33,6 +33,11 @@ public class ItemSlot
         this.count = count;
         this.id = id;
     }
+
+    internal void Set(ItemSlot itemSlot, int i, bool v)
+    {
+        throw new NotImplementedException();
+    }
 }
 
 

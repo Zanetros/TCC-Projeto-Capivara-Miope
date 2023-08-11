@@ -68,6 +68,7 @@ public class CraftingPanel : MonoBehaviour
         ingredientCount = 0;
     }
 
+
     public void ShowRecipesKnown()
     {
         ingredientsUsedButtons1.Clear();

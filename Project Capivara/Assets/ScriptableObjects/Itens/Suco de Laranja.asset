@@ -16,7 +16,7 @@ MonoBehaviour:
   Name: Suco de Laranja
   Description: Um suco refrescante de laranja
   shopText: Bom dia, eu quero um suco de laranja
-  sellPrice: 50
+  sellPrice: 60
   stackable: 1
   usableInRecipe: 1
   juice: 1

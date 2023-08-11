@@ -2,13 +2,20 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using TMPro;
 
 public class ItemDragAndDropController : MonoBehaviour
 {
-    [SerializeField] ItemSlot itemSlot;
-    [SerializeField] GameObject dragItemIcon;
+    public ItemSlot itemSlot;
+    public GameObject dragItemIcon;
     RectTransform iconTransform;
     Image itemIconImage;
+    public bool isDraging;
+    public bool inPlace;
+
+    [SerializeField] PlayerShopHandler playerShop;
+    public Image iconToSellImage;
+    public TextMeshProUGUI textItemToSell;
 
     private void Start()
     {
@@ -48,6 +55,7 @@ public class ItemDragAndDropController : MonoBehaviour
         {
             this.itemSlot.Copy(itemSlot); 
             itemSlot.Clear();
+            isDraging = true;
         }
         else
         {
@@ -57,9 +65,9 @@ public class ItemDragAndDropController : MonoBehaviour
 
             itemSlot.Copy(this.itemSlot);
             this.itemSlot.Set(item, count, id);
+            isDraging = false ;
         }
-        UpdateIcon();   
-        
+        UpdateIcon();      
     }
 
     private void UpdateIcon()
@@ -74,5 +82,39 @@ public class ItemDragAndDropController : MonoBehaviour
             dragItemIcon.SetActive(true);
             itemIconImage.sprite = itemSlot.item.sprite;
         }
+    }
+
+    public void TransferSlot()
+    {
+        if (inPlace)
+        {
+            itemSlot.Copy(playerShop.itemSlot);
+            itemIconImage.sprite = playerShop.itemSlot.item.sprite;
+            iconToSellImage.sprite = null;
+            textItemToSell.text = null;
+            dragItemIcon.SetActive(true);
+            playerShop.itemSlot.Clear();
+            inPlace = false;
+        }
+
+        else
+        {
+            playerShop.itemSlot.Copy(itemSlot);
+            iconToSellImage.sprite = itemSlot.item.sprite;
+            textItemToSell.text = itemSlot.count.ToString();
+            dragItemIcon.SetActive(false);
+            itemSlot.Clear();
+            inPlace = true;
+        }
+              
+    }
+
+    public void AfterSell()
+    {
+        playerShop.itemSlot.Clear();
+        iconToSellImage.sprite = null;
+        textItemToSell.text = null;
+        inPlace = false;
+        GameManager.instance.playerShop.SetItensInShop();
     }
 }
