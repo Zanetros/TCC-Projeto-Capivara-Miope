@@ -96,7 +96,6 @@ public class ItemDragAndDropController : MonoBehaviour
             playerShop.itemSlot.Clear();
             inPlace = false;
         }
-
         else
         {
             playerShop.itemSlot.Copy(itemSlot);
@@ -111,7 +110,6 @@ public class ItemDragAndDropController : MonoBehaviour
 
     public void AfterSell()
     {
-        playerShop.itemSlot.Clear();
         iconToSellImage.sprite = null;
         textItemToSell.text = null;
         inPlace = false;

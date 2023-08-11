@@ -5,26 +5,27 @@ using UnityEngine;
 public class PlayerShopPanel : ShopItemPanel
 {
     private int juiceCount = 0;
+    public List<ShopButtonsController> shopButtons;
     public override void Show()
     { 
-        foreach (PlayerShopButton playerShopB in buttons)
+        foreach (ShopButtonsController shopButtonsController in shopButtons)
         {
-            playerShopB.Clean();
+            shopButtonsController.Clear();
         }
         for (int i = 0; i < inventory.slots.Count; i++)
         { 
             if (inventory.slots[i].item != null && inventory.slots[i].item.juice)
             { 
-               buttons[juiceCount].Set(inventory.slots[i], i);
+                shopButtons[juiceCount].Set(inventory.slots[i], i);
                juiceCount++; 
             }
         }
         juiceCount = 0;
     }
 
-    public override void OnClick(int id)
+    public void RemoveSoldItemFromInventory(ItemSlot itemSlot)
     {
-        GameManager.instance.dragAndDropController.OnClick(inventory.slots[id]);
+        inventory.Remove(itemSlot.item, 1);
         Show();
     }
 }

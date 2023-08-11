@@ -7,19 +7,19 @@ using UnityEngine.UI;
 
 public class CraftingButtonsControls : MonoBehaviour
 {
-    [SerializeField] Image icon;
-    [SerializeField] TextMeshProUGUI text;
-    [SerializeField] Image highlight;
-    [SerializeField] CraftingPanel craftingPanel;
+    [SerializeField] protected Image icon;
+    [SerializeField] protected TextMeshProUGUI text;
+    [SerializeField] private Image highlight;
+    [SerializeField] private CraftingPanel craftingPanel;
     public int myIndex = -1;
     private bool selected = false;
 
-    public void SetIndex(int index)
+    public virtual void SetIndex(int index)
     {
         myIndex = index;
     }
     
-    public void Set(ItemSlot slot, int index, bool selectedAsIngredient)
+    public virtual void Set(ItemSlot slot, int index, bool selectedAsIngredient)
     {
         gameObject.GetComponent<Button>().enabled = true;
         SetIndex(index);
@@ -32,7 +32,7 @@ public class CraftingButtonsControls : MonoBehaviour
         }
     }
 
-    public void Clear()
+    public virtual void Clear()
     {
         myIndex = -1;
         gameObject.GetComponent<Button>().enabled = false;

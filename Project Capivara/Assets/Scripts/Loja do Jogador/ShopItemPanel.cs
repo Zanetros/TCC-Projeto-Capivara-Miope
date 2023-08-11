@@ -5,7 +5,7 @@ using UnityEngine;
 public class ShopItemPanel : MonoBehaviour
 {
     public ItemContainer inventory;
-    public List<PlayerShopButton> buttons;
+    [SerializeField] private List<PlayerShopButton> buttons;
 
     private void Start()
     {

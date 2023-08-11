@@ -11,7 +11,8 @@ public class PlayerShopHandler : MonoBehaviour
     public Image juiceSprite;
     Item dialogos;
     public ItemSlot itemSlot;
-    public ItemDragAndDropController dropController;
+    public PlayerShopPanel playerShopPanel;
+    public PlayerShopButton sellJuiceButtonController;
 
     public void SetItensInShop()
     {
@@ -22,17 +23,28 @@ public class PlayerShopHandler : MonoBehaviour
 
     public void SellJuice()
     {
-        if (dropController.inPlace)
+        if (itemSlot != null)
         {
             if (itemSlot.item.Name == dialogos.Name)
             {
-                GameManager.instance.coinBag.AddCoins(dialogos.sellPrice * itemSlot.count);
+                GameManager.instance.coinBag.AddCoins(dialogos.sellPrice);
             }
-
             else if (itemSlot.item.Name != dialogos.Name)
             {
-                GameManager.instance.coinBag.AddCoins(dialogos.sellPrice / 2 * itemSlot.count);
+                GameManager.instance.coinBag.AddCoins(dialogos.sellPrice / 2);
             }
+            playerShopPanel.RemoveSoldItemFromInventory(itemSlot);
+            itemSlot = null;
         }        
     }
+
+    public void ChooseJuice(ItemSlot item)
+    {
+        if (item != null)
+        {
+            itemSlot = item;
+            sellJuiceButtonController.Set(item, item.id);
+        }
+    }
+    
 }

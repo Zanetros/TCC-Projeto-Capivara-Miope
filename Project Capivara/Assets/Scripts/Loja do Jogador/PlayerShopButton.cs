@@ -5,11 +5,13 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class PlayerShopButton : MonoBehaviour, IPointerClickHandler
+public class PlayerShopButton : MonoBehaviour
+    //, IPointerClickHandler
 {
     [SerializeField] Image icon;
     [SerializeField] TextMeshProUGUI text;
     [SerializeField] Image highlight;
+    [SerializeField] PlayerShopHandler playerShopHandler;
     int myIndex;
 
     public void SetIndex(int index)
@@ -23,14 +25,17 @@ public class PlayerShopButton : MonoBehaviour, IPointerClickHandler
         icon.gameObject.SetActive(true);
         icon.sprite = slot.item.sprite;
 
-        if (slot.item.stackable == true)
+        if (text != null)
         {
-            text.gameObject.SetActive(true);
-            text.text = slot.count.ToString();
-        }
-        else
-        {
-            text.gameObject.SetActive(false);
+            if (slot.item.stackable == true)
+            {
+                text.gameObject.SetActive(true);
+                text.text = slot.count.ToString();
+            }
+            else
+            {
+                text.gameObject.SetActive(false);
+            }   
         }
     }
 
@@ -55,15 +60,21 @@ public class PlayerShopButton : MonoBehaviour, IPointerClickHandler
     {
         icon.sprite = null;
         icon.gameObject.SetActive(false);
-
         text.gameObject.SetActive(false);
     }
 
-    public void OnPointerClick(PointerEventData eventData)
+    public void ClearItemSelection()
+    {
+        playerShopHandler.itemSlot = null;
+        icon.sprite = null;
+        icon.gameObject.SetActive(false);
+    }
+    
+    /*public void OnPointerClick(PointerEventData eventData)
     {
         ShopItemPanel itemPanel = transform.parent.GetComponent<ShopItemPanel>();
         itemPanel.OnClick(myIndex);
-    }
+    }*/
 
     public void Highlight(bool b)
     {
