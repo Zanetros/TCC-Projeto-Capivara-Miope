@@ -1,33 +1,44 @@
+using System.Collections.Generic;
 using TMPro;
+using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class DialogueSystem : MonoBehaviour
 {
+    [Header("Campos")]
+    #region
     [SerializeField] private TextMeshProUGUI targetText;
     [SerializeField] private TextMeshProUGUI nameText;
     [SerializeField] private Image portrait;
+    [SerializeField] private GameObject inventoryDialoguePanel;
+    #endregion
 
-    private DialogueContainer currentDialogue;
+    [Header("Text Variables")]
+    #region 
+    private DialogueByDay currentDialogue;
     private int currentLine, letterCount;
-
     [Range(0f,1f)]
     [SerializeField] private float visibleTextPercent;
-    
     [SerializeField] private float timePerLetter = 0.05F;
     private float totalTimeToType, currentTime;
     private string lineToShow;
+    public List<DialogueInventoryButtonController> buttons;
+    private ItemContainer itensInLocalInventory;
+    private int giftCount = 0;
+    private bool advanceBlocked = false;
+    public GameObject dialogueCanvas;
+    #endregion
 
+    [Header("Other Scripts")]
+    #region
     public GameManager gameManager;
     public AudioManager audioManager;
     public NpcWalkController npcTalking;
-
+    #endregion
+    
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            PushText();
-        }
         TypeOutText();
     }
 
@@ -47,15 +58,19 @@ public class DialogueSystem : MonoBehaviour
         targetText.text = lineToShow.Substring(0, letterCount);
     }
 
-    private void PushText()
+    public void PushText()
     {
+        if (advanceBlocked)
+        {
+            return;
+        }
         if (visibleTextPercent < 1F)
         {
             visibleTextPercent = 1F;
             UpdateText();
             return;
         }
-        if (currentLine >= currentDialogue.line.Count)
+        if (currentLine >= currentDialogue.lines.Count)
         {
             Conclude();
         }
@@ -67,7 +82,7 @@ public class DialogueSystem : MonoBehaviour
 
     void CycleLine()
     {
-        lineToShow = currentDialogue.line[currentLine];
+        lineToShow = currentDialogue.lines[currentLine];
         totalTimeToType = lineToShow.Length * timePerLetter;
         currentTime = 0F;
         visibleTextPercent = 0F;
@@ -80,25 +95,25 @@ public class DialogueSystem : MonoBehaviour
     {
         Show(true);
         AudioManager.instance.Play(AudioManager.instance.dialogo);
-        currentDialogue = dialogueContainer;
+        currentDialogue = dialogueContainer.lineInEachDay[gameManager.timeManager.GetDay() - 1];
         visibleTextPercent = 1;
         currentLine = 0;
         targetText.text = "";
-        UpdatePortrait();
+        UpdatePortrait(dialogueContainer);
         PushText();
         gameManager.ControlCharacterControls(false, true);
     }
 
-    private void UpdatePortrait()
+    private void UpdatePortrait(DialogueContainer dialogueContainer)
     {
-        portrait.sprite = currentDialogue.actor.portrait;
-        nameText.text = currentDialogue.actor.name;
+        portrait.sprite = dialogueContainer.actor.portrait;
+        nameText.text = dialogueContainer.actor.name;
     }
 
     private void Show(bool b)
     {
         gameManager.ControlCharacterControls(b, b);
-        gameObject.SetActive(b);
+        dialogueCanvas.SetActive(b);
     }
 
     void Conclude()
@@ -113,4 +128,31 @@ public class DialogueSystem : MonoBehaviour
         Show(false);
         gameManager.ControlCharacterControls(true, true);
     }
+    
+    public void ShowItensToGive()
+    {
+        advanceBlocked = true;
+        itensInLocalInventory = gameManager.inventoryController.itemContainer;
+        foreach (DialogueInventoryButtonController dibc in buttons)
+        {
+            dibc.Clear();
+        }
+        for (int i = 0; i < gameManager.inventoryController.itemContainer.slots.Count; i++)
+        { 
+            if (itensInLocalInventory.slots[i].item != null && itensInLocalInventory.slots[i].item.isGift)
+            {
+                buttons[giftCount].Set(itensInLocalInventory.slots[i], i, false);
+                giftCount++;   
+            }
+        }
+        giftCount = 0;
+        inventoryDialoguePanel.SetActive(true);
+    }
+
+    public void CloseInventoryItens()
+    {
+        advanceBlocked = false;
+        inventoryDialoguePanel.SetActive(false);
+    }
+    
 }

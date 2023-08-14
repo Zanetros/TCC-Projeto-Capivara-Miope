@@ -93,6 +93,12 @@ public class TimeManager : MonoBehaviour
     {
         return Minute;
     }
+
+    public int GetDay()
+    {
+        return Day;
+    }
+    
     public void CalculateTime()
     {
         ControlPPV();

@@ -20,6 +20,7 @@ MonoBehaviour:
   stackable: 1
   usableInRecipe: 1
   juice: 1
+  isGift: 1
   sprite: {fileID: 21300000, guid: e81911942f7722f4d93e61a4d93de0fe, type: 3}
   onAction: {fileID: 0}
   onTilemapAction: {fileID: 0}

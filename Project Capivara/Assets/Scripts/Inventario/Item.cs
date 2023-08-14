@@ -14,6 +14,7 @@ public class Item : ScriptableObject
     public bool stackable;
     public bool usableInRecipe;
     public bool juice;
+    public bool isGift;
     public Sprite sprite;
     public ToolActions onAction;
     public ToolActions onTilemapAction;

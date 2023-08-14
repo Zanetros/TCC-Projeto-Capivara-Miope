@@ -9,8 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0ac562debab7c046b9a18c637292f16, type: 3}
-  m_Name: New Actor
+  m_Script: {fileID: 11500000, guid: 82b249dd887e23c4b844eb8554877294, type: 3}
+  m_Name: Day1
   m_EditorClassIdentifier: 
-  name: Douglas
-  portrait: {fileID: 21300000, guid: ff8ce5873838821459946a541b2df2f9, type: 3}
+  lines:
+  - "Ol\xE1, eu sou o Douglas!"
+  - "Voc\xEA sabia que eu sou o Douglas?"
+  - "Pois \xE9, eu sou o Douglas! E voc\xEA n\xE3o \xE9 o Douglas"
+  - Lembre-se disso, ok? Hehe

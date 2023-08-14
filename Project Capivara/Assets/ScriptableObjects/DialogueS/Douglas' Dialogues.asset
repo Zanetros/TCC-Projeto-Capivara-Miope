@@ -10,11 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 44a9fc817d98a3443a6fb473bd917c21, type: 3}
-  m_Name: New Dialogue Container
+  m_Name: Douglas' Dialogues
   m_EditorClassIdentifier: 
-  line:
-  - "Ol\xE1, eu sou o Douglas!"
-  - "Voc\xEA sabia que eu sou o Douglas?"
-  - "Pois \xE9, eu sou o Douglas!"
-  - "E voc\xEA n\xE3o \xE9 o Douglas, pois eu sou o Douglas! Lembre-se disso"
+  lineInEachDay:
+  - {fileID: 11400000, guid: a74df2aa63f8e8e4da7160ecdee80a18, type: 2}
+  - {fileID: 11400000, guid: 8eb023cf14179cd4fb6e52c6b5cd9fd9, type: 2}
+  - {fileID: 11400000, guid: 933df995ce56eb34f8c9a72f26bef176, type: 2}
   actor: {fileID: 11400000, guid: 49cba591a1397734c8c92d696d2eb035, type: 2}
