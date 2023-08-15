@@ -6,7 +6,7 @@ using UnityEngine;
 public class ToolBarController : MonoBehaviour
 {
     [SerializeField] int toolBarSize = 8;
-    int selectedTool;
+    public int selectedTool;
 
     public Action<int> onChange;
     [SerializeField] IconHighlight iconHighlight;

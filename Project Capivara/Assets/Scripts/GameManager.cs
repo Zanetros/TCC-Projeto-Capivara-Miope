@@ -31,6 +31,8 @@ public class GameManager : MonoBehaviour
     public PlayerShopController playerShopController;
     public PlayerShopHandler playerShop;
     public NpcSpawnManager npcSpawnManager;
+    public PlayerStamina playerStamina;
+    public ToolBarController toolBarController;
 
     public void ControlCharacterControls(bool characterMov, bool characterInt)
     {

@@ -15,10 +15,12 @@ public class Item : ScriptableObject
     public bool usableInRecipe;
     public bool juice;
     public bool isGift;
+    public bool isEtable;
     public Sprite sprite;
     public ToolActions onAction;
     public ToolActions onTilemapAction;
     public ToolActions onItemUsed;
+    public ToolActions onEat;
     public Crop crop;
     public bool iconHighlight;
     public GameObject itemPrefab;

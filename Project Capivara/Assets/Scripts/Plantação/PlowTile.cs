@@ -21,6 +21,7 @@ public class PlowTile : ToolActions
         tileMapReadController.cropsManager.Plow(gridPosition);
 
         AudioManager.instance.Play(onPlowUsed);
+        GameManager.instance.playerStamina.TakeStamina(20);
         
         return true;
     }
