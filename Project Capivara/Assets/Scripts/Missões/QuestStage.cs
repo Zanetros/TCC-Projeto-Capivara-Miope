@@ -8,20 +8,15 @@ public class QuestStage : ScriptableObject
         public ItemSlot[] itensToReceive;
         private string objectiveExplained = null;
 
-        public string ShowObjective()
-        {
-                return GetItensFromQuest();
-        }
-
-        private string GetItensFromQuest()
+        public string ShowObjective(Actor actor)
         {
                 objectiveExplained = null;
                 foreach (ItemSlot itemSlot in itensToReceive)
                 {
                         if (objectiveExplained == null)
                         {
-                                objectiveExplained = "Um NPC pede: " + itemSlot.count + " "
-                                        + itemSlot.item.Name + "(s)";
+                                objectiveExplained = actor.name + " pede " + itemSlot.count + " "
+                                                     + itemSlot.item.Name + "(s)";
                         }
                         else
                         {
@@ -31,5 +26,5 @@ public class QuestStage : ScriptableObject
                 }
                 return objectiveExplained;
         }
-        
+
 }

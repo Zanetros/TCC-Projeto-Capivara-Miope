@@ -12,15 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d89932d1c01fbd42ab6411d5e1857a1, type: 3}
   m_Name: QuestsAtivas
   m_EditorClassIdentifier: 
-  quests:
-  - {fileID: 11400000, guid: 9882cf2624d2c034dbf261aa5ba36de2, type: 2}
-  - {fileID: 11400000, guid: 9882cf2624d2c034dbf261aa5ba36de2, type: 2}
-  - {fileID: 11400000, guid: 9882cf2624d2c034dbf261aa5ba36de2, type: 2}
-  - {fileID: 11400000, guid: 9882cf2624d2c034dbf261aa5ba36de2, type: 2}
-  - {fileID: 11400000, guid: 9882cf2624d2c034dbf261aa5ba36de2, type: 2}
-  - {fileID: 11400000, guid: 9882cf2624d2c034dbf261aa5ba36de2, type: 2}
-  - {fileID: 11400000, guid: 9882cf2624d2c034dbf261aa5ba36de2, type: 2}
-  - {fileID: 11400000, guid: 9882cf2624d2c034dbf261aa5ba36de2, type: 2}
-  - {fileID: 11400000, guid: 9882cf2624d2c034dbf261aa5ba36de2, type: 2}
-  - {fileID: 11400000, guid: 9882cf2624d2c034dbf261aa5ba36de2, type: 2}
-  - {fileID: 11400000, guid: 9882cf2624d2c034dbf261aa5ba36de2, type: 2}
+  quests: []

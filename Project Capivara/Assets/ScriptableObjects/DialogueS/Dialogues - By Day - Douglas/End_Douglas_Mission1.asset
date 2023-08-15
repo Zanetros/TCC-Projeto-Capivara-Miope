@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 82b249dd887e23c4b844eb8554877294, type: 3}
-  m_Name: Day1
+  m_Name: End_Douglas_Mission1
   m_EditorClassIdentifier: 
   lines:
-  - "Ol\xE1, eu sou o Douglas!"
-  - "Voc\xEA sabia que eu sou o Douglas?"
-  - "Pois \xE9, eu sou o Douglas! E voc\xEA n\xE3o \xE9 o Douglas"
-  - Lembre-se disso, ok? Hehe
-  questDialog: {fileID: 11400000, guid: c5761caa7a1ca4e4aa66f503a97892a3, type: 2}
-  questToAdd: {fileID: 11400000, guid: 0a1e22d3ffb7eee46a668bea530d7633, type: 2}
+  - Cara, muito obrigado!
+  - "N\xE3o tenho como te recompensar com dinheiro, mas deixe eu te mostrar como
+    se faz um Ba\xFA!"
+  - "At\xE9 logo!"
+  questDialog: {fileID: 0}
+  questToAdd: {fileID: 0}

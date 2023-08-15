@@ -59,7 +59,14 @@ public class MissionPanelController : MonoBehaviour
         page = 0;
         opened = true;
         firstQuestShown = 5 * page;
-        lastQuestShown = firstQuestShown + 4;
+        if (playerQuests.quests.Count >= 4)
+        {
+            lastQuestShown = firstQuestShown + 4;
+        }
+        else
+        {
+            lastQuestShown = playerQuests.quests.Count - 1;
+        }
         missionPanel.SetActive(true);
         gameManager.ControlCharacterControls(false, false);
         ChangePage(0);

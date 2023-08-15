@@ -6,4 +6,6 @@ using UnityEngine;
 public class DialogueByDay : ScriptableObject
 {
     public List<string> lines;
+    public DialogueByDay questDialog;
+    public QuestContainer questToAdd;
 }

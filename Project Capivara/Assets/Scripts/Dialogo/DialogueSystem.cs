@@ -15,8 +15,9 @@ public class DialogueSystem : MonoBehaviour
     #endregion
 
     [Header("Text Variables")]
-    #region 
-    private DialogueByDay currentDialogue;
+    #region
+    public DialogueContainer currentDialogueContainer;
+    public DialogueByDay currentDialogue;
     private int currentLine, letterCount;
     [Range(0f,1f)]
     [SerializeField] private float visibleTextPercent;
@@ -72,7 +73,15 @@ public class DialogueSystem : MonoBehaviour
         }
         if (currentLine >= currentDialogue.lines.Count)
         {
-            Conclude();
+            if (currentDialogue.questToAdd == null || gameManager.questController.activeQuests.quests.Contains(currentDialogue.questToAdd))
+            {
+                Conclude();   
+            }
+            else
+            {
+                gameManager.questController.GainQuest(currentDialogue.questToAdd);
+                Initialize(currentDialogueContainer, true);
+            }
         }
         else
         {
@@ -91,17 +100,25 @@ public class DialogueSystem : MonoBehaviour
         currentLine++;
     }
     
-    public void Initialize(DialogueContainer dialogueContainer)
+    public void Initialize(DialogueContainer dialogueContainer, bool isToGetQuest)
     {
         Show(true);
         AudioManager.instance.Play(AudioManager.instance.dialogo);
-        currentDialogue = dialogueContainer.lineInEachDay[gameManager.timeManager.GetDay() - 1];
+        currentDialogueContainer = dialogueContainer;
+        if (!isToGetQuest)
+        {
+            currentDialogue = dialogueContainer.lineInEachDay[gameManager.timeManager.GetDay() - 1];   
+        }
+        else
+        {
+            currentDialogue = dialogueContainer.lineInEachDay[gameManager.timeManager.GetDay() - 1].questDialog;
+        }
         visibleTextPercent = 1;
         currentLine = 0;
         targetText.text = "";
         UpdatePortrait(dialogueContainer);
         PushText();
-        gameManager.ControlCharacterControls(false, true);
+        gameManager.ControlCharacterControls(false, false);
     }
 
     private void UpdatePortrait(DialogueContainer dialogueContainer)
@@ -124,7 +141,6 @@ public class DialogueSystem : MonoBehaviour
             npcTalking = null;
         }
         AudioManager.instance.Stop(AudioManager.instance.dialogo);
-        print("The dialogue has ended");
         Show(false);
         gameManager.ControlCharacterControls(true, true);
     }

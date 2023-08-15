@@ -16,12 +16,13 @@ public class NpcSpawnManager : MonoBehaviour
     #region
     public List<Npc> npcsToMove;
     public List<Npc> npcsToSpawn;
+    public List<GameObject> npcsToDelete;
     public List<NpcContainer> containersToDeleteFrom;
-    private GameObject npcToDelete;
     private int c;
     private int actualSceneForNpc;
     private GameObject go;
     public List<GameObject> npcsInActualScene;
+    public List<Npc> npcsNPCsInActualScene;
     #endregion
 
     public GameManager gameManager;
@@ -36,6 +37,7 @@ public class NpcSpawnManager : MonoBehaviour
     public void SpawnStartNpcs()
     {
         npcsInActualScene.Clear();
+        npcsNPCsInActualScene.Clear();
         foreach (NpcContainer npcC in npcsInScenes)
         {
             foreach (Npc npc in npcC.npcsFromScene)
@@ -51,7 +53,7 @@ public class NpcSpawnManager : MonoBehaviour
                         }
                     }
                 }
-                if (actualSceneForNpc.Equals(SceneManager.GetActiveScene().buildIndex))
+                if (actualSceneForNpc.Equals(SceneManager.GetActiveScene().buildIndex) && !npcsNPCsInActualScene.Contains(npc))
                 {
                     //Caso o Npc deva estar na cena atual no horário atual, Spawna o NPC
                     SpawnNamedNpc(npc,  npcSpawnPointsInScene[Random.Range(0, npcSpawnPointsInScene.Length -1)],
@@ -64,12 +66,13 @@ public class NpcSpawnManager : MonoBehaviour
 
     void SpawnNamedNpc(Npc npc, Transform spawnPoint, Transform[] waypoints)
     {
-        go = Instantiate(npcPrefab, spawnPoint);
-        go.transform.parent = null;
-        go.GetComponent<NpcWalkController>().waypoints = waypoints;
-        go.GetComponent<NpcWalkController>().myPersonality = npc;
-        go.GetComponentInChildren<SpriteRenderer>().sprite = npc.npcSprite;
-        npcsInActualScene.Add(go);
+       go = Instantiate(npcPrefab, spawnPoint);
+       go.transform.parent = null;
+       go.GetComponent<NpcWalkController>().waypoints = waypoints; 
+       go.GetComponent<NpcWalkController>().myPersonality = npc;
+       go.GetComponentInChildren<SpriteRenderer>().sprite = npc.npcSprite;
+       npcsInActualScene.Add(go);
+       npcsNPCsInActualScene.Add(npc);
     }
 
     void Update()
@@ -80,6 +83,7 @@ public class NpcSpawnManager : MonoBehaviour
     
     void VerifyNpcTime()
     {
+        npcsToMove.Clear();
         c = 0;
         foreach (NpcContainer npcC in npcsInScenes)
         {
@@ -96,11 +100,12 @@ public class NpcSpawnManager : MonoBehaviour
                             {
                                 if (npcD.GetComponent<NpcWalkController>().myPersonality.dialogueContainer.Equals(npc.dialogueContainer))
                                 {
-                                    npcToDelete = npcD;
+                                    if (!npcsToDelete.Contains(npcD))
+                                    {
+                                        npcsToDelete.Add(npcD);
+                                    }
                                 }
                             }
-                            npcsInActualScene.Remove(npcToDelete);
-                            Destroy(npcToDelete);
                             if (!npcsToMove.Contains(npc))
                             {
                                 npcsToMove.Add(npc);
@@ -115,6 +120,15 @@ public class NpcSpawnManager : MonoBehaviour
                 }
             }
         }
+        if (npcsToDelete != null)
+        {
+            foreach (GameObject g in npcsToDelete)
+            {
+                npcsInActualScene.Remove(g);
+                Destroy(g);
+            }
+            npcsToDelete.Clear();
+        }
         if (npcsToMove != null)
         {
             foreach (Npc npcM in npcsToMove)
@@ -122,7 +136,6 @@ public class NpcSpawnManager : MonoBehaviour
                 MoveNpcToAnotherScene(npcM);
                 c++;
             }
-            npcsToMove.Clear();
         }
     }
 
@@ -139,8 +152,15 @@ public class NpcSpawnManager : MonoBehaviour
                     {
                         if (gameManager.timeManager.GetMinute().Equals(npcTimeAndLocation.minute))
                         {
-                            npcsToSpawn.Add(npc);
-                            break;
+                            if (npcTimeAndLocation.sceneToBeIn.Equals(SceneManager.GetActiveScene().buildIndex))
+                            {
+                                if (!npcsToSpawn.Contains(npc))
+                                {
+                                    print(npc);
+                                    npcsToSpawn.Add(npc);
+                                }
+                                break;
+                            }
                         }
                     }
                 }
@@ -149,7 +169,7 @@ public class NpcSpawnManager : MonoBehaviour
         foreach (Npc npcTS in npcsToSpawn)
         {
             SpawnNamedNpc(npcTS, npcSpawnPointsInScene[Random.Range(0, npcSpawnPointsInScene.Length -1)],
-                npcWaypointsInScene);
+                    npcWaypointsInScene);
         }
 
     }

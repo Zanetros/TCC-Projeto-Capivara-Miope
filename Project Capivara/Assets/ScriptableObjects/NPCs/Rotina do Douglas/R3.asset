@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83c69047c1204994d81f2809cf6e2cae, type: 3}
   m_Name: R3
   m_EditorClassIdentifier: 
-  hour: 12
+  hour: 11
   minute: 0
   sceneToBeIn: 1

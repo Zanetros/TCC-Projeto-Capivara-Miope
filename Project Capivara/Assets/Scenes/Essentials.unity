@@ -9373,6 +9373,8 @@ MonoBehaviour:
   nameText: {fileID: 791009188}
   portrait: {fileID: 1304488750}
   inventoryDialoguePanel: {fileID: 702807854}
+  currentDialogueContainer: {fileID: 0}
+  currentDialogue: {fileID: 0}
   visibleTextPercent: 0
   timePerLetter: 0.05
   buttons:

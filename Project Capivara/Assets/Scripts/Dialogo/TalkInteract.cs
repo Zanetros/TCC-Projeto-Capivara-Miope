@@ -9,7 +9,7 @@ public class TalkInteract : Interactable
     
     public override void Interact(Character character)
     {
-        GameManager.instance.dialogueSystem.Initialize(npcWalkController.myPersonality.dialogueContainer);
+        GameManager.instance.dialogueSystem.Initialize(npcWalkController.myPersonality.dialogueContainer, false);
         if (!npcWalkController.Equals(null))
         {
             GameManager.instance.dialogueSystem.npcTalking = npcWalkController;

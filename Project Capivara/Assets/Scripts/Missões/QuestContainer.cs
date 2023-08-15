@@ -7,6 +7,7 @@ public class QuestContainer : ScriptableObject
 {
     public List<QuestStage> stages;
     public string questName;
+    public Actor questActor;
     [TextArea] public string questDescription;
     //Colocar, posteriormente, uma variável para diferenciar uma quest da outra. A priori, é um id
     public int questId = 1;
@@ -15,4 +16,5 @@ public class QuestContainer : ScriptableObject
     public bool active = false;
     public CraftingRecipe[] rewardRecipes = null;
     public int coinReward = 0;
+    public List<DialogueByDay> stagesCompleatedDialogue;
 }

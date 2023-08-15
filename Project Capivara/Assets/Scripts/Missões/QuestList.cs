@@ -16,14 +16,6 @@ public class QuestList : ScriptableObject
     
     public void GetNewQuest(QuestContainer quest)
     {
-        foreach (QuestContainer questContainer in quests)
-        {
-            if (questContainer.questId.Equals(quest.questId))
-            {
-                Debug.Log("Esta missão já está ativa");
-                return;
-            }    
-        }
         Debug.Log("Nova missão ativa!");
         quests.Add(quest);
     }
@@ -34,7 +26,7 @@ public class QuestList : ScriptableObject
         {
             if (questContainer.questId.Equals(quest.questId))
             {
-                return questContainer.stages[questContainer.actualStage].ShowObjective();
+                return questContainer.stages[questContainer.actualStage].ShowObjective(quest.questActor);
             }
         }
         return null;
