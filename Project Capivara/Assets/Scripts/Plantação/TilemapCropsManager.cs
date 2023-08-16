@@ -74,7 +74,7 @@ public class TilemapCropsManager : TimeAgent
             }
 
             cropsTile.growTimer += 1;
-            /*
+            
             if (cropsTile.growTimer >= cropsTile.crop.growthStageTime[cropsTile.growthStage])
             {
                 cropsTile.renderer.gameObject.SetActive(true);
@@ -84,7 +84,7 @@ public class TilemapCropsManager : TimeAgent
                 {
                     cropsTile.growthStage += 1;
                 }
-            }*/
+            }
         }
 
         for (int i = 0; i < cropsRenders.Count; i++)

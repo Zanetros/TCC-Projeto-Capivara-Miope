@@ -22,6 +22,8 @@ public class TimeManager : MonoBehaviour
 
     public List<TimeAgent> agents;
 
+    public bool isTimeStoped;
+
     private void Awake()
     {
         agents = new List<TimeAgent>();
@@ -52,11 +54,13 @@ public class TimeManager : MonoBehaviour
 
     void Update()
     {
+        StopTime();
+
         timer -= Time.deltaTime;
 
         TimeManagement();
 
-        TimeAgents();
+        TimeAgents();        
     }
 
     public void TimeManagement()
@@ -129,6 +133,19 @@ public class TimeManager : MonoBehaviour
             {
                 agents[i].Invoke();
             }
+        }
+    }
+
+    public void StopTime()
+    {
+        if (isTimeStoped)
+        {
+            timer += Time.deltaTime;
+        }
+
+        else
+        {
+            timer -= Time.deltaTime;
         }
     }
 }
