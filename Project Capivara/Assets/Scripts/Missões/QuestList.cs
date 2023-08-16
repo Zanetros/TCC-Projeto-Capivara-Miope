@@ -7,6 +7,7 @@ public class QuestList : ScriptableObject
 {
     public List<QuestContainer> quests;
     private QuestStage stageToFind;
+    private QuestContainer questToRemove;
 
     public void LoadOwnedQuest(QuestContainer ownedQuest, int stage)
     {
@@ -36,9 +37,9 @@ public class QuestList : ScriptableObject
     {
         foreach (QuestContainer questContainer in quests)
         {
-            if (questContainer.questId.Equals(quest.questId))
+            if (questContainer.Equals(quest))
             {
-                questContainer.actualStage++;
+                //questContainer.actualStage++;
                 if (questContainer.actualStage >= questContainer.stages.Count)
                 {
                     questContainer.compleated = true;
@@ -52,12 +53,17 @@ public class QuestList : ScriptableObject
 
     public void CompleateQuest(QuestContainer quest)
     {
+        questToRemove = null;
         foreach (QuestContainer questContainer in quests)
         {
-            if (questContainer.questId.Equals(quest.questId))
+            if (questContainer.Equals(quest))
             {
-                quests.Remove(questContainer);
+                questToRemove = questContainer;
             }
+        }
+        if (questToRemove != null)
+        {
+            quests.Remove(questToRemove);
         }
     }
     

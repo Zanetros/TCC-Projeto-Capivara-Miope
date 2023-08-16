@@ -21,7 +21,7 @@ MonoBehaviour:
   questId: 1
   actualStage: 0
   compleated: 0
-  active: 0
+  active: 1
   rewardRecipes:
   - {fileID: 11400000, guid: bca7e3fa1c4f22c49a8e60138e21cc48, type: 2}
   coinReward: 0

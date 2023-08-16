@@ -156,7 +156,6 @@ public class NpcSpawnManager : MonoBehaviour
                             {
                                 if (!npcsToSpawn.Contains(npc))
                                 {
-                                    print(npc);
                                     npcsToSpawn.Add(npc);
                                 }
                                 break;

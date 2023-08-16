@@ -40,4 +40,9 @@ public class GameManager : MonoBehaviour
         characterInteractController.enabled = characterInt;
     }
 
+    public void ControlPassageOfTime(bool countingTime)
+    {
+        timeManager.ControlTime(countingTime);
+    }
+
 }

@@ -142,10 +142,15 @@ public class TimeManager : MonoBehaviour
         {
             timer += Time.deltaTime;
         }
-
         else
         {
             timer -= Time.deltaTime;
         }
     }
+
+    public void ControlTime(bool timeStoped)
+    {
+        isTimeStoped = timeStoped;
+    }
+    
 }

@@ -31,6 +31,16 @@ public class DialogueSystem : MonoBehaviour
     public GameObject dialogueCanvas;
     #endregion
 
+    [Header("Trade Variables")]
+    #region
+    public TextMeshProUGUI txtItemName;
+    public GameObject btnGiveItem;
+    public DialogueInventoryButtonController selectedSlotController;
+    public GameObject btnAdvanceQuest;
+    private QuestContainer questToAdvance = null;
+    private int d = 0;
+    #endregion
+
     [Header("Other Scripts")]
     #region
     public GameManager gameManager;
@@ -80,7 +90,7 @@ public class DialogueSystem : MonoBehaviour
             else
             {
                 gameManager.questController.GainQuest(currentDialogue.questToAdd);
-                Initialize(currentDialogueContainer, true);
+                Initialize(currentDialogueContainer, null, true, false);
             }
         }
         else
@@ -100,27 +110,79 @@ public class DialogueSystem : MonoBehaviour
         currentLine++;
     }
     
-    public void Initialize(DialogueContainer dialogueContainer, bool isToGetQuest)
+    public void Initialize(DialogueContainer dialogueContainer, DialogueByDay questDialog, bool isToGetQuest, bool isFromQuestAdvanced)
     {
         Show(true);
+        gameManager.ControlCharacterControls(false, false);
         AudioManager.instance.Play(AudioManager.instance.dialogo);
-        currentDialogueContainer = dialogueContainer;
-        if (!isToGetQuest)
+        if (isFromQuestAdvanced)
         {
-            currentDialogue = dialogueContainer.lineInEachDay[gameManager.timeManager.GetDay() - 1];   
+            currentDialogue = questDialog;
         }
         else
         {
-            currentDialogue = dialogueContainer.lineInEachDay[gameManager.timeManager.GetDay() - 1].questDialog;
+            currentDialogueContainer = dialogueContainer;  
+            if (!isToGetQuest)
+            {
+                currentDialogue = dialogueContainer.lineInEachDay[gameManager.timeManager.GetDay() - 1];   
+            }
+            else
+            {
+                currentDialogue = dialogueContainer.lineInEachDay[gameManager.timeManager.GetDay() - 1].questDialog;
+            }
         }
         visibleTextPercent = 1;
         currentLine = 0;
         targetText.text = "";
         UpdatePortrait(dialogueContainer);
         PushText();
-        gameManager.ControlCharacterControls(false, false);
+        if (VerifyQuestForNPC())
+        {
+               btnAdvanceQuest.SetActive(true);
+        }
+        else
+        {
+            btnAdvanceQuest.SetActive(false);
+        }
     }
 
+    private bool VerifyQuestForNPC()
+    {
+        foreach (QuestContainer quest in gameManager.questController.activeQuests.quests)
+        {
+            if ( currentDialogueContainer != null && quest.questActor.Equals(currentDialogueContainer.actor))
+            {
+                if (gameManager.questController.VerifyItemQuestToAdvance(quest, gameManager.inventoryContainer))
+                {
+                    questToAdvance = quest;
+                    return true;
+                }
+                return false;
+            }
+        }
+        return false;
+    }
+    
+    public void AdvanceQuest()
+    {
+        if (questToAdvance != null)
+        {
+            foreach (ItemSlot item in gameManager.inventoryContainer.slots)
+            {
+                if (item.Equals(questToAdvance.stages[questToAdvance.actualStage].itensToReceive))
+                {
+                    gameManager.inventoryContainer.Remove(item.item, 
+                        questToAdvance.stages[questToAdvance.actualStage].itensToReceive[d].count);
+                    d++;
+                }
+            }
+            Initialize(currentDialogueContainer, gameManager.questController.AdvanceQuest(questToAdvance), false, true);
+            gameManager.questController.activeQuests.CompleateQuest(questToAdvance);
+            questToAdvance = null;
+        }
+        d = 0;
+    }
+    
     private void UpdatePortrait(DialogueContainer dialogueContainer)
     {
         portrait.sprite = dialogueContainer.actor.portrait;
@@ -129,7 +191,6 @@ public class DialogueSystem : MonoBehaviour
 
     private void Show(bool b)
     {
-        gameManager.ControlCharacterControls(b, b);
         dialogueCanvas.SetActive(b);
     }
 
@@ -143,6 +204,7 @@ public class DialogueSystem : MonoBehaviour
         AudioManager.instance.Stop(AudioManager.instance.dialogo);
         Show(false);
         gameManager.ControlCharacterControls(true, true);
+        gameManager.ControlPassageOfTime(false);
     }
     
     public void ShowItensToGive()
@@ -163,12 +225,27 @@ public class DialogueSystem : MonoBehaviour
         }
         giftCount = 0;
         inventoryDialoguePanel.SetActive(true);
+        txtItemName.text = "";
     }
 
     public void CloseInventoryItens()
     {
         advanceBlocked = false;
         inventoryDialoguePanel.SetActive(false);
+        btnGiveItem.gameObject.SetActive(false);
+        selectedSlotController.Clear();
+    }
+
+    public void GetItemToGive(ItemSlot itemSlot, int index)
+    {
+        selectedSlotController.Set(itemSlot, index, false);
+        btnGiveItem.gameObject.SetActive(true);
+    }
+
+    public void DeselectItem()
+    {
+        btnGiveItem.gameObject.SetActive(false);
+        txtItemName.text = "";
     }
     
 }

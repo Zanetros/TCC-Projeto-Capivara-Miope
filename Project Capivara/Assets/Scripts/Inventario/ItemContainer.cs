@@ -159,6 +159,17 @@ public class ItemContainer : ScriptableObject, ISerializationCallbackReceiver
 
         return true;
     }
+    
+    internal bool CheckItemForQuantity(ItemSlot checkingItem, int quantityToCheckFor)
+    {
+        ItemSlot itemSlot = slots.Find(x => x.item = checkingItem.item);
+
+        if (itemSlot == null) { return false; }
+
+        if (checkingItem.item.stackable) { return itemSlot.count >= quantityToCheckFor; }
+
+        return true;
+    }
 
     public void SaveInventory()
     {

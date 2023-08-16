@@ -13,11 +13,11 @@ public class QuestController : MonoBehaviour
         activeQuests.GetNewQuest(newQuest);
     }
 
-    public void AdvanceQuest(QuestContainer actualQuest)
+    public DialogueByDay AdvanceQuest(QuestContainer actualQuest)
     {
+        //Caso a quest tenha sido completada
         if (activeQuests.AdvanceStage(actualQuest))
         {
-            activeQuests.CompleateQuest(actualQuest);
             gameManager.coinBag.AddCoins(actualQuest.coinReward);
             //gameManager.crafting.VerifyIfItsKnownRecipe(actualQuest.rewardRecipe);
             foreach (CraftingRecipe craftingRecipe in actualQuest.rewardRecipes)
@@ -25,6 +25,7 @@ public class QuestController : MonoBehaviour
                 gameManager.crafting.VerifyIfItsKnownRecipe(craftingRecipe);
             }
         }
+        return actualQuest.stagesCompleatedDialogue[actualQuest.actualStage];
     }
 
     void Update()
@@ -33,6 +34,19 @@ public class QuestController : MonoBehaviour
         {
             print(activeQuests.GetStageObjective(activeQuests.quests[0]));
         }
+    }
+
+    public bool VerifyItemQuestToAdvance(QuestContainer questContainer, ItemContainer playerInventory)
+    {
+        foreach (ItemSlot item in questContainer.stages[questContainer.actualStage].itensToReceive)
+        {
+            if (!playerInventory.CheckItemForQuantity(item, item.count))
+            {
+                print("Sem todos os itens do estágio atual da quest");
+                return false;
+            }   
+        }
+        return true;
     }
 
 }
