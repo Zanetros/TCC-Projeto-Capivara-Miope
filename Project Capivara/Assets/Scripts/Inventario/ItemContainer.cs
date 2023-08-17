@@ -113,7 +113,7 @@ public class ItemContainer : ScriptableObject, ISerializationCallbackReceiver
         
         if (itemRemove.stackable)
         {
-            ItemSlot itemSlot = slots.Find(x => x.item == itemRemove);
+            ItemSlot itemSlot = slots.Find(x => x.item.Equals(itemRemove));
             if (itemSlot == null) { return; }
             
             itemSlot.count -= count;
@@ -122,7 +122,6 @@ public class ItemContainer : ScriptableObject, ISerializationCallbackReceiver
                 itemSlot.Clear();
             }
         }
-
         else
         {
             while (count > 0)
@@ -151,7 +150,7 @@ public class ItemContainer : ScriptableObject, ISerializationCallbackReceiver
 
     internal bool CheckItem(ItemSlot checkingItem)
     {
-        ItemSlot itemSlot = slots.Find(x => x.item = checkingItem.item);
+        ItemSlot itemSlot = slots.Find(x => x.item.Equals(checkingItem.item));
 
         if (itemSlot == null) { return false; }
 
@@ -162,7 +161,7 @@ public class ItemContainer : ScriptableObject, ISerializationCallbackReceiver
     
     internal bool CheckItemForQuantity(ItemSlot checkingItem, int quantityToCheckFor)
     {
-        ItemSlot itemSlot = slots.Find(x => x.item = checkingItem.item);
+        ItemSlot itemSlot = slots.Find(x => x.item.Equals(checkingItem.item));
 
         if (itemSlot == null) { return false; }
 

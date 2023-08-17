@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Data/Quest/Quest Stage")]
 public class QuestStage : ScriptableObject
 {
-        public ItemSlot[] itensToReceive;
+        public List<ItemSlot> itensToReceive;
         private string objectiveExplained = null;
 
         public string ShowObjective(Actor actor)

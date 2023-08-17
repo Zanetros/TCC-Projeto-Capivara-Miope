@@ -82926,6 +82926,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeQuests: {fileID: 11400000, guid: 60d67a469b645d7409becc63c3f03532, type: 2}
+  compleatedQuests: {fileID: 11400000, guid: 39ebf5289e4553146add9818b1ab36f0, type: 2}
   gameManager: {fileID: 5908046378252556751}
 --- !u!114 &4312722990166600706
 MonoBehaviour:

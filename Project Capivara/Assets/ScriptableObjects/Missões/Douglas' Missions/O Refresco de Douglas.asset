@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stages:
   - {fileID: 11400000, guid: 468ef60a1b575fe4197176e5464a4788, type: 2}
+  - {fileID: 11400000, guid: 018bafc4dd3c1e440a9997e5ae867f7f, type: 2}
   questName: O Refresco de Douglas
   questActor: {fileID: 11400000, guid: 49cba591a1397734c8c92d696d2eb035, type: 2}
   questDescription: "Douglas est\xE1 com sede no centro da cidade e me pediu um Suco
@@ -26,4 +27,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: bca7e3fa1c4f22c49a8e60138e21cc48, type: 2}
   coinReward: 0
   stagesCompleatedDialogue:
-  - {fileID: 11400000, guid: c5761caa7a1ca4e4aa66f503a97892a3, type: 2}
+  - {fileID: 11400000, guid: 3be89d2fcf8d36c4ea4aa87ab3aaf391, type: 2}
+  - {fileID: 11400000, guid: 3e7f03df828f9a6439f431eae254ac81, type: 2}

@@ -39,7 +39,7 @@ public class QuestList : ScriptableObject
         {
             if (questContainer.Equals(quest))
             {
-                //questContainer.actualStage++;
+                quest.actualStage++;
                 if (questContainer.actualStage >= questContainer.stages.Count)
                 {
                     questContainer.compleated = true;

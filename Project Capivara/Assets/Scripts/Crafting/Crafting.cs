@@ -95,7 +95,6 @@ public class Crafting : MonoBehaviour
     {
         if (!recipesKnownList.CheckRecipe(possibleNewRecipe.output.item))
         {
-            print("!");
             recipesKnownList.AddNewRecipeToList(possibleNewRecipe);
         }
     }

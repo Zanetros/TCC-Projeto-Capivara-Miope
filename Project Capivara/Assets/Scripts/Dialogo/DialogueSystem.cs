@@ -89,8 +89,15 @@ public class DialogueSystem : MonoBehaviour
             }
             else
             {
-                gameManager.questController.GainQuest(currentDialogue.questToAdd);
-                Initialize(currentDialogueContainer, null, true, false);
+                if (!gameManager.questController.VerifyQuestToGain(currentDialogue.questToAdd))
+                {
+                    gameManager.questController.GainQuest(currentDialogue.questToAdd);
+                    Initialize(currentDialogueContainer, null, true, false);   
+                }
+                else
+                {
+                    Conclude();
+                }
             }
         }
         else
@@ -138,7 +145,7 @@ public class DialogueSystem : MonoBehaviour
         PushText();
         if (VerifyQuestForNPC())
         {
-               btnAdvanceQuest.SetActive(true);
+            btnAdvanceQuest.SetActive(true);
         }
         else
         {
@@ -150,7 +157,7 @@ public class DialogueSystem : MonoBehaviour
     {
         foreach (QuestContainer quest in gameManager.questController.activeQuests.quests)
         {
-            if ( currentDialogueContainer != null && quest.questActor.Equals(currentDialogueContainer.actor))
+            if (currentDialogueContainer != null && quest.questActor.Equals(currentDialogueContainer.actor))
             {
                 if (gameManager.questController.VerifyItemQuestToAdvance(quest, gameManager.inventoryContainer))
                 {
@@ -167,17 +174,12 @@ public class DialogueSystem : MonoBehaviour
     {
         if (questToAdvance != null)
         {
-            foreach (ItemSlot item in gameManager.inventoryContainer.slots)
+            foreach (ItemSlot item in questToAdvance.stages[questToAdvance.actualStage].itensToReceive)
             {
-                if (item.Equals(questToAdvance.stages[questToAdvance.actualStage].itensToReceive))
-                {
-                    gameManager.inventoryContainer.Remove(item.item, 
-                        questToAdvance.stages[questToAdvance.actualStage].itensToReceive[d].count);
-                    d++;
-                }
+                //gameManager.inventoryContainer.Remove(item.item, questToAdvance.stages[questToAdvance.actualStage].itensToReceive[d].count);
+                d++;
             }
             Initialize(currentDialogueContainer, gameManager.questController.AdvanceQuest(questToAdvance), false, true);
-            gameManager.questController.activeQuests.CompleateQuest(questToAdvance);
             questToAdvance = null;
         }
         d = 0;
