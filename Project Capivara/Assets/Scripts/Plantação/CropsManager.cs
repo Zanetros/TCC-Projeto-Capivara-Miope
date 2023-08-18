@@ -10,10 +10,10 @@ using UnityEngine.Tilemaps;
 [Serializable]
 public class CropsTile
 {
-    public int growTimer;
     public int growthStage;
     public int sceneBuildIndex;
     public Crop crop;
+    public bool isGrown;
     public SpriteRenderer renderer;
     public Vector3Int position;
 
@@ -22,13 +22,12 @@ public class CropsTile
         get
         {
             if (crop == null) { return false; }
-            return growTimer >= crop.timeToGrow;
-        }
+            return isGrown;
+}
     }
 
     internal void Harvested()
     {
-        growTimer = 0;
         growthStage = 0;
         crop = null;
         renderer.gameObject.SetActive(false);
@@ -38,8 +37,6 @@ public class CropsTile
 public class CropsManager : MonoBehaviour
 {
     public TilemapCropsManager tileCropsManager;
-    private float[,] cropsToReturn = {{0,0,0,0,0,0}, {0,0,0,0,0,0}, {0,0,0,0,0,0}};
-    private int c = 0;
 
     public void PickUp(Vector3Int position  )
     {

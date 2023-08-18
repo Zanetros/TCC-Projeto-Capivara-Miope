@@ -6,10 +6,9 @@ using UnityEngine;
 public class Crop : ScriptableObject
 {
     public int cropId;
-    public int timeToGrow = 10;
     public Item yield;
     public int count = 1;
 
+    public int maxGrowthFase;
     public List<Sprite> sprites;
-    public List<int> growthStageTime;
 }

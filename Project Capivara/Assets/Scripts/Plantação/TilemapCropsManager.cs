@@ -15,35 +15,67 @@ public class TilemapCropsManager : TimeAgent
     [SerializeField] GameObject cropsSpritePrefab;
 
     public CropsContainer container;
-    public CropsContainer allCropsInGame;
     public List<SpriteRenderer> cropsRenders;
     public List<int> c;
     private int d = 0;
-
-    //Função de Exemplo
-    public void TestarComparacaoDeCrop(int id)
-    {
-        foreach (CropsTile cropToCompare in allCropsInGame.crops)
-        {
-            if (cropToCompare.crop.cropId.Equals(id))
-            {
-                Debug.Log("O id informado pertence a uma crop do jogo");
-            }
-            else
-            {
-                Debug.Log("O id informado não pertence a uma crop do jogo");
-            }
-        }
-    }
+    public TimeManager timeManager;
     
     public void Start()
     {
         d = 0;
         GameManager.instance.GetComponent<CropsManager>().tileCropsManager = this;
         targetTilemap = GetComponent<Tilemap>();
-        onTimeTick += Tick;
+        timeManager = FindObjectOfType<TimeManager>();
         Init();
+        onTimeTick += Tick;
         VisualizeMap();
+    }
+
+    public void Update()
+    {
+        
+    }
+
+    private void OnEnable()
+    {
+        TimeManager.OnDayChanged += GrowStage;
+    }
+
+    private void OnDisable()
+    {
+
+        TimeManager.OnDayChanged -= GrowStage;
+    }
+
+    public void GrowStage()
+    {
+        foreach (CropsTile crops in container.crops)
+        {
+            if (crops.crop == null) { continue; }
+
+            if (crops.Complete)
+            {
+                continue;
+            }
+
+            
+            for (int i = 0; i < container.crops.Count; i++)
+            {               
+                if (container.crops[i].crop == null) { continue; }
+
+                if (container.crops[i].growthStage == container.crops[i].crop.maxGrowthFase)
+                {
+                    container.crops[i].isGrown = true;
+                }
+
+                else
+                {
+                    container.crops[i].growthStage += 1;
+                    crops.renderer.sprite = crops.crop.sprites[crops.growthStage];
+                }
+            }   
+        }
+        
     }
 
     private void VisualizeMap()
@@ -71,35 +103,12 @@ public class TilemapCropsManager : TimeAgent
             if (cropsTile.Complete)
             {
                 continue;
-            }
-
-            cropsTile.growTimer += 1;
+            } 
             
-            if (cropsTile.growTimer >= cropsTile.crop.growthStageTime[cropsTile.growthStage])
-            {
-                cropsTile.renderer.gameObject.SetActive(true);
-                cropsTile.renderer.sprite = cropsTile.crop.sprites[cropsTile.growthStage];
-
-                if (cropsTile.growthStage + 1 < cropsTile.crop.sprites.Count)
-                {
-                    cropsTile.growthStage += 1;
-                }
-            }
+            cropsTile.renderer.gameObject.SetActive(true);
+            cropsTile.renderer.sprite = cropsTile.crop.sprites[cropsTile.growthStage];           
         }
-
-        for (int i = 0; i < cropsRenders.Count; i++)
-        {
-            if (container.crops[i].crop != null && 
-                container.crops[i].growTimer >= container.crops[i].crop.growthStageTime[container.crops[i].growthStage])
-            {
-                cropsRenders[i].gameObject.SetActive(true);
-                cropsRenders[i].sprite = container.crops[i].crop.sprites[container.crops[i].growthStage];
-                if (container.crops[i].growthStage + 1 < container.crops[i].crop.sprites.Count)
-                {
-                    container.crops[i].growthStage += 1;
-                }
-            }
-        }
+     
     }
 
     internal bool Check(Vector3Int position)
@@ -111,6 +120,7 @@ public class TilemapCropsManager : TimeAgent
     {
         if (Check(position) == true) { return; }
         CreatePlowedTile(position);
+        
     }
 
     public void Seed(Vector3Int position, Crop toSeed)
@@ -123,12 +133,24 @@ public class TilemapCropsManager : TimeAgent
 
         tile.crop = toSeed;
         tile.sceneBuildIndex = SceneManager.GetActiveScene().buildIndex;
+        tile.renderer.gameObject.SetActive(true);
+        for (int i = 0; i < tile.crop.sprites.Count; i++)
+        {
+            tile.renderer.sprite = tile.crop.sprites[0];
+        }
     }
 
     public void VisualizeTile(CropsTile cropsTile)
     {
         targetTilemap.SetTile(cropsTile.position, cropsTile.crop != null ? seeded : plowed);
-        
+
+        if (cropsTile.crop != null)
+        {
+            cropsTile.renderer.gameObject.SetActive(true);
+            cropsTile.renderer.sprite = cropsTile.crop.sprites[cropsTile.growthStage - 1];
+            cropsRenders[d].sprite = cropsTile.crop.sprites[cropsTile.growthStage - 1];
+        }
+
         if (cropsTile.renderer == null) 
         {
             GameObject go = Instantiate(cropsSpritePrefab, transform);
@@ -137,16 +159,11 @@ public class TilemapCropsManager : TimeAgent
             cropsRenders.Add(go.GetComponent<SpriteRenderer>());
             cropsTile.renderer = go.GetComponent<SpriteRenderer>();
             c.Add(d);
+            go.SetActive(false);
         }
-        bool growing = cropsTile.crop != null && cropsTile.growTimer >= cropsTile.crop.growthStageTime[0];
-        
-        cropsTile.renderer.gameObject.SetActive(growing);
 
-        if (growing == true)
-        {
-            cropsTile.renderer.sprite = cropsTile.crop.sprites[cropsTile.growthStage-1];
-            cropsRenders[d].sprite = cropsTile.crop.sprites[cropsTile.growthStage-1];
-        }      
+        
+
         d++;
     }
     
@@ -174,7 +191,7 @@ public class TilemapCropsManager : TimeAgent
             print("plantavelpego");
             DropedItemSpawner.instance.SpawnItem(targetTilemap.CellToWorld(gridPosition),
                 tile.crop.yield, tile.crop.count);
-
+            tile.isGrown = false;
             tile.Harvested();
             VisualizeTile(tile);
         }

@@ -12,6 +12,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5c7bccaad1255c43a456685f628b58f, type: 3}
   m_Name: AlvaroCropsContainer
   m_EditorClassIdentifier: 
-  crops: []
+  crops:
+  - growthStage: 0
+    sceneBuildIndex: 1
+    crop: {fileID: 0}
+    isGrown: 0
+    renderer: {fileID: 0}
+    position: {x: 2, y: 0, z: 0}
+  - growthStage: 0
+    sceneBuildIndex: 1
+    crop: {fileID: 0}
+    isGrown: 0
+    renderer: {fileID: 0}
+    position: {x: 1, y: 0, z: 0}
+  - growthStage: 0
+    sceneBuildIndex: 1
+    crop: {fileID: 0}
+    isGrown: 0
+    renderer: {fileID: 0}
+    position: {x: 0, y: 0, z: 0}
   savePath: /SaveCrops
   cropsDatabase: {fileID: 11400000, guid: 01915d219d9975441a964802b2cadcd3, type: 2}

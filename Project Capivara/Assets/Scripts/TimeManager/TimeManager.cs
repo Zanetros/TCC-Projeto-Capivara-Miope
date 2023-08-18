@@ -52,7 +52,7 @@ public class TimeManager : MonoBehaviour
         CalculateTime();
     }
 
-    void Update()
+    public void Update()
     {
         StopTime();
 
@@ -65,7 +65,7 @@ public class TimeManager : MonoBehaviour
 
     public void TimeManagement()
     {
-        if (Hour > 24)
+        if (Hour == 23 && Minute == 59)
         {
             Minute = 0;
             Hour = 0;
@@ -151,6 +151,5 @@ public class TimeManager : MonoBehaviour
     public void ControlTime(bool timeStoped)
     {
         isTimeStoped = timeStoped;
-    }
-    
+    }      
 }
