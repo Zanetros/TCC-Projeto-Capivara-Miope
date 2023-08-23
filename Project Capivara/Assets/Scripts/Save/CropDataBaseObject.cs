@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Item Database", menuName = "CropDatabase")]
+[CreateAssetMenu(fileName = "Data/Crop Database")]
 public class CropDataBaseObject : ScriptableObject, ISerializationCallbackReceiver
 {
     public Crop[] Crops;

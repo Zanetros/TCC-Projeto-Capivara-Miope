@@ -44,7 +44,7 @@ public class ItemSlot
 [CreateAssetMenu(menuName = "Data/Item Container")]
 public class ItemContainer : ScriptableObject, ISerializationCallbackReceiver
 {
-    public string savePath;
+    public string savePath = "InventoryData.json";
     public ItemDataBaseObject database;
     public List<ItemSlot> slots;
     public bool isDirty;
@@ -180,7 +180,7 @@ public class ItemContainer : ScriptableObject, ISerializationCallbackReceiver
     }
 
     public void LoadInventory()
-    {
+    {     
         if (File.Exists(string.Concat(Application.persistentDataPath, savePath)))
         {
             Debug.Log("Inventário Carregado");
