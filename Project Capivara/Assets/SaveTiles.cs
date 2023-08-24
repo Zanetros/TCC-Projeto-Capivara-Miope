@@ -8,7 +8,8 @@ using System.IO;
 public class SaveTiles : MonoBehaviour
 {
     public static SaveTiles instance;
-    List<CustomTile> tiles = new List<CustomTile>();
+    public Tilemap tilemap;
+    [SerializeField] List<CustomTile> tiles = new List<CustomTile>();
     
     private void Awake()
     {
@@ -22,11 +23,13 @@ public class SaveTiles : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.RightAlt)) LoadTile();
     }
 
-    public Tilemap tilemap;
+    
 
     public void SaveTile()
     {
         BoundsInt bounds = tilemap.cellBounds;
+
+        Debug.Log("TILE SALVO");
 
         LevelData levelData = new LevelData();
 
@@ -40,7 +43,8 @@ public class SaveTiles : MonoBehaviour
                 if (temptile != null)
                 {
                     levelData.tiles.Add(temptile.id);
-                    levelData.pos.Add(new Vector3Int(x, y, 0));
+                    levelData.posX.Add(x);
+                    levelData.posY.Add(y);
                 }
             }
         }
@@ -51,14 +55,16 @@ public class SaveTiles : MonoBehaviour
 
     public void LoadTile()
     {
+        Debug.Log("TILE CARREGADO");
+
         string json = File.ReadAllText(Application.dataPath + "/testLevel.json");
         LevelData data = JsonUtility.FromJson<LevelData>(json);
 
         tilemap.ClearAllTiles();
-
-        for (int i = 0; i < data.pos.Count; i++)
+        
+        for (int i = 0; i < data.tiles.Count; i++)
         {
-            tilemap.SetTile(data.pos[i], tiles.Find(t => t.name == data.tiles[i]).tile);
+            tilemap.SetTile(new Vector3Int(data.posX[i], data.posY[i], 0), tiles.Find(t => t.name == data.tiles[i]).tile);
         }
     }
 }
@@ -66,5 +72,6 @@ public class SaveTiles : MonoBehaviour
 public class LevelData
 {
     public List<string> tiles = new List<string>();
-    public List<Vector3Int> pos = new List<Vector3Int>();
+    public List<int> posX = new List<int>();
+    public List<int> posY = new List<int>();
 }

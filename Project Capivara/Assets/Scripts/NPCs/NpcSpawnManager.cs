@@ -184,7 +184,7 @@ public class NpcSpawnManager : MonoBehaviour
                     npcsN.sceneBuildIndex.Equals(npcTimeAndLocation.sceneToBeIn)) && !npcsN.npcsFromScene.Contains(npc))
                 {
                     npcsN.npcsFromScene.Add(npc);
-                    print("Npc Movido para outra cena!");
+                    
                     RemoveNpcFromLastScene(npc, containersToDeleteFrom[c]);
                     return;
                 }      
