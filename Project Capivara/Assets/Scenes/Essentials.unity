@@ -14256,9 +14256,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1526230360}
-        m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: testLoad
+      - m_Target: {fileID: 4312722990166600708}
+        m_TargetAssemblyTypeName: TileMapSaveHandler, Assembly-CSharp
+        m_MethodName: onLoad
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -40283,9 +40283,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1526230360}
-        m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
-        m_MethodName: testSave
+      - m_Target: {fileID: 4312722990166600708}
+        m_TargetAssemblyTypeName: TileMapSaveHandler, Assembly-CSharp
+        m_MethodName: onSave
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -83398,6 +83398,7 @@ GameObject:
   - component: {fileID: 4312722990166600705}
   - component: {fileID: 4312722990166600706}
   - component: {fileID: 4312722990166600707}
+  - component: {fileID: 4312722990166600708}
   m_Layer: 0
   m_Name: PlayerCustom
   m_TagString: Player
@@ -83498,6 +83499,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInv: {fileID: 11400000, guid: c9b86d2555838be44a1343983fb80ba7, type: 2}
+--- !u!114 &4312722990166600708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4312722990166600703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1494f6679ba41924db49d53dcf712679, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bounds:
+    m_Position: {x: 0, y: 0, z: 0}
+    m_Size: {x: 0, y: 0, z: 0}
+  filename: tilemapData.json
+  tilemap: []
 --- !u!1 &4312722990932931420
 GameObject:
   m_ObjectHideFlags: 0
@@ -84208,6 +84226,7 @@ MonoBehaviour:
     m_Position: {x: 100, y: 100, z: 0}
     m_Size: {x: 100, y: 100, z: 0}
   filename: tilemapData.json
+  tilemap: []
 --- !u!1001 &6315858059527434194
 PrefabInstance:
   m_ObjectHideFlags: 0
