@@ -58,10 +58,12 @@ public class TilemapCropsManager : TimeAgent
             }
   
             crops.growthStage += 1;
+            targetTilemap.SetTile(crops.position, plowed);
 
-            if (crops.growthStage >= crops.crop.maxGrowthFase)
+            if (crops.growthStage == crops.crop.maxGrowthFase -1)
             {
                 crops.isGrown = true;
+                crops.renderer.sprite = crops.crop.sprites[crops.growthStage];
             }
 
             else
@@ -155,7 +157,6 @@ public class TilemapCropsManager : TimeAgent
             cropsRenders.Add(go.GetComponent<SpriteRenderer>());
             cropsTile.renderer = go.GetComponent<SpriteRenderer>();
             c.Add(d);
-            //go.SetActive(false);
         }
 
         bool growing = cropsTile.crop != null && cropsTile.growthStage >= cropsTile.crop.maxGrowthFase;

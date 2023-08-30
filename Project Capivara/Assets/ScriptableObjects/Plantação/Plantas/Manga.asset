@@ -15,8 +15,9 @@ MonoBehaviour:
   cropId: 0
   yield: {fileID: 11400000, guid: 0e87d732b68e6e347b837e925cded9e9, type: 2}
   count: 4
-  maxGrowthFase: 4
+  maxGrowthFase: 5
   sprites:
+  - {fileID: 0}
   - {fileID: -1033181317, guid: cd520a82895c6224db5c73e37b5d2211, type: 3}
   - {fileID: 202177373, guid: cd520a82895c6224db5c73e37b5d2211, type: 3}
   - {fileID: -1422383674, guid: cd520a82895c6224db5c73e37b5d2211, type: 3}
