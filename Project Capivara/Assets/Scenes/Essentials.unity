@@ -83511,11 +83511,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1494f6679ba41924db49d53dcf712679, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bounds:
-    m_Position: {x: 0, y: 0, z: 0}
-    m_Size: {x: 0, y: 0, z: 0}
-  filename: tilemapData.json
-  tilemap: []
 --- !u!1 &4312722990932931420
 GameObject:
   m_ObjectHideFlags: 0
@@ -84222,11 +84217,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1494f6679ba41924db49d53dcf712679, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bounds:
-    m_Position: {x: 100, y: 100, z: 0}
-    m_Size: {x: 100, y: 100, z: 0}
-  filename: tilemapData.json
-  tilemap: []
 --- !u!1001 &6315858059527434194
 PrefabInstance:
   m_ObjectHideFlags: 0
