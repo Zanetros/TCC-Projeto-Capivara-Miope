@@ -19,18 +19,18 @@ MonoBehaviour:
     count: 1
     id: 0
   - item: {fileID: 11400000, guid: 0e87d732b68e6e347b837e925cded9e9, type: 2}
-    count: 994
-    id: 0
-  - item: {fileID: 0}
+    count: 1004
+    id: 4
+  - item: {fileID: 11400000, guid: 5c57c28f65a08d140bf705886b50c4c7, type: 2}
+    count: 1
+    id: 1
+  - item: {fileID: 11400000, guid: 11a13a86bc1ee3040b176141b4125b25, type: 2}
+    count: 1
+    id: 12
+  - item: {fileID: 11400000, guid: 421b9c798010a174c8b5997dcef09eb1, type: 2}
     count: 0
     id: 0
-  - item: {fileID: 0}
-    count: 0
-    id: 0
-  - item: {fileID: 0}
-    count: 0
-    id: 0
-  - item: {fileID: 0}
+  - item: {fileID: 11400000, guid: f7c304f6228f3ba48ab944a9d15d8eb1, type: 2}
     count: 0
     id: 0
   - item: {fileID: 0}

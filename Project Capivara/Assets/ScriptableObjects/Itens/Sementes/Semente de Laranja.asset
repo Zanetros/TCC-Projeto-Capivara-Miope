@@ -10,19 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 74b9439d70e29b345860848dba9e0985, type: 3}
-  m_Name: Semente de manga
+  m_Name: Semente de Laranja
   m_EditorClassIdentifier: 
   itemId: 4
-  Name: Semente de Manga
+  Name: Semente de Laranja
   Description: "Sementes que fazem brotar uma mangueira. N\xE3o, n\xE3o a que solta
     \xE1gua..."
+  shopText: 
   sellPrice: 12
   stackable: 1
   usableInRecipe: 0
-  sprite: {fileID: 21300000, guid: 0a8460f85ee341248a06f8399d9433ca, type: 3}
+  juice: 0
+  isGift: 0
+  isEtable: 0
+  sprite: {fileID: 21300000, guid: 481be5a8b2bdd1442ba7653944b42b7f, type: 3}
   onAction: {fileID: 0}
   onTilemapAction: {fileID: 11400000, guid: 153bb18c0f355dc418179a46811796a5, type: 2}
   onItemUsed: {fileID: 11400000, guid: 153bb18c0f355dc418179a46811796a5, type: 2}
+  onEat: {fileID: 0}
   crop: {fileID: 11400000, guid: 4454fc322e6c72f4aa7f7a463f3d6af6, type: 2}
   iconHighlight: 0
   itemPrefab: {fileID: 0}

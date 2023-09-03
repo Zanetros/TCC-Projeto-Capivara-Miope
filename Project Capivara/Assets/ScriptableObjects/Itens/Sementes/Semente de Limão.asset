@@ -10,20 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 74b9439d70e29b345860848dba9e0985, type: 3}
-  m_Name: Laranja
+  m_Name: "Semente de Lim\xE3o"
   m_EditorClassIdentifier: 
-  itemId: 1
-  Name: Laranja
-  Description: Uma Laranja das mais doces
+  itemId: 0
+  Name: "Semente de Lim\xE3o"
+  Description: 
   shopText: 
-  sellPrice: 30
-  stackable: 1
-  usableInRecipe: 1
-  juice: 1
-  sprite: {fileID: 21300000, guid: e81911942f7722f4d93e61a4d93de0fe, type: 3}
+  sellPrice: 0
+  stackable: 0
+  usableInRecipe: 0
+  juice: 0
+  isGift: 0
+  isEtable: 0
+  sprite: {fileID: 21300000, guid: c76ad6f5041aaf349be4b63b7d0b6cb5, type: 3}
   onAction: {fileID: 0}
   onTilemapAction: {fileID: 0}
   onItemUsed: {fileID: 0}
+  onEat: {fileID: 0}
   crop: {fileID: 0}
   iconHighlight: 0
   itemPrefab: {fileID: 0}
